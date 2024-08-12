@@ -6,9 +6,9 @@ services:
     ports:
       - 8055:8055
     volumes:
-      - ./directus/database:/directus/database
-      - ./directus/uploads:/directus/uploads
-      - ./directus/extensions:/directus/extensions
+      - ./directus/directus/database:/directus/database
+      - ./directus/directus/uploads:/directus/uploads
+      - ./directus/directus/extensions:/directus/extensions
     environment:
       SECRET: "replace-with-secure-random-value"
       ADMIN_EMAIL: "admin@example.com"
@@ -16,3 +16,13 @@ services:
       DB_CLIENT: "sqlite3"
       DB_FILENAME: "/directus/database/data.db"
       WEBSOCKETS_ENABLED: "true"
+
+  web:
+    build: ./web
+    ports:
+      - 5173:5173
+    develop:
+      watch:
+        - action: sync
+          path: ./web
+          target: /app

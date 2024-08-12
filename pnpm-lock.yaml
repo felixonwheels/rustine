@@ -1,0 +1,23 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    dependencies:
+      '@directus/sdk':
+        specifier: ^17.0.0
+        version: 17.0.0
+
+packages:
+
+  '@directus/sdk@17.0.0':
+    resolution: {integrity: sha512-ADKoFrLjWPVVsYNK0EffVFstl/ZHVaQbiUp4NCueKfvFaOSLQ16xSVNj5O//rP5+rU8t1HkjwC6JDh02rao7ZQ==}
+    engines: {node: '>=18.0.0'}
+
+snapshots:
+
+  '@directus/sdk@17.0.0': {}
