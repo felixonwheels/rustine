@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		%sveltekit.head%
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">%sveltekit.body%</div>
+	</body>
+	<script>
+		function updateTheme() {
+			document
+				.querySelector('html')
+				.setAttribute(
+					'data-bs-theme',
+					window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+				);
+		}
+
+		window
+			.matchMedia('(prefers-color-scheme: dark)')
+			.addEventListener('change', (event) => updateTheme());
+
+		updateTheme();
+	</script>
+</html>

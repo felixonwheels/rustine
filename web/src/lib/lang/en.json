@@ -1,0 +1,7 @@
+{
+	"heading": "Internationalization in SvelteKit",
+	"toggle_label": "Select Locale",
+	"button_label": "Generate Awards",
+	"body_text": "This is a small example to demonstrate i18n functionality in SvelteKit using svelte-i18n library. svelte-i18n helps you localize your app using the reactive tools Svelte provides. By using stores to keep track of the current locale, dictionary of messages and to format messages, we keep everything neat, in sync and easy to use on your svelte files. Total number of npm downloads per week as of {date} are {download}.",
+	"awards": "You have {n, plural, =0 { not won any awards } one { won exactly # award } other { won # awards }}!"
+}
