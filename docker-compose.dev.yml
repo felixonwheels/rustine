@@ -3,6 +3,8 @@ version: "3"
 services:
   directus:
     image: directus/directus:11.0.1
+    networks:
+      - backend
     ports:
       - 8055:8055
     volumes:
@@ -17,12 +19,20 @@ services:
       DB_FILENAME: "/directus/database/data.db"
       WEBSOCKETS_ENABLED: "true"
 
-  web:
-    build: ./web
-    ports:
-      - 5173:5173
-    develop:
-      watch:
-        - action: sync
-          path: ./web
-          target: /app
+      CORS_ENABLED: "true" # for development
+      CORS_ORIGIN: "*" # for development
+
+  # web:
+  #   build: ./web
+  #   networks:
+  #     - backend
+  #   ports:
+  #     - 5173:5173
+  #   develop:
+  #     watch:
+  #       - action: sync
+  #         path: ./web
+  #         target: /app
+
+networks:
+  backend:
