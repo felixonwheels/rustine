@@ -7,6 +7,14 @@ import getDirectusInstance from '$lib/directus';
 import { readItems } from '@directus/sdk';
 
 export const load: PageLoad = async ({ fetch }) => {
+	const url = `http://localhost:8055/items/Global`;
+
+	const response = await fetch(url);
+
+	console.log('PLOFDOFUOISDUIOFUDSOUFOIUSDOIUFIODSU');
+
+	console.log(await response.json());
+
 	const directus = getDirectusInstance(fetch);
 
 	return {
