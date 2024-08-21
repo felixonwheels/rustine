@@ -2,7 +2,7 @@ version: "3"
 
 services:
   directus:
-    image: directus/directus:11.0.1
+    image: directus/directus:11.0.2
     networks:
       - backend
     ports:
@@ -13,10 +13,13 @@ services:
       - ./directus/directus/extensions:/directus/extensions
     environment:
       SECRET: "replace-with-secure-random-value"
+
       ADMIN_EMAIL: "admin@example.com"
       ADMIN_PASSWORD: "d1r3ctu5"
+
       DB_CLIENT: "sqlite3"
       DB_FILENAME: "/directus/database/data.db"
+
       WEBSOCKETS_ENABLED: "true"
 
       CORS_ENABLED: "true" # for development
@@ -27,12 +30,12 @@ services:
     networks:
       - backend
     ports:
-      - 5173:5173
-    # develop:
-    #   watch:
-    #     - action: sync
-    #       path: ./web
-    #       target: /app
+      - 8080:8080
+    develop:
+      watch:
+        - action: sync+restart
+          path: ./web
+          target: /app
 
 networks:
   backend:
