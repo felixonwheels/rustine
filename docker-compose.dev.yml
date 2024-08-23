@@ -1,5 +1,3 @@
-version: "3"
-
 services:
   directus:
     image: directus/directus:11.0.2
@@ -33,7 +31,7 @@ services:
       - 8080:8080
     develop:
       watch:
-        - action: sync+restart
+        - action: sync
           path: ./web
           target: /app
 

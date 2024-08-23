@@ -15,8 +15,8 @@
 	<div class="col-lg-6 mx-auto">
 		<p class="lead mb-4">{data.global?.description}</p>
 		<div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-			<button type="button" class="btn btn-primary btn-lg px-4 gap-4">Primary button</button>
-			<button type="button" class="btn btn-light btn-lg px-4">Light</button>
+			<button type="button" class="btn btn-primary btn-lg px-4 gap-4">primary button</button>
+			<button type="button" class="btn btn-light btn-lg px-4">light</button>
 		</div>
 	</div>
 </div>

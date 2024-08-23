@@ -12,8 +12,8 @@
 			</a>
 
 			<ul class="nav col-12 col-lg-auto me-lg-auto ms-lg-2 mb-2 justify-content-center mb-md-0">
-				<li><a href="/" class="nav-link px-2 text-secondary">Home</a></li>
-				<li><a href="/about" class="nav-link px-2 text-secondary">About</a></li>
+				<li><a href="/learn" class="nav-link px-2 text-secondary">learn</a></li>
+				<li><a href="/fix" class="nav-link px-2 text-secondary">fix</a></li>
 			</ul>
 		</div>
 	</div>

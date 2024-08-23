@@ -5,7 +5,7 @@
       "name": "Run docker-compose.dev.yml",
       "request": "launch",
       "type": "node-terminal",
-      "command": "docker compose -f docker-compose.dev.yml up --watch"
+      "command": "docker compose -f docker-compose.dev.yml up --build --force-recreate --watch"
     }
   ]
 }
