@@ -1,8 +1,9 @@
 <script lang="ts">
-	import 'iconify-icon';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
+
+	import Wrench from 'lucide-svelte/icons/wrench';
 </script>
 
 <svelte:head>
@@ -10,66 +11,101 @@
 	<meta name="description" content="Rustine" />
 </svelte:head>
 
-<div class="px-4 py-5 my-5 text-center">
-	<h1 class="display-5 fw-bold text-body-emphasis">{data.global?.title}</h1>
+<section class="hero">
+	<h1>{data.global?.title}</h1>
+	<p>{data.global?.description}</p>
+	<button class="btn btn-primary">Get Started</button>
+</section>
 
-	<div class="col-lg-6 mx-auto">
-		<p class="lead mb-4">{data.global?.description}</p>
-		<div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-			<button type="button" class="btn btn-primary btn-lg px-4 gap-4">primary button</button>
-			<button type="button" class="btn btn-light btn-lg px-4">light</button>
-		</div>
-	</div>
-</div>
+<section>
+	<div class="grid">
+		<article>
+			<h3><Wrench /></h3>
 
-<div class="container px-4 py-5" id="featured-3">
-	<h2 class="pb-2 border-bottom">Columns with icons</h2>
-	<div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
-		<div class="feature col">
-			<div class="fs-2">
-				<iconify-icon icon="fa6-solid:wrench"></iconify-icon>
-			</div>
-			<h3 class="fs-2 text-body-emphasis">Learn about</h3>
+			<h2>Tools</h2>
+
 			<p>
-				Paragraph of text beneath the heading to explain the heading. We'll add onto it with another
-				sentence and probably just keep going until we run out of words.
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus
+				tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices
+				diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci
+				nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis
+				semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque
+				congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue.
+				Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue
+				blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
+				cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque fermentum. Maecenas
+				adipiscing ante non diam sodales hendrerit.
 			</p>
-			<a href="#/" class="icon-link">
-				Call to action
-				<svg class="bi"><use xlink:href="#chevron-right" /></svg>
-			</a>
-		</div>
-		<div class="feature col">
-			<div
-				class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3"
-			>
-				<svg class="bi" width="1em" height="1em"><use xlink:href="#people-circle" /></svg>
-			</div>
-			<h3 class="fs-2 text-body-emphasis">Featured title</h3>
 			<p>
-				Paragraph of text beneath the heading to explain the heading. We'll add onto it with another
-				sentence and probably just keep going until we run out of words.
+				<a href="/learn/tools">Navigate to tools</a>
 			</p>
-			<a href="#/" class="icon-link">
-				Call to action
-				<svg class="bi"><use xlink:href="#chevron-right" /></svg>
-			</a>
-		</div>
-		<div class="feature col">
-			<div
-				class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3"
-			>
-				<svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2" /></svg>
-			</div>
-			<h3 class="fs-2 text-body-emphasis">Featured title</h3>
+		</article>
+		<article>
+			<header><Wrench /></header>
+			<h3>plouf</h3>
 			<p>
-				Paragraph of text beneath the heading to explain the heading. We'll add onto it with another
-				sentence and probably just keep going until we run out of words.
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus
+				tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices
+				diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci
+				nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis
+				semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque
+				congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue.
+				Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue
+				blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
+				cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque fermentum. Maecenas
+				adipiscing ante non diam sodales hendrerit.
 			</p>
-			<a href="#/" class="icon-link">
-				Call to action
-				<svg class="bi"><use xlink:href="#chevron-right" /></svg>
-			</a>
-		</div>
+		</article>
+		<article>
+			<header><Wrench /></header>
+			<h3>plouf</h3>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus
+				tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices
+				diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci
+				nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis
+				semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque
+				congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue.
+				Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue
+				blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
+				cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque fermentum. Maecenas
+				adipiscing ante non diam sodales hendrerit.
+			</p>
+		</article>
+		<article>
+			<header><Wrench /></header>
+			<h3>plouf</h3>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus
+				tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices
+				diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci
+				nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis
+				semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque
+				congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue.
+				Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue
+				blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
+				cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque fermentum. Maecenas
+				adipiscing ante non diam sodales hendrerit.
+			</p>
+		</article>
 	</div>
-</div>
+</section>
+
+<style>
+	.hero {
+		display: grid;
+		grid-template-columns: 1fr;
+		-moz-column-gap: calc(var(--pico-spacing) * 6);
+		column-gap: calc(var(--pico-spacing) * 6);
+		row-gap: calc((var(--pico-spacing) * 6) / 2);
+		justify-items: center;
+		margin-top: calc((var(--pico-spacing) * 6) / 2);
+		margin-bottom: calc((var(--pico-spacing) * 6) / 2);
+	}
+
+	@media (min-width: 768px) {
+		.grid {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+</style>

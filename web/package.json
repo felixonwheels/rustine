@@ -38,7 +38,7 @@
 	"type": "module",
 	"dependencies": {
 		"@directus/sdk": "^17.0.0",
-		"bootstrap": "5.3.3",
-		"iconify-icon": "^2.1.0"
+		"@picocss/pico": "^2.0.6",
+		"lucide-svelte": "^0.441.0"
 	}
 }
