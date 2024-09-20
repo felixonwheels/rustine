@@ -21,7 +21,7 @@
 				</ul>
 			</nav>
 		</section>
-		<section>
+		<section class="love">
 			<small>made with ❤️ by omni</small>
 		</section>
 	</div>
@@ -30,5 +30,9 @@
 <style>
 	.rustine-logo {
 		width: 4rem;
+	}
+
+	.love {
+		text-align: center;
 	}
 </style>
