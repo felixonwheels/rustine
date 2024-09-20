@@ -13,7 +13,7 @@
 </svelte:head>
 
 <section class="hero" in:fly>
-	<h1>{data.global?.title}</h1>
+	<h1 class="title">{data.global?.title}</h1>
 	<p>{data.global?.description}</p>
 	<button class="btn btn-primary">Get Started</button>
 </section>
@@ -62,5 +62,9 @@
 		.grid {
 			grid-template-columns: 1fr 1fr;
 		}
+	}
+
+	.title {
+		font-size: 3rem;
 	}
 </style>

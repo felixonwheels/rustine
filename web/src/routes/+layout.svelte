@@ -15,3 +15,10 @@
 
 	<Footer />
 </div>
+
+<style>
+	.container {
+		margin-top: var(--pico-spacing);
+		margin-bottom: var(--pico-spacing);
+	}
+</style>

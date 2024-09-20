@@ -7,6 +7,4 @@
 	<meta name="description" content="fix your bike" />
 </svelte:head>
 
-<div class="content" in:fly>
-	<h1>fix</h1>
-</div>
+<h1 in:fly>fix</h1>

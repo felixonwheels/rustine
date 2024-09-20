@@ -1,38 +1,39 @@
 <script>
-	import RustineLogo from '$lib/assets/rustine_logo.svg?raw';
+	import GitlabLogo from '$lib/assets/gitlab-logo.svg?raw';
 </script>
 
 <footer>
-	<div class="container">
+	<div class="container footer">
 		<section>
 			<nav>
 				<ul>
 					<li>
-						<a class="rustine-logo" href="/">
-							{@html RustineLogo}
+						<a class="logo" href="https://gitlab.com/rustine/rustine">
+							{@html GitlabLogo}
 						</a>
 					</li>
 				</ul>
-				<ul>
-					<aside>
-						<li><a href="/learn" class="contrast">learn</a></li>
-						<li><a href="/fix" class="contrast">fix</a></li>
-					</aside>
-				</ul>
 			</nav>
 		</section>
+
 		<section class="love">
-			<small>made with ❤️ by omni</small>
+			<small>made with 🧡 by omni</small>
 		</section>
 	</div>
 </footer>
 
 <style>
-	.rustine-logo {
-		width: 4rem;
+	.logo {
+		width: 5rem;
+	}
+
+	.footer {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 	}
 
 	.love {
-		text-align: center;
+		margin-bottom: calc(var(--pico-spacing) * 4);
 	}
 </style>
