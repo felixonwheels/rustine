@@ -7,9 +7,7 @@
 	import { fly } from 'svelte/transition';
 
 	import * as m from '$lib/paraglide/messages.js';
-	import { availableLanguageTags, languageTag } from '$lib/paraglide/runtime.js';
-	import { i18n } from '$lib/i18n.js';
-	import { page } from '$app/stores';
+	import { languageTag } from '$lib/paraglide/runtime.js';
 </script>
 
 <svelte:head>
@@ -19,17 +17,6 @@
 
 <h1>{languageTag()}</h1>
 <h1>{m.greetings({ name: 'Félix' })}</h1>
-
-{#each availableLanguageTags as lang}
-	<!-- the hreflang attribute decides which language the link points to -->
-	<a
-		href={i18n.route($page.url.pathname)}
-		hreflang={lang}
-		aria-current={lang === languageTag() ? 'page' : undefined}
-	>
-		{lang}
-	</a>
-{/each}
 
 <section class="hero" in:fly>
 	<h1 class="title">{data.global?.title}</h1>
