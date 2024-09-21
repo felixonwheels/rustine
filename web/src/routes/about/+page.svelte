@@ -3,6 +3,8 @@
 	import { fly } from 'svelte/transition';
 
 	export let data: PageData;
+
+	import * as m from '$lib/paraglide/messages.js';
 </script>
 
 <svelte:head>
@@ -10,7 +12,7 @@
 	<meta name="description" content="About this app" />
 </svelte:head>
 
-<h1 in:fly>about</h1>
+<h1 in:fly>{m.about()}</h1>
 
 <article>
 	{@html data.about?.text}

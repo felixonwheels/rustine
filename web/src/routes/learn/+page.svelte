@@ -1,5 +1,7 @@
 <script>
 	import { fly } from 'svelte/transition';
+
+	import * as m from '$lib/paraglide/messages.js';
 </script>
 
 <svelte:head>
@@ -7,7 +9,7 @@
 	<meta name="description" content="learn about bike maintenance" />
 </svelte:head>
 
-<h1 in:fly>learn</h1>
+<h1 in:fly>{m.learn()}</h1>
 
 {#each [...Array(100).keys()] as _, i}
 	<article in:fly|global={{ duration: 120, delay: i * 100 }}>

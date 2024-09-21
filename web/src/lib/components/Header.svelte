@@ -1,6 +1,8 @@
 <script>
 	import RustineLogo from '$lib/assets/rustine-logo.svg?raw';
 	import { BookOpenText, CircleHelp, Wrench } from 'lucide-svelte';
+
+	import * as m from '$lib/paraglide/messages.js';
 </script>
 
 <header>
@@ -13,9 +15,9 @@
 			</li>
 		</ul>
 		<ul>
-			<li><a href="/learn" class="contrast"><BookOpenText /> learn</a></li>
-			<li><a href="/fix" class="contrast"><Wrench /> fix</a></li>
-			<li><a href="/about" class="contrast"><CircleHelp /> about</a></li>
+			<li><a href="/learn" class="contrast"><BookOpenText /> {m.learn()}</a></li>
+			<li><a href="/fix" class="contrast"><Wrench /> {m.fix()}</a></li>
+			<li><a href="/about" class="contrast"><CircleHelp /> {m.about()}</a></li>
 		</ul>
 	</nav>
 </header>

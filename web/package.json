@@ -14,6 +14,7 @@
 		"test:unit": "vitest"
 	},
 	"devDependencies": {
+		"@inlang/paraglide-js": "1.11.2",
 		"@neoconfetti/svelte": "^1.0.0",
 		"@playwright/test": "^1.46.1",
 		"@sveltejs/adapter-auto": "^3.2.4",
@@ -38,6 +39,7 @@
 	"type": "module",
 	"dependencies": {
 		"@directus/sdk": "^17.0.0",
+		"@inlang/paraglide-sveltekit": "0.11.0",
 		"@picocss/pico": "^2.0.6",
 		"lucide-svelte": "^0.441.0"
 	}

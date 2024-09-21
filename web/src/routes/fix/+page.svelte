@@ -1,5 +1,7 @@
 <script>
 	import { fly } from 'svelte/transition';
+
+	import * as m from '$lib/paraglide/messages.js';
 </script>
 
 <svelte:head>
@@ -7,4 +9,8 @@
 	<meta name="description" content="fix your bike" />
 </svelte:head>
 
-<h1 in:fly>fix</h1>
+<h1 in:fly>{m.fix()}</h1>
+
+<div class="grid">
+	<article>fixxxxx</article>
+</div>

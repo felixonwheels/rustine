@@ -6,13 +6,9 @@
 	<div class="container footer">
 		<section>
 			<nav>
-				<ul>
-					<li>
-						<a class="logo" href="https://gitlab.com/rustine/rustine">
-							{@html GitlabLogo}
-						</a>
-					</li>
-				</ul>
+				<a class="logo" href="https://gitlab.com/rustine/rustine">
+					{@html GitlabLogo}
+				</a>
 			</nav>
 		</section>
 
