@@ -3,7 +3,7 @@ const __vite__mapDeps = (
 	m = __vite__mapDeps,
 	d = m.f ||
 		(m.f = [
-			'../nodes/0.BYYPvwGe.js',
+			'../nodes/0.Crv5TZ4n.js',
 			'../chunks/disclose-version.BeaculLB.js',
 			'../chunks/runtime.DilaVa7n.js',
 			'../chunks/wrench.u8TcwBjA.js',
@@ -11,16 +11,16 @@ const __vite__mapDeps = (
 			'../chunks/index.Bmg8rQph.js',
 			'../chunks/render.BxL60c5z.js',
 			'../chunks/lifecycle.D2hKm4A6.js',
-			'../chunks/i18n.COEalsOf.js',
+			'../chunks/i18n.DSZqRpWF.js',
 			'../chunks/runtime.BB1J7FTS.js',
-			'../chunks/entry.DG9UY6Zw.js',
-			'../chunks/stores.DjS85lB-.js',
-			'../chunks/store.DMuufVLb.js',
+			'../chunks/entry.yZf3JTNA.js',
+			'../chunks/stores.Ds0dtC5X.js',
+			'../chunks/store.Wka2ykIp.js',
 			'../chunks/about.wuY0A_JP.js',
 			'../chunks/learn.CAJoXpab.js',
 			'../chunks/fix.CXzj8-gX.js',
 			'../assets/0.sU1d2Hsw.css',
-			'../nodes/1.Dh2EnRXr.js',
+			'../nodes/1.DkyuiBmy.js',
 			'../nodes/2.Blh5v-JL.js',
 			'../chunks/index.jdzEjXFq.js',
 			'../assets/2.DxV2IoH6.css',
@@ -42,7 +42,7 @@ var u = (e, t, r) => (F(e, t, 'read from private field'), r ? r.call(e) : t.get(
 				? t.add(e)
 				: t.set(e, r),
 	T = (e, t, r, i) => (F(e, t, 'write to private field'), i ? i.call(e, r) : t.set(e, r), r);
-import { i as Q, a as A } from '../chunks/i18n.COEalsOf.js';
+import { i as Q, a as A } from '../chunks/i18n.DSZqRpWF.js';
 import {
 	R as H,
 	V as X,
@@ -400,13 +400,13 @@ const Wt = wt(Vt),
 	Yt = [
 		() =>
 			b(
-				() => import('../nodes/0.BYYPvwGe.js'),
+				() => import('../nodes/0.Crv5TZ4n.js'),
 				__vite__mapDeps([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]),
 				import.meta.url
 			),
 		() =>
 			b(
-				() => import('../nodes/1.Dh2EnRXr.js'),
+				() => import('../nodes/1.DkyuiBmy.js'),
 				__vite__mapDeps([17, 1, 2, 6, 7, 12, 10, 11]),
 				import.meta.url
 			),
