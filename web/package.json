@@ -1,9 +1,6 @@
 {
 	"name": "rustine-web",
 	"version": "0.0.1",
-	"engines": {
-		"node": "20.17.0"
-	},
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
