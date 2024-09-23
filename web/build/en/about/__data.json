@@ -1,1 +1,29 @@
-{"type":"data","nodes":[null,{"type":"data","data":[{"about":1},{"id":2,"status":3,"user_created":4,"date_created":5,"user_updated":6,"date_updated":6,"translations":7},1,"published","eed9a881-9522-499c-b011-1c99409f0646","2024-09-21T14:42:32.036Z",null,[2,8],2],"uses":{}}]}
+{
+	"type": "data",
+	"nodes": [
+		null,
+		{
+			"type": "data",
+			"data": [
+				{ "about": 1 },
+				{
+					"id": 2,
+					"status": 3,
+					"user_created": 4,
+					"date_created": 5,
+					"user_updated": 6,
+					"date_updated": 6,
+					"translations": 7
+				},
+				1,
+				"published",
+				"eed9a881-9522-499c-b011-1c99409f0646",
+				"2024-09-21T14:42:32.036Z",
+				null,
+				[2, 8],
+				2
+			],
+			"uses": {}
+		}
+	]
+}

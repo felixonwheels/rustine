@@ -1,4 +1,269 @@
-import{d as F,a as b,t as G}from"../chunks/disclose-version.BeaculLB.js";import{N as u1,R as Y,V as g1,aG as _1,ap as h1,O as v1,U as m1,T as L1,p as S,aH as x,aI as t1,f as B,a as Z,l as A,g as e,t as v,m as T,d as E,c as r,r as n,s as k}from"../chunks/runtime.DilaVa7n.js";import{s as H,d as D,I as e1,W as b1}from"../chunks/wrench.u8TcwBjA.js";import{h as y1,s as N}from"../chunks/render.BxL60c5z.js";import{n as C1,a as n1,p as V,s as K,i as s1}from"../chunks/i18n.SUgpfbe3.js";import{i as j}from"../chunks/lifecycle.D2hKm4A6.js";import{p as O,l as r1,s as o1}from"../chunks/props.BY6uJeTk.js";import{s as W,a as q}from"../chunks/store.B-zHoxYf.js";import{p as I}from"../chunks/stores.DI1mH514.js";import{e as l1,s as P,i as i1,L as $1,f as x1,h as Q,g as c1}from"../chunks/index.Bmg8rQph.js";import{b as f1,g as k1,i as w1}from"../chunks/entry.s-sTqh4A.js";import{h as p1,a as M1}from"../chunks/about.wuY0A_JP.js";import{l as X,a as P1}from"../chunks/runtime.BB1J7FTS.js";import{l as U1}from"../chunks/learn.CAJoXpab.js";import{f as A1}from"../chunks/fix.CXzj8-gX.js";function F1(o,a,p){Y&&g1();var s=o,t=m1,i;u1(()=>{_1(t,t=a())&&(i&&h1(i),i=v1(()=>p(s)))}),Y&&(s=L1)}function B1(o,a){return o.protocol!==a.protocol?a.href:a.password||a.username?"//"+[a.username,a.password].filter(Boolean).join(":")+"@"+a.host+a.pathname+a.search+a.hash:o.host!==a.host?"//"+a.host+a.pathname+a.search+a.hash:a.pathname+a.search+a.hash}function R1(o,a,p){const s=new URL(p??"/",a).pathname;return o.origin!==a.origin||!o.pathname.startsWith(s)}var T1=G('<link rel="alternate">');function E1(o,a){S(a,!1);const p=W(),s=()=>q(I,"$page",p),t=T(),i=T(),l=T(),f=C1(f1,new URL(s().url))||"/";let C=O(a,"availableLanguageTags",8),d=O(a,"strategy",8),U=O(a,"currentLang",8);const y=(g,c)=>{const h=[];for(const L of C()){const M=c.getLocalisedPath(g,L),m=K(M,f,void 0),_=new URL(m,new URL(s().url)).href;h.push(_)}return h};x(()=>s(),()=>{E(t,V(s().url.pathname,f)[0])}),x(()=>(A(d()),e(t),A(U())),()=>{E(i,d().getCanonicalPath(e(t),U()))}),x(()=>(e(i),A(d())),()=>{E(l,y(e(i),d()))}),t1(),j();var w=F(),u=B(w);n1(u,()=>C().length>=1,g=>{var c=F(),h=B(c);l1(h,1,()=>e(l),i1,(L,M,m)=>{var _=T1();v(()=>{P(_,"hreflang",C()[m]),P(_,"href",e(M))}),b(L,_)}),b(g,c)}),b(o,w),Z()}const N1=(o,a)=>`${$1}=${o};Path=${a};SameSite=lax;Max-Age=31557600`;function O1(o,a){S(a,!1);const p=W(),s=()=>q(I,"$page",p),t=T(),i=T(),l=C1(f1,new URL(s().url))||"/";let f=O(a,"languageTag",24,()=>{}),C=O(a,"i18n",8),d=T(0);function U(u,g){try{const c=new URL(k1(I).url),[h,L]=V(c.pathname,l),M=C().strategy.getCanonicalPath(h,e(t)),m=new URL(c);m.pathname=K(M,l,L);const _=new URL(u,new URL(m));if(R1(_,c,l)||C().config.exclude(_.pathname))return u;const $=g??e(t),[R,z]=V(_.pathname,l),d1=C().strategy.getLocalisedPath(R,$),J=new URL(_);return J.pathname=K(d1,l,z),B1(c,J)}catch{return u}}x1({translateHref:U}),x(()=>(A(f()),A(C()),s()),()=>{E(t,f()??C().getLanguageFromUrl(s().url))}),x(()=>(A(C()),e(t)),()=>{C().config.runtime.setLanguageTag(e(t))}),x(()=>e(t),()=>{document.documentElement.lang=e(t)}),x(()=>(A(C()),e(t)),()=>{document.documentElement.dir=C().config.textDirection[e(t)]??"ltr"}),x(()=>(e(t),e(d)),()=>{e(t)&&E(d,e(d)+1)}),x(()=>(e(t),e(d),Q),()=>{e(t)&&e(d)>1&&w1(Q)}),x(()=>e(t),()=>{E(i,e(t))}),x(()=>e(t),()=>{document.cookie=N1(e(t),l)}),t1(),j();var y=F();y1(u=>{var g=F(),c=B(g);n1(c,()=>C().config.seo.noAlternateLinks!==!0&&!C().config.exclude(s().url.pathname),h=>{E1(h,{get availableLanguageTags(){return C().config.runtime.availableLanguageTags},get strategy(){return C().strategy},get currentLang(){return e(t)}})}),b(u,g)});var w=B(y);F1(w,()=>e(i),u=>{var g=F(),c=B(g);H(c,D(a),{}),b(u,g)}),b(o,y),Z()}const G1=!0,c2=Object.freeze(Object.defineProperty({__proto__:null,prerender:G1},Symbol.toStringTag,{value:"Module"})),I1=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 380">
+import { d as F, a as b, t as G } from '../chunks/disclose-version.BeaculLB.js';
+import {
+	N as u1,
+	R as Y,
+	V as g1,
+	aG as _1,
+	ap as h1,
+	O as v1,
+	U as m1,
+	T as L1,
+	p as S,
+	aH as x,
+	aI as t1,
+	f as B,
+	a as Z,
+	l as A,
+	g as e,
+	t as v,
+	m as T,
+	d as E,
+	c as r,
+	r as n,
+	s as k
+} from '../chunks/runtime.DilaVa7n.js';
+import { s as H, d as D, I as e1, W as b1 } from '../chunks/wrench.u8TcwBjA.js';
+import { h as y1, s as N } from '../chunks/render.BxL60c5z.js';
+import { n as C1, a as n1, p as V, s as K, i as s1 } from '../chunks/i18n.COEalsOf.js';
+import { i as j } from '../chunks/lifecycle.D2hKm4A6.js';
+import { p as O, l as r1, s as o1 } from '../chunks/props.BY6uJeTk.js';
+import { s as W, a as q } from '../chunks/store.DMuufVLb.js';
+import { p as I } from '../chunks/stores.DjS85lB-.js';
+import {
+	e as l1,
+	s as P,
+	i as i1,
+	L as $1,
+	f as x1,
+	h as Q,
+	g as c1
+} from '../chunks/index.Bmg8rQph.js';
+import { b as f1, g as k1, i as w1 } from '../chunks/entry.DG9UY6Zw.js';
+import { h as p1, a as M1 } from '../chunks/about.wuY0A_JP.js';
+import { l as X, a as P1 } from '../chunks/runtime.BB1J7FTS.js';
+import { l as U1 } from '../chunks/learn.CAJoXpab.js';
+import { f as A1 } from '../chunks/fix.CXzj8-gX.js';
+function F1(o, a, p) {
+	Y && g1();
+	var s = o,
+		t = m1,
+		i;
+	u1(() => {
+		_1(t, (t = a())) && (i && h1(i), (i = v1(() => p(s))));
+	}),
+		Y && (s = L1);
+}
+function B1(o, a) {
+	return o.protocol !== a.protocol
+		? a.href
+		: a.password || a.username
+			? '//' +
+				[a.username, a.password].filter(Boolean).join(':') +
+				'@' +
+				a.host +
+				a.pathname +
+				a.search +
+				a.hash
+			: o.host !== a.host
+				? '//' + a.host + a.pathname + a.search + a.hash
+				: a.pathname + a.search + a.hash;
+}
+function R1(o, a, p) {
+	const s = new URL(p ?? '/', a).pathname;
+	return o.origin !== a.origin || !o.pathname.startsWith(s);
+}
+var T1 = G('<link rel="alternate">');
+function E1(o, a) {
+	S(a, !1);
+	const p = W(),
+		s = () => q(I, '$page', p),
+		t = T(),
+		i = T(),
+		l = T(),
+		f = C1(f1, new URL(s().url)) || '/';
+	let C = O(a, 'availableLanguageTags', 8),
+		d = O(a, 'strategy', 8),
+		U = O(a, 'currentLang', 8);
+	const y = (g, c) => {
+		const h = [];
+		for (const L of C()) {
+			const M = c.getLocalisedPath(g, L),
+				m = K(M, f, void 0),
+				_ = new URL(m, new URL(s().url)).href;
+			h.push(_);
+		}
+		return h;
+	};
+	x(
+		() => s(),
+		() => {
+			E(t, V(s().url.pathname, f)[0]);
+		}
+	),
+		x(
+			() => (A(d()), e(t), A(U())),
+			() => {
+				E(i, d().getCanonicalPath(e(t), U()));
+			}
+		),
+		x(
+			() => (e(i), A(d())),
+			() => {
+				E(l, y(e(i), d()));
+			}
+		),
+		t1(),
+		j();
+	var w = F(),
+		u = B(w);
+	n1(
+		u,
+		() => C().length >= 1,
+		(g) => {
+			var c = F(),
+				h = B(c);
+			l1(
+				h,
+				1,
+				() => e(l),
+				i1,
+				(L, M, m) => {
+					var _ = T1();
+					v(() => {
+						P(_, 'hreflang', C()[m]), P(_, 'href', e(M));
+					}),
+						b(L, _);
+				}
+			),
+				b(g, c);
+		}
+	),
+		b(o, w),
+		Z();
+}
+const N1 = (o, a) => `${$1}=${o};Path=${a};SameSite=lax;Max-Age=31557600`;
+function O1(o, a) {
+	S(a, !1);
+	const p = W(),
+		s = () => q(I, '$page', p),
+		t = T(),
+		i = T(),
+		l = C1(f1, new URL(s().url)) || '/';
+	let f = O(a, 'languageTag', 24, () => {}),
+		C = O(a, 'i18n', 8),
+		d = T(0);
+	function U(u, g) {
+		try {
+			const c = new URL(k1(I).url),
+				[h, L] = V(c.pathname, l),
+				M = C().strategy.getCanonicalPath(h, e(t)),
+				m = new URL(c);
+			m.pathname = K(M, l, L);
+			const _ = new URL(u, new URL(m));
+			if (R1(_, c, l) || C().config.exclude(_.pathname)) return u;
+			const $ = g ?? e(t),
+				[R, z] = V(_.pathname, l),
+				d1 = C().strategy.getLocalisedPath(R, $),
+				J = new URL(_);
+			return (J.pathname = K(d1, l, z)), B1(c, J);
+		} catch {
+			return u;
+		}
+	}
+	x1({ translateHref: U }),
+		x(
+			() => (A(f()), A(C()), s()),
+			() => {
+				E(t, f() ?? C().getLanguageFromUrl(s().url));
+			}
+		),
+		x(
+			() => (A(C()), e(t)),
+			() => {
+				C().config.runtime.setLanguageTag(e(t));
+			}
+		),
+		x(
+			() => e(t),
+			() => {
+				document.documentElement.lang = e(t);
+			}
+		),
+		x(
+			() => (A(C()), e(t)),
+			() => {
+				document.documentElement.dir = C().config.textDirection[e(t)] ?? 'ltr';
+			}
+		),
+		x(
+			() => (e(t), e(d)),
+			() => {
+				e(t) && E(d, e(d) + 1);
+			}
+		),
+		x(
+			() => (e(t), e(d), Q),
+			() => {
+				e(t) && e(d) > 1 && w1(Q);
+			}
+		),
+		x(
+			() => e(t),
+			() => {
+				E(i, e(t));
+			}
+		),
+		x(
+			() => e(t),
+			() => {
+				document.cookie = N1(e(t), l);
+			}
+		),
+		t1(),
+		j();
+	var y = F();
+	y1((u) => {
+		var g = F(),
+			c = B(g);
+		n1(
+			c,
+			() => C().config.seo.noAlternateLinks !== !0 && !C().config.exclude(s().url.pathname),
+			(h) => {
+				E1(h, {
+					get availableLanguageTags() {
+						return C().config.runtime.availableLanguageTags;
+					},
+					get strategy() {
+						return C().strategy;
+					},
+					get currentLang() {
+						return e(t);
+					}
+				});
+			}
+		),
+			b(u, g);
+	});
+	var w = B(y);
+	F1(
+		w,
+		() => e(i),
+		(u) => {
+			var g = F(),
+				c = B(g);
+			H(c, D(a), {}), b(u, g);
+		}
+	),
+		b(o, y),
+		Z();
+}
+const G1 = !0,
+	c2 = Object.freeze(
+		Object.defineProperty({ __proto__: null, prerender: G1 }, Symbol.toStringTag, {
+			value: 'Module'
+		})
+	),
+	I1 = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 380">
     <script xmlns="" />
     <defs>
         <style>
@@ -25,7 +290,60 @@ import{d as F,a as b,t as G}from"../chunks/disclose-version.BeaculLB.js";import{
         <path class="cls-2"
             d="M132.58,185.84A88.19,88.19,0,0,0,97.44,170l-.26.69a48.54,48.54,0,0,0,16.1,56.1l.09.07.24.17,39.82,29.82s17-12.85,36.57-27.64Z" />
     </g>
-</svg>`,a1=new Map([["en","🇬🇧"],["fr","🇫🇷"]]);var S1=G("<li><a> </a></li>"),Z1=G('<footer><div class="container footer svelte-1r34jcn"><section><nav><a class="logo svelte-1r34jcn"><!></a></nav></section> <section><details class="dropdown"><summary> </summary> <ul></ul></details></section> <section class="love svelte-1r34jcn"><small>made with 🧡 by omni</small></section></div></footer>');function H1(o,a){S(a,!1);const p=W(),s=()=>q(I,"$page",p),t=c1(),[i,l]=t;j();var f=Z1(),C=r(f),d=r(C),U=r(d),y=r(U);v(()=>P(y,"href",i("https://gitlab.com/rustine/rustine",void 0)));var w=r(y);p1(w,()=>I1),n(y),n(U),n(d);var u=k(d,2),g=r(u),c=r(g),h=r(c);v(()=>N(h,a1.get(X()))),n(c);var L=k(c,2);l1(L,5,()=>P1,i1,(M,m)=>{var _=S1(),$=r(_);v(()=>P($,"href",i(s1.route(s().url.pathname),e(m)))),v(()=>P($,"aria-current",e(m)===X()?"page":void 0));var R=r($);v(()=>N(R,a1.get(e(m)))),n($),n(_),v(()=>P($,"hreflang",e(m))),b(M,_)}),n(L),n(g),n(u),k(u,2),n(C),n(f),b(o,f),Z()}const D1=`<svg viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+</svg>`,
+	a1 = new Map([
+		['en', '🇬🇧'],
+		['fr', '🇫🇷']
+	]);
+var S1 = G('<li><a> </a></li>'),
+	Z1 = G(
+		'<footer><div class="container footer svelte-1r34jcn"><section><nav><a class="logo svelte-1r34jcn"><!></a></nav></section> <section><details class="dropdown"><summary> </summary> <ul></ul></details></section> <section class="love svelte-1r34jcn"><small>made with 🧡 by omni</small></section></div></footer>'
+	);
+function H1(o, a) {
+	S(a, !1);
+	const p = W(),
+		s = () => q(I, '$page', p),
+		t = c1(),
+		[i, l] = t;
+	j();
+	var f = Z1(),
+		C = r(f),
+		d = r(C),
+		U = r(d),
+		y = r(U);
+	v(() => P(y, 'href', i('https://gitlab.com/rustine/rustine', void 0)));
+	var w = r(y);
+	p1(w, () => I1), n(y), n(U), n(d);
+	var u = k(d, 2),
+		g = r(u),
+		c = r(g),
+		h = r(c);
+	v(() => N(h, a1.get(X()))), n(c);
+	var L = k(c, 2);
+	l1(
+		L,
+		5,
+		() => P1,
+		i1,
+		(M, m) => {
+			var _ = S1(),
+				$ = r(_);
+			v(() => P($, 'href', i(s1.route(s().url.pathname), e(m)))),
+				v(() => P($, 'aria-current', e(m) === X() ? 'page' : void 0));
+			var R = r($);
+			v(() => N(R, a1.get(e(m)))), n($), n(_), v(() => P($, 'hreflang', e(m))), b(M, _);
+		}
+	),
+		n(L),
+		n(g),
+		n(u),
+		k(u, 2),
+		n(C),
+		n(f),
+		b(o, f),
+		Z();
+}
+const D1 = `<svg viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
     <g clip-path="url(#clip0_39_20)">
         <mask id="mask0_39_20" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="513" height="512">
             <path
@@ -70,4 +388,107 @@ import{d as F,a as b,t as G}from"../chunks/disclose-version.BeaculLB.js";import{
             <rect width="512" height="512" fill="white" />
         </clipPath>
     </defs>
-</svg>`;function j1(o,a){const p=r1(a,["children","$$slots","$$events","$$legacy"]);e1(o,o1({name:"book-open-text"},()=>p,{iconNode:[["path",{d:"M12 7v14"}],["path",{d:"M16 12h2"}],["path",{d:"M16 8h2"}],["path",{d:"M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"}],["path",{d:"M6 12h2"}],["path",{d:"M6 8h2"}]],children:(t,i)=>{var l=F(),f=B(l);H(f,D(a),{}),b(t,l)},$$slots:{default:!0}}))}function z1(o,a){const p=r1(a,["children","$$slots","$$events","$$legacy"]);e1(o,o1({name:"circle-help"},()=>p,{iconNode:[["circle",{cx:"12",cy:"12",r:"10"}],["path",{d:"M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"}],["path",{d:"M12 17h.01"}]],children:(t,i)=>{var l=F(),f=B(l);H(f,D(a),{}),b(t,l)},$$slots:{default:!0}}))}var V1=G('<header><nav class="container-fluid svelte-1ki4a00"><ul><li><a class="rustine-logo svelte-1ki4a00"><!></a></li></ul> <ul><li><a class="contrast"><!> </a></li> <li><a class="contrast"><!> </a></li> <li><a class="contrast"><!> </a></li></ul></nav></header>');function K1(o,a){S(a,!1);const p=c1(),[s,t]=p;j();var i=V1(),l=r(i),f=r(l),C=r(f),d=r(C);v(()=>P(d,"href",s("/",void 0)));var U=r(d);p1(U,()=>D1),n(d),n(C),n(f);var y=k(f,2),w=r(y),u=r(w);v(()=>P(u,"href",s("/learn",void 0)));var g=r(u);j1(g,{});var c=k(g);v(()=>N(c,` ${U1()??""}`)),n(u),n(w);var h=k(w,2),L=r(h);v(()=>P(L,"href",s("/fix",void 0)));var M=r(L);b1(M,{});var m=k(M);v(()=>N(m,` ${A1()??""}`)),n(L),n(h);var _=k(h,2),$=r(_);v(()=>P($,"href",s("/about",void 0)));var R=r($);z1(R,{});var z=k(R);v(()=>N(z,` ${M1()??""}`)),n($),n(_),n(y),n(l),n(i),b(o,i),Z()}var W1=G('<div class="app"><!> <main class="container svelte-1bprpy2"><!></main> <!></div>');function f2(o,a){O1(o,{i18n:s1,children:(p,s)=>{var t=W1(),i=r(t);K1(i,{});var l=k(i,2),f=r(l);H(f,D(a),{}),n(l);var C=k(l,2);H1(C,{}),n(t),b(p,t)},$$slots:{default:!0}})}export{f2 as component,c2 as universal};
+</svg>`;
+function j1(o, a) {
+	const p = r1(a, ['children', '$$slots', '$$events', '$$legacy']);
+	e1(
+		o,
+		o1({ name: 'book-open-text' }, () => p, {
+			iconNode: [
+				['path', { d: 'M12 7v14' }],
+				['path', { d: 'M16 12h2' }],
+				['path', { d: 'M16 8h2' }],
+				[
+					'path',
+					{
+						d: 'M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z'
+					}
+				],
+				['path', { d: 'M6 12h2' }],
+				['path', { d: 'M6 8h2' }]
+			],
+			children: (t, i) => {
+				var l = F(),
+					f = B(l);
+				H(f, D(a), {}), b(t, l);
+			},
+			$$slots: { default: !0 }
+		})
+	);
+}
+function z1(o, a) {
+	const p = r1(a, ['children', '$$slots', '$$events', '$$legacy']);
+	e1(
+		o,
+		o1({ name: 'circle-help' }, () => p, {
+			iconNode: [
+				['circle', { cx: '12', cy: '12', r: '10' }],
+				['path', { d: 'M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3' }],
+				['path', { d: 'M12 17h.01' }]
+			],
+			children: (t, i) => {
+				var l = F(),
+					f = B(l);
+				H(f, D(a), {}), b(t, l);
+			},
+			$$slots: { default: !0 }
+		})
+	);
+}
+var V1 = G(
+	'<header><nav class="container-fluid svelte-1ki4a00"><ul><li><a class="rustine-logo svelte-1ki4a00"><!></a></li></ul> <ul><li><a class="contrast"><!> </a></li> <li><a class="contrast"><!> </a></li> <li><a class="contrast"><!> </a></li></ul></nav></header>'
+);
+function K1(o, a) {
+	S(a, !1);
+	const p = c1(),
+		[s, t] = p;
+	j();
+	var i = V1(),
+		l = r(i),
+		f = r(l),
+		C = r(f),
+		d = r(C);
+	v(() => P(d, 'href', s('/', void 0)));
+	var U = r(d);
+	p1(U, () => D1), n(d), n(C), n(f);
+	var y = k(f, 2),
+		w = r(y),
+		u = r(w);
+	v(() => P(u, 'href', s('/learn', void 0)));
+	var g = r(u);
+	j1(g, {});
+	var c = k(g);
+	v(() => N(c, ` ${U1() ?? ''}`)), n(u), n(w);
+	var h = k(w, 2),
+		L = r(h);
+	v(() => P(L, 'href', s('/fix', void 0)));
+	var M = r(L);
+	b1(M, {});
+	var m = k(M);
+	v(() => N(m, ` ${A1() ?? ''}`)), n(L), n(h);
+	var _ = k(h, 2),
+		$ = r(_);
+	v(() => P($, 'href', s('/about', void 0)));
+	var R = r($);
+	z1(R, {});
+	var z = k(R);
+	v(() => N(z, ` ${M1() ?? ''}`)), n($), n(_), n(y), n(l), n(i), b(o, i), Z();
+}
+var W1 = G('<div class="app"><!> <main class="container svelte-1bprpy2"><!></main> <!></div>');
+function f2(o, a) {
+	O1(o, {
+		i18n: s1,
+		children: (p, s) => {
+			var t = W1(),
+				i = r(t);
+			K1(i, {});
+			var l = k(i, 2),
+				f = r(l);
+			H(f, D(a), {}), n(l);
+			var C = k(l, 2);
+			H1(C, {}), n(t), b(p, t);
+		},
+		$$slots: { default: !0 }
+	});
+}
+export { f2 as component, c2 as universal };
