@@ -6,21 +6,6 @@ export const load: PageServerLoad = async ({ fetch }) => {
 	const directus = getDirectusInstance(fetch);
 
 	return {
-		about: await directus.request(
-			readItems('About', {
-				deep: {
-					translations: {
-						_filter: {
-							_and: [
-								{
-									languages_code: { _eq: 'en-US' }
-								}
-							]
-						}
-					}
-				},
-				fields: ['*', { translations: ['*'] }]
-			})
-		)
+		about: await directus.request(readItems('about'))
 	};
 };
