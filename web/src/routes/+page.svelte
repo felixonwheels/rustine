@@ -5,18 +5,12 @@
 
 	import Wrench from 'lucide-svelte/icons/wrench';
 	import { fly } from 'svelte/transition';
-
-	import * as m from '$lib/paraglide/messages.js';
-	import { languageTag } from '$lib/paraglide/runtime.js';
 </script>
 
 <svelte:head>
 	<title>Home</title>
 	<meta name="description" content="Rustine" />
 </svelte:head>
-
-<h1>{languageTag()}</h1>
-<h1>{m.greetings({ name: 'Félix' })}</h1>
 
 <section class="hero" in:fly>
 	<h1 class="title">{data.global?.title}</h1>
