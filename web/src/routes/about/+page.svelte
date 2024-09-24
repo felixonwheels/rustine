@@ -12,9 +12,11 @@
 	<meta name="description" content="About this app" />
 </svelte:head>
 
-<h1 in:fly>{m.about()}</h1>
+<div class="container">
+	<h1 in:fly>{m.about()}</h1>
 
-<article>
-	<!-- {@html data.about?.text} -->
-	{@html data.about?.status}
-</article>
+	<article>
+		<!-- {@html data.about?.text} -->
+		{@html data.about?.status}
+	</article>
+</div>

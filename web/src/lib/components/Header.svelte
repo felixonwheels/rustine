@@ -9,7 +9,7 @@
 	<nav class="container-fluid">
 		<ul>
 			<li>
-				<a class="rustine-logo" href="/">
+				<a class="rustine-logo" href="/" aria-label="rustine logo">
 					{@html RustineLogo}
 				</a>
 			</li>

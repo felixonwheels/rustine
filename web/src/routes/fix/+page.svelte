@@ -9,8 +9,10 @@
 	<meta name="description" content="fix your bike" />
 </svelte:head>
 
-<h1 in:fly>{m.fix()}</h1>
+<div class="container">
+	<h1 in:fly>{m.fix()}</h1>
 
-<div class="grid">
-	<article>fixxxxx</article>
+	<div class="grid">
+		<article>fixxxxx</article>
+	</div>
 </div>

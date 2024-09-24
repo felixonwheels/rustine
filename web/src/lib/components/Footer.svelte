@@ -12,7 +12,7 @@
 	<div class="container footer">
 		<section>
 			<nav>
-				<a class="logo" href="https://gitlab.com/rustine/rustine">
+				<a class="logo" href="https://gitlab.com/rustine/rustine" aria-label="gitlab logo">
 					{@html GitlabLogo}
 				</a>
 			</nav>

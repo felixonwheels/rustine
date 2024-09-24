@@ -12,19 +12,19 @@
 	<meta name="description" content="Rustine" />
 </svelte:head>
 
-<section class="hero" in:fly>
+<section class="hero container" in:fly>
 	<h1 class="title">{data.global?.title}</h1>
 	<p>{data.global?.description}</p>
 	<button class="btn btn-primary">Get Started</button>
 </section>
 
-<section>
-	<div class="grid">
-		{#each [...Array(8).keys()] as _, i}
+<section class="pannels">
+	<div class="container grid">
+		{#each [...Array(4).keys()] as _, i}
 			<article in:fly|global={{ duration: 120, delay: i * 100 }}>
-				<h3><Wrench /></h3>
+				<h2><Wrench /></h2>
 
-				<h2>Tools</h2>
+				<h3>Tools</h3>
 
 				<p>
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus
@@ -66,5 +66,10 @@
 
 	.title {
 		font-size: 3rem;
+	}
+
+	.pannels {
+		padding: calc(var(--pico-spacing) * 4) 0;
+		background-color: var(--pico-muted-border-color);
 	}
 </style>

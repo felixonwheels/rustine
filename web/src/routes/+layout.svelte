@@ -2,7 +2,7 @@
 	import { ParaglideJS } from '@inlang/paraglide-sveltekit';
 	import { i18n } from '$lib/i18n';
 
-	import '@picocss/pico/css/pico.pumpkin.min.css';
+	import '@picocss/pico/css/pico.indigo.min.css';
 	import '@picocss/pico/css/pico.colors.min.css';
 	import '../app.css';
 	import Footer from '$lib/components/Footer.svelte';
@@ -13,7 +13,7 @@
 	<div class="app">
 		<Header />
 
-		<main class="container">
+		<main>
 			<slot />
 		</main>
 
@@ -22,7 +22,7 @@
 </ParaglideJS>
 
 <style>
-	.container {
+	main {
 		margin-top: var(--pico-spacing);
 		margin-bottom: var(--pico-spacing);
 	}
