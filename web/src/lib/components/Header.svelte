@@ -4,19 +4,19 @@
 	import { BookOpenText, CircleHelp, Wrench } from 'lucide-svelte';
 </script>
 
-<div class="container-fluid">
+<div class="container">
 	<nav>
 		<ul>
 			<li>
-				<a class="rustine-logo" href="/" aria-label="rustine logo">
+				<a aria-label="rustine logo" class="rustine-logo" href="/">
 					{@html RustineLogo}
 				</a>
 			</li>
 		</ul>
 		<ul>
-			<li><strong><a href="/learn" class="contrast"><BookOpenText /> {m.learn()}</a></strong></li>
-			<li><strong><a href="/fix" class="contrast"><Wrench /> {m.fix()}</a></strong></li>
-			<li><strong><a href="/about" class="contrast"><CircleHelp /> {m.about()}</a></strong></li>
+			<li><strong><a class="contrast" href="/fix"><Wrench /> {m.fix()}</a></strong></li>
+			<li><strong><a class="contrast" href="/learn"><BookOpenText /> {m.learn()}</a></strong></li>
+			<li><strong><a class="contrast" href="/about"><CircleHelp /> {m.about()}</a></strong></li>
 		</ul>
 	</nav>
 </div>

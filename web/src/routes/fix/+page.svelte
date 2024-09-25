@@ -5,13 +5,11 @@
 
 <svelte:head>
 	<title>fix</title>
-	<meta name="description" content="fix your bike" />
+	<meta content="fix your bike" name="description" />
 </svelte:head>
 
-<div class="container">
-	<h1 in:fly>{m.fix()}</h1>
+<h1 in:fly>{m.fix()}</h1>
 
-	<div class="grid">
-		<article>fixxxxx</article>
-	</div>
+<div class="grid">
+	<article>fixxxxx</article>
 </div>

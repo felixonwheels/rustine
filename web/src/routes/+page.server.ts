@@ -1,5 +1,5 @@
-import { readItems } from '@directus/sdk';
 import getDirectusInstance from '$lib/directus';
+import { readItems } from '@directus/sdk';
 
 import type { PageServerLoad } from './$types';
 
