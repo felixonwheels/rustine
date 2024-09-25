@@ -5,20 +5,23 @@
 	import '@picocss/pico/css/pico.indigo.min.css';
 	import '@picocss/pico/css/pico.colors.min.css';
 	import '../app.css';
+
 	import Footer from '$lib/components/Footer.svelte';
 	import Header from '$lib/components/Header.svelte';
 </script>
 
 <ParaglideJS {i18n}>
-	<div class="app">
+	<header>
 		<Header />
+	</header>
 
-		<main>
-			<slot />
-		</main>
+	<main>
+		<slot />
+	</main>
 
+	<footer>
 		<Footer />
-	</div>
+	</footer>
 </ParaglideJS>
 
 <style>

@@ -1,7 +1,6 @@
 <script>
-	import { fly } from 'svelte/transition';
-
 	import * as m from '$lib/paraglide/messages.js';
+	import { fly } from 'svelte/transition';
 </script>
 
 <svelte:head>

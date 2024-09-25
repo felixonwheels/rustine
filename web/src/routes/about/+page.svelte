@@ -1,10 +1,10 @@
 <script lang="ts">
-	import type { PageData } from './$types';
+	import * as m from '$lib/paraglide/messages.js';
 	import { fly } from 'svelte/transition';
 
-	export let data: PageData;
+	import type { PageData } from './$types';
 
-	import * as m from '$lib/paraglide/messages.js';
+	export let data: PageData;
 </script>
 
 <svelte:head>
