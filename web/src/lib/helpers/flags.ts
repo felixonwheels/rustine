@@ -1,4 +1,4 @@
 export const flags = new Map<string, string>([
-	['en', '🇬🇧'],
-	['fr', '🇫🇷']
+	['fr-FR', '🇫🇷'],
+	['en-US', '🇺🇸']
 ]);

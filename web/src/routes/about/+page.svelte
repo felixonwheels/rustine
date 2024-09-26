@@ -16,5 +16,5 @@
 
 <article>
 	<!-- {@html data.about?.text} -->
-	{@html data.about?.status}
+	{@html data.about?.translations[0]?.text}
 </article>
