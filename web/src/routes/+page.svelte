@@ -15,9 +15,19 @@
 
 <section class="hero" in:fly>
 	<!-- <h1>{data.global?.title}</h1> -->
-	<h1>Learn and <mark>repair your bike.</mark></h1>
+	<!-- <p>{data.global?.description}</p> -->
 
-	<p>{data.global?.description}</p>
+	<h1>Learn. <mark>Repair your bike.</mark> Ride.</h1>
+
+	<div class="hero-text">
+		<p>Your goto location for all things bike mechanics, bike repair, and bike in general.</p>
+
+		<p>
+			Navigate through the many resources to learn more about that incredible machine, or use the
+			diagnosis tool to know how to fix your bike.
+		</p>
+	</div>
+
 	<div class="grid hero-buttons">
 		<a class="contrast" href="/learn" role="button">learn about your bike</a>
 		<a href="/fix" role="button">fix your bike!</a>
@@ -27,22 +37,24 @@
 <section>
 	<div class="grid cards">
 		<article in:fly={{ duration: 120 }}>
-			<h1><BookOpenText size={28} /></h1>
+			<h1><BookOpenText color="var(--pico-primary)" size={28} /></h1>
 			<h2>{m.learn()}</h2>
 			<p>learn about your bike, its components and how they all work together</p>
-			<p><a class="secondary" href="/learn" role="button">learn more</a></p>
+			<p><a href="/learn">learn more</a></p>
 		</article>
 
 		<article in:fly={{ duration: 120 }}>
-			<h2><Wrench size={28} /> {m.fix()}</h2>
+			<h1><Wrench color="var(--pico-primary)" size={28} /></h1>
+			<h2>{m.fix()}</h2>
 			<p>diagnose an issue on your bike, and learn how to fix it</p>
-			<p><a class="secondary" href="/fix" role="button">fix my bike</a></p>
+			<p><a href="/fix">fix my bike</a></p>
 		</article>
 
 		<article in:fly={{ duration: 120 }}>
-			<h2><CircleHelp size={28} /> {m.about()}</h2>
+			<h1><CircleHelp color="var(--pico-primary)" size={28} /></h1>
+			<h2>{m.about()}</h2>
 			<p>read about what this project is and why it came to be</p>
-			<p><a class="secondary" href="/about" role="button">what even is this?</a></p>
+			<p><a href="/about">what even is this?</a></p>
 		</article>
 	</div>
 </section>
@@ -54,6 +66,10 @@
 		margin-top: calc(var(--pico-spacing) * 2);
 		margin-bottom: calc(var(--pico-spacing) * 4);
 		row-gap: calc(var(--pico-spacing) * 2);
+	}
+
+	.hero-text {
+		text-align: start;
 	}
 
 	@media (min-width: 576px) {
@@ -72,6 +88,10 @@
 			margin-top: calc(var(--pico-spacing) * 6);
 			margin-bottom: calc(var(--pico-spacing) * 6);
 		}
+
+		.hero-text {
+			text-align: center;
+		}
 	}
 
 	@media (max-width: 1280px) {
@@ -85,10 +105,6 @@
 		font-size: 4rem;
 		font-style: italic;
 		font-weight: 900;
-		text-align: center;
-	}
-
-	section > p {
 		text-align: center;
 	}
 

@@ -34,7 +34,7 @@
 			{:else}
 				<li>
 					<details bind:this={headerRef} class="dropdown">
-						<summary><Menu /></summary>
+						<summary><Menu size={20} /></summary>
 
 						<ul dir="rtl">
 							<li>
@@ -81,6 +81,10 @@
 		font-style: italic;
 		font-weight: 900;
 		margin: auto 0.5rem;
+
+		background: linear-gradient(to right, var(--pico-primary), var(--pico-color-pumpkin-300));
+		background-clip: text;
+		color: transparent;
 	}
 
 	@media (max-width: 768px) {
