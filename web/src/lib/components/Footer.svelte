@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { page } from '$app/stores';
 	import GitlabLogo from '$lib/assets/gitlab-logo.svg?raw';
 	import { flags } from '$lib/helpers/flags';

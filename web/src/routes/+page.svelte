@@ -14,18 +14,21 @@
 </svelte:head>
 
 <section class="hero" in:fly>
-	<h1>{data.global?.title}</h1>
+	<!-- <h1>{data.global?.title}</h1> -->
+	<h1>Learn and <mark>repair your bike.</mark></h1>
+
 	<p>{data.global?.description}</p>
 	<div class="grid hero-buttons">
-		<a href="/fix" role="button">fix your bike!</a>
 		<a class="contrast" href="/learn" role="button">learn about your bike</a>
+		<a href="/fix" role="button">fix your bike!</a>
 	</div>
 </section>
 
 <section>
 	<div class="grid cards">
 		<article in:fly={{ duration: 120 }}>
-			<h2><BookOpenText size={28} /> {m.learn()}</h2>
+			<h1><BookOpenText size={28} /></h1>
+			<h2>{m.learn()}</h2>
 			<p>learn about your bike, its components and how they all work together</p>
 			<p><a class="secondary" href="/learn" role="button">learn more</a></p>
 		</article>
@@ -48,9 +51,9 @@
 	.hero {
 		display: flex;
 		flex-direction: column;
-		margin-top: calc(var(--pico-spacing) * 1);
-		margin-bottom: calc(var(--pico-spacing) * 3);
-		row-gap: calc(var(--pico-spacing) * 1.5);
+		margin-top: calc(var(--pico-spacing) * 2);
+		margin-bottom: calc(var(--pico-spacing) * 4);
+		row-gap: calc(var(--pico-spacing) * 2);
 	}
 
 	@media (min-width: 576px) {
@@ -78,6 +81,7 @@
 	}
 
 	section > h1 {
+		font-family: 'Roboto', sans-serif;
 		font-size: 4rem;
 		font-style: italic;
 		font-weight: 900;
@@ -88,7 +92,9 @@
 		text-align: center;
 	}
 
-	section article {
-		border: 1px solid var(--pico-primary-background);
+	mark {
+		background: linear-gradient(to right, var(--pico-primary), var(--pico-color-pumpkin-300));
+		background-clip: text;
+		color: transparent;
 	}
 </style>
