@@ -11,6 +11,9 @@ importers:
       '@directus/sdk':
         specifier: ^17.0.1
         version: 17.0.1
+      '@fontsource/roboto':
+        specifier: ^5.1.0
+        version: 5.1.0
       '@inlang/paraglide-sveltekit':
         specifier: 0.11.0
         version: 0.11.0(@sveltejs/kit@2.5.28(@sveltejs/vite-plugin-svelte@3.1.2(svelte@5.0.0-next.230)(vite@5.4.7(@types/node@22.5.5)(sass@1.79.3)))(svelte@5.0.0-next.230)(vite@5.4.7(@types/node@22.5.5)(sass@1.79.3)))
@@ -524,6 +527,9 @@ packages:
   '@fastify/busboy@2.1.1':
     resolution: {integrity: sha512-vBZP4NlzfOlerQTnba4aqZoMhE/a9HY7HRqoOPaETQcSQuWEIyZMHGfVu6w9wGtGK5fED5qRs2DteVCjOH60sA==}
     engines: {node: '>=14'}
+
+  '@fontsource/roboto@5.1.0':
+    resolution: {integrity: sha512-cFRRC1s6RqPygeZ8Uw/acwVHqih8Czjt6Q0MwoUoDe9U3m4dH1HmNDRBZyqlMSFwgNAUKgFImncKdmDHyKpwdg==}
 
   '@humanwhocodes/config-array@0.13.0':
     resolution: {integrity: sha512-DZLEEqFWQFiyK6h5YIeynKx7JlvCYWL0cImfSRXZ9l4Sg2efkFGTuFf6vzXjK1cq6IYkU+Eg/JizXw+TD2vRNw==}
@@ -2872,6 +2878,8 @@ snapshots:
   '@eslint/js@8.57.1': {}
 
   '@fastify/busboy@2.1.1': {}
+
+  '@fontsource/roboto@5.1.0': {}
 
   '@humanwhocodes/config-array@0.13.0':
     dependencies:

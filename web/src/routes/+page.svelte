@@ -17,20 +17,22 @@
 	<!-- <h1>{data.global?.title}</h1> -->
 	<!-- <p>{data.global?.description}</p> -->
 
-	<h1>Learn. <mark>Repair your bike.</mark> Ride.</h1>
+	<div class="hero-container">
+		<div class="hero-title"><h1>Learn. <mark>Repair your bike.</mark> Ride.</h1></div>
 
-	<div class="hero-text">
-		<p>Your goto location for all things bike mechanics, bike repair, and bike in general.</p>
+		<div class="hero-text">
+			<p>Your goto location for all things bike mechanics, bike repair, and bike in general.</p>
 
-		<p>
-			Navigate through the many resources to learn more about that incredible machine, or use the
-			diagnosis tool to know how to fix your bike.
-		</p>
-	</div>
+			<p>
+				Navigate through the many resources to learn more about that incredible machine, or use the
+				diagnosis tool to know how to fix your bike.
+			</p>
+		</div>
 
-	<div class="grid hero-buttons">
-		<a class="contrast" href="/learn" role="button">learn about your bike</a>
-		<a href="/fix" role="button">fix your bike!</a>
+		<div class="grid hero-buttons">
+			<a class="contrast" href="/learn" role="button">learn about your bike</a>
+			<a href="/fix" role="button">fix your bike!</a>
+		</div>
 	</div>
 </section>
 
@@ -65,28 +67,29 @@
 		flex-direction: column;
 		margin-top: calc(var(--pico-spacing) * 2);
 		margin-bottom: calc(var(--pico-spacing) * 4);
-		row-gap: calc(var(--pico-spacing) * 2);
+
+		align-items: center;
 	}
 
 	.hero-text {
 		text-align: start;
 	}
 
+	.hero-container {
+		display: flex;
+		flex-direction: column;
+		gap: var(--pico-spacing);
+	}
+
 	@media (min-width: 576px) {
+		.hero-container {
+			max-width: 60vw;
+			gap: calc(var(--pico-spacing) * 2.5);
+		}
+
 		.hero-buttons {
 			display: flex;
 			justify-content: center;
-		}
-
-		.hero {
-			display: grid;
-			grid-template-columns: 1fr;
-			-moz-column-gap: calc(var(--pico-spacing) * 6);
-			column-gap: calc(var(--pico-spacing) * 6);
-			row-gap: calc(var(--pico-spacing) * 3);
-			justify-items: center;
-			margin-top: calc(var(--pico-spacing) * 6);
-			margin-bottom: calc(var(--pico-spacing) * 6);
 		}
 
 		.hero-text {
@@ -100,7 +103,7 @@
 		}
 	}
 
-	section > h1 {
+	.hero-title h1 {
 		font-family: 'Roboto', sans-serif;
 		font-size: 4rem;
 		font-style: italic;

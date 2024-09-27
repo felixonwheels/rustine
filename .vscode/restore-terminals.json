@@ -1,0 +1,27 @@
+{
+  "runOnStartup": true,
+  "terminals": [
+    {
+      "splitTerminals": [
+        {
+          "name": "docker",
+          "commands": [
+            "docker compose -f docker-compose.dev.yml up --build --force-recreate --watch"
+          ]
+        },
+        {
+          "name": "client",
+          "commands": ["cd web ; pnpm run dev"]
+        },
+        {
+          "name": "format",
+          "commands": ["cd web"]
+        },
+        {
+          "name": "git",
+          "commands": [""]
+        }
+      ]
+    }
+  ]
+}

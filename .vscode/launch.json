@@ -1,11 +1,35 @@
 {
-  "version": "0.2.0",
+  "version": "2.0.0",
   "configurations": [
     {
       "name": "Run docker-compose.dev.yml",
       "request": "launch",
       "type": "node-terminal",
       "command": "docker compose -f docker-compose.dev.yml up --build --force-recreate --watch"
+    },
+    {
+      "name": "Run pnpm run dev",
+      "request": "launch",
+      "type": "node-terminal",
+      "command": "cd web ; pnpm run dev"
+    },
+    {
+      "name": "Run dev environnement",
+      "request": "launch",
+      "type": "node-terminal",
+      "command": "echo dev ready",
+      "dependsOn": ["Run docker-compose.dev.yml", "Run pnpm run dev"]
+    }
+  ],
+  "tasks": [
+    {
+      "type": "typescript",
+      "tsconfig": "tsconfig.json",
+      "problemMatcher": ["$tsc"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
     }
   ]
 }

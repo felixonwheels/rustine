@@ -44,6 +44,7 @@
 	"type": "module",
 	"dependencies": {
 		"@directus/sdk": "^17.0.1",
+		"@fontsource/roboto": "^5.1.0",
 		"@inlang/paraglide-sveltekit": "0.11.0",
 		"@picocss/pico": "^2.0.6",
 		"lucide-svelte": "^0.441.0"

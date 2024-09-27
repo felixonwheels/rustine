@@ -7,6 +7,7 @@
 	import '@picocss/pico/css/pico.indigo.min.css';
 
 	import '../app.css';
+	// import '@fontsource/roboto/900-italic.css';
 </script>
 
 <ParaglideJS {i18n}>
