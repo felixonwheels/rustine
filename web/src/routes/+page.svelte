@@ -18,13 +18,15 @@
 	<!-- <p>{data.global?.description}</p> -->
 
 	<div class="hero-container">
-		<div class="hero-title"><h1>Learn. <mark>Repair your bike.</mark> Ride.</h1></div>
+		<div class="hero-title">
+			<h1>break something. <mark>repair your bike.</mark> ride. repeat.</h1>
+		</div>
 
 		<div class="hero-text">
-			<p>Your goto location for all things bike mechanics, bike repair, and bike in general.</p>
+			<p>your goto location for all things bike mechanics, bike repair, and bike in general.</p>
 
 			<p>
-				Navigate through the many resources to learn more about that incredible machine, or use the
+				navigate through the many resources to learn more about that incredible machine, or use the
 				diagnosis tool to know how to fix your bike.
 			</p>
 		</div>
