@@ -637,84 +637,6 @@ export interface paths {
 		 */
 		patch: operations['updatePermission'];
 	};
-	'/items/Tools': {
-		/**
-		 * List Items
-		 * @description List the Tools items.
-		 */
-		get: operations['readItemsTools'];
-		/**
-		 * Create an Item
-		 * @description Create a new Tools item.
-		 */
-		post: operations['createItemsTools'];
-		/**
-		 * Delete Multiple Items
-		 * @description Delete multiple existing Tools items.
-		 */
-		delete: operations['deleteItemsTools'];
-		/**
-		 * Update Multiple Items
-		 * @description Update multiple Tools items at the same time.
-		 */
-		patch: operations['updateItemsTools'];
-	};
-	'/items/Tools/{id}': {
-		/**
-		 * Retrieve an Item
-		 * @description Retrieve a single Tools item by unique identifier.
-		 */
-		get: operations['readSingleItemsTools'];
-		/**
-		 * Delete an Item
-		 * @description Delete an existing Tools item.
-		 */
-		delete: operations['deleteSingleItemsTools'];
-		/**
-		 * Update an Item
-		 * @description Update an existing Tools item.
-		 */
-		patch: operations['updateSingleItemsTools'];
-	};
-	'/items/Global': {
-		/**
-		 * List Items
-		 * @description List the Global items.
-		 */
-		get: operations['readItemsGlobal'];
-		/**
-		 * Create an Item
-		 * @description Create a new Global item.
-		 */
-		post: operations['createItemsGlobal'];
-		/**
-		 * Delete Multiple Items
-		 * @description Delete multiple existing Global items.
-		 */
-		delete: operations['deleteItemsGlobal'];
-		/**
-		 * Update Multiple Items
-		 * @description Update multiple Global items at the same time.
-		 */
-		patch: operations['updateItemsGlobal'];
-	};
-	'/items/Global/{id}': {
-		/**
-		 * Retrieve an Item
-		 * @description Retrieve a single Global item by unique identifier.
-		 */
-		get: operations['readSingleItemsGlobal'];
-		/**
-		 * Delete an Item
-		 * @description Delete an existing Global item.
-		 */
-		delete: operations['deleteSingleItemsGlobal'];
-		/**
-		 * Update an Item
-		 * @description Update an existing Global item.
-		 */
-		patch: operations['updateSingleItemsGlobal'];
-	};
 	'/collections': {
 		/**
 		 * List Collections
@@ -977,6 +899,84 @@ export interface paths {
 		 * @description Update an existing about_translations item.
 		 */
 		patch: operations['updateSingleItemsAboutTranslations'];
+	};
+	'/items/global': {
+		/**
+		 * List Items
+		 * @description List the global items.
+		 */
+		get: operations['readItemsGlobal'];
+		/**
+		 * Create an Item
+		 * @description Create a new global item.
+		 */
+		post: operations['createItemsGlobal'];
+		/**
+		 * Delete Multiple Items
+		 * @description Delete multiple existing global items.
+		 */
+		delete: operations['deleteItemsGlobal'];
+		/**
+		 * Update Multiple Items
+		 * @description Update multiple global items at the same time.
+		 */
+		patch: operations['updateItemsGlobal'];
+	};
+	'/items/global/{id}': {
+		/**
+		 * Retrieve an Item
+		 * @description Retrieve a single global item by unique identifier.
+		 */
+		get: operations['readSingleItemsGlobal'];
+		/**
+		 * Delete an Item
+		 * @description Delete an existing global item.
+		 */
+		delete: operations['deleteSingleItemsGlobal'];
+		/**
+		 * Update an Item
+		 * @description Update an existing global item.
+		 */
+		patch: operations['updateSingleItemsGlobal'];
+	};
+	'/items/global_translations': {
+		/**
+		 * List Items
+		 * @description List the global_translations items.
+		 */
+		get: operations['readItemsGlobalTranslations'];
+		/**
+		 * Create an Item
+		 * @description Create a new global_translations item.
+		 */
+		post: operations['createItemsGlobalTranslations'];
+		/**
+		 * Delete Multiple Items
+		 * @description Delete multiple existing global_translations items.
+		 */
+		delete: operations['deleteItemsGlobalTranslations'];
+		/**
+		 * Update Multiple Items
+		 * @description Update multiple global_translations items at the same time.
+		 */
+		patch: operations['updateItemsGlobalTranslations'];
+	};
+	'/items/global_translations/{id}': {
+		/**
+		 * Retrieve an Item
+		 * @description Retrieve a single global_translations item by unique identifier.
+		 */
+		get: operations['readSingleItemsGlobalTranslations'];
+		/**
+		 * Delete an Item
+		 * @description Delete an existing global_translations item.
+		 */
+		delete: operations['deleteSingleItemsGlobalTranslations'];
+		/**
+		 * Update an Item
+		 * @description Update an existing global_translations item.
+		 */
+		patch: operations['updateSingleItemsGlobalTranslations'];
 	};
 }
 
@@ -1782,20 +1782,6 @@ export interface components {
 			fields?: string[] | null;
 			policy?: unknown;
 		};
-		ItemsTools: {
-			id?: number;
-			user_created?: string | components['schemas']['Users'] | null;
-			/** Format: timestamp */
-			date_created?: string | null;
-			/** Format: timestamp */
-			date_updated?: string | null;
-			name?: string | null;
-		};
-		ItemsGlobal: {
-			id?: number;
-			title?: string | null;
-			description?: string | null;
-		};
 		Collections: {
 			/**
 			 * @description The collection key.
@@ -1961,6 +1947,17 @@ export interface components {
 			about_id?: number | components['schemas']['ItemsAbout'] | null;
 			languages_code?: string | components['schemas']['ItemsLanguages'] | null;
 			text?: string | null;
+		};
+		ItemsGlobal: {
+			id?: number;
+			translations?: (number | components['schemas']['ItemsGlobalTranslations'])[] | null;
+		};
+		ItemsGlobalTranslations: {
+			id?: number;
+			global_id?: number | components['schemas']['ItemsGlobal'] | null;
+			languages_code?: string | components['schemas']['ItemsLanguages'] | null;
+			title?: unknown;
+			description?: unknown;
 		};
 	};
 	responses: {
@@ -5415,380 +5412,6 @@ export interface operations {
 		};
 	};
 	/**
-	 * List Items
-	 * @description List the Tools items.
-	 */
-	readItemsTools: {
-		parameters: {
-			query?: {
-				fields?: components['parameters']['Fields'];
-				limit?: components['parameters']['Limit'];
-				meta?: components['parameters']['Meta'];
-				offset?: components['parameters']['Offset'];
-				sort?: components['parameters']['Sort'];
-				filter?: components['parameters']['Filter'];
-				search?: components['parameters']['Search'];
-			};
-		};
-		responses: {
-			/** @description Successful request */
-			200: {
-				content: {
-					'application/json': {
-						data?: components['schemas']['ItemsTools'][];
-						meta?: components['schemas']['x-metadata'];
-					};
-				};
-			};
-			401: components['responses']['UnauthorizedError'];
-		};
-	};
-	/**
-	 * Create an Item
-	 * @description Create a new Tools item.
-	 */
-	createItemsTools: {
-		parameters: {
-			query?: {
-				meta?: components['parameters']['Meta'];
-			};
-		};
-		requestBody?: {
-			content: {
-				'application/json':
-					| components['schemas']['ItemsTools'][]
-					| components['schemas']['ItemsTools'];
-			};
-		};
-		responses: {
-			/** @description Successful request */
-			200: {
-				content: {
-					'application/json': {
-						data?: unknown;
-					};
-				};
-			};
-			401: components['responses']['UnauthorizedError'];
-		};
-	};
-	/**
-	 * Delete Multiple Items
-	 * @description Delete multiple existing Tools items.
-	 */
-	deleteItemsTools: {
-		responses: {
-			/** @description Successful request */
-			200: {
-				content: never;
-			};
-			401: components['responses']['UnauthorizedError'];
-		};
-	};
-	/**
-	 * Update Multiple Items
-	 * @description Update multiple Tools items at the same time.
-	 */
-	updateItemsTools: {
-		parameters: {
-			query?: {
-				fields?: components['parameters']['Fields'];
-				limit?: components['parameters']['Limit'];
-				meta?: components['parameters']['Meta'];
-				offset?: components['parameters']['Offset'];
-				sort?: components['parameters']['Sort'];
-				filter?: components['parameters']['Filter'];
-				search?: components['parameters']['Search'];
-			};
-		};
-		requestBody?: {
-			content: {
-				'application/json':
-					| components['schemas']['ItemsTools'][]
-					| components['schemas']['ItemsTools'];
-			};
-		};
-		responses: {
-			/** @description Successful request */
-			200: {
-				content: {
-					'application/json': {
-						data?: unknown;
-					};
-				};
-			};
-		};
-	};
-	/**
-	 * Retrieve an Item
-	 * @description Retrieve a single Tools item by unique identifier.
-	 */
-	readSingleItemsTools: {
-		parameters: {
-			query?: {
-				fields?: components['parameters']['Fields'];
-				meta?: components['parameters']['Meta'];
-				version?: components['parameters']['Version'];
-			};
-			path: {
-				/** @description Index of the item. */
-				id: number | string;
-			};
-		};
-		responses: {
-			/** @description Successful request */
-			200: {
-				content: {
-					'application/json': {
-						data?: components['schemas']['ItemsTools'];
-					};
-				};
-			};
-			401: components['responses']['UnauthorizedError'];
-			404: components['responses']['NotFoundError'];
-		};
-	};
-	/**
-	 * Delete an Item
-	 * @description Delete an existing Tools item.
-	 */
-	deleteSingleItemsTools: {
-		parameters: {
-			path: {
-				/** @description Index of the item. */
-				id: number | string;
-			};
-		};
-		responses: {
-			/** @description Successful request */
-			200: {
-				content: never;
-			};
-			401: components['responses']['UnauthorizedError'];
-			404: components['responses']['NotFoundError'];
-		};
-	};
-	/**
-	 * Update an Item
-	 * @description Update an existing Tools item.
-	 */
-	updateSingleItemsTools: {
-		parameters: {
-			query?: {
-				fields?: components['parameters']['Fields'];
-				meta?: components['parameters']['Meta'];
-			};
-			path: {
-				/** @description Index of the item. */
-				id: number | string;
-			};
-		};
-		requestBody?: {
-			content: {
-				'application/json': components['schemas']['ItemsTools'];
-			};
-		};
-		responses: {
-			/** @description Successful request */
-			200: {
-				content: {
-					'application/json': {
-						data?: components['schemas']['ItemsTools'];
-					};
-				};
-			};
-			401: components['responses']['UnauthorizedError'];
-			404: components['responses']['NotFoundError'];
-		};
-	};
-	/**
-	 * List Items
-	 * @description List the Global items.
-	 */
-	readItemsGlobal: {
-		parameters: {
-			query?: {
-				fields?: components['parameters']['Fields'];
-				limit?: components['parameters']['Limit'];
-				meta?: components['parameters']['Meta'];
-				offset?: components['parameters']['Offset'];
-				sort?: components['parameters']['Sort'];
-				filter?: components['parameters']['Filter'];
-				search?: components['parameters']['Search'];
-			};
-		};
-		responses: {
-			/** @description Successful request */
-			200: {
-				content: {
-					'application/json': {
-						data?: components['schemas']['ItemsGlobal'][];
-						meta?: components['schemas']['x-metadata'];
-					};
-				};
-			};
-			401: components['responses']['UnauthorizedError'];
-		};
-	};
-	/**
-	 * Create an Item
-	 * @description Create a new Global item.
-	 */
-	createItemsGlobal: {
-		parameters: {
-			query?: {
-				meta?: components['parameters']['Meta'];
-			};
-		};
-		requestBody?: {
-			content: {
-				'application/json':
-					| components['schemas']['ItemsGlobal'][]
-					| components['schemas']['ItemsGlobal'];
-			};
-		};
-		responses: {
-			/** @description Successful request */
-			200: {
-				content: {
-					'application/json': {
-						data?: unknown;
-					};
-				};
-			};
-			401: components['responses']['UnauthorizedError'];
-		};
-	};
-	/**
-	 * Delete Multiple Items
-	 * @description Delete multiple existing Global items.
-	 */
-	deleteItemsGlobal: {
-		responses: {
-			/** @description Successful request */
-			200: {
-				content: never;
-			};
-			401: components['responses']['UnauthorizedError'];
-		};
-	};
-	/**
-	 * Update Multiple Items
-	 * @description Update multiple Global items at the same time.
-	 */
-	updateItemsGlobal: {
-		parameters: {
-			query?: {
-				fields?: components['parameters']['Fields'];
-				limit?: components['parameters']['Limit'];
-				meta?: components['parameters']['Meta'];
-				offset?: components['parameters']['Offset'];
-				sort?: components['parameters']['Sort'];
-				filter?: components['parameters']['Filter'];
-				search?: components['parameters']['Search'];
-			};
-		};
-		requestBody?: {
-			content: {
-				'application/json':
-					| components['schemas']['ItemsGlobal'][]
-					| components['schemas']['ItemsGlobal'];
-			};
-		};
-		responses: {
-			/** @description Successful request */
-			200: {
-				content: {
-					'application/json': {
-						data?: unknown;
-					};
-				};
-			};
-		};
-	};
-	/**
-	 * Retrieve an Item
-	 * @description Retrieve a single Global item by unique identifier.
-	 */
-	readSingleItemsGlobal: {
-		parameters: {
-			query?: {
-				fields?: components['parameters']['Fields'];
-				meta?: components['parameters']['Meta'];
-				version?: components['parameters']['Version'];
-			};
-			path: {
-				/** @description Index of the item. */
-				id: number | string;
-			};
-		};
-		responses: {
-			/** @description Successful request */
-			200: {
-				content: {
-					'application/json': {
-						data?: components['schemas']['ItemsGlobal'];
-					};
-				};
-			};
-			401: components['responses']['UnauthorizedError'];
-			404: components['responses']['NotFoundError'];
-		};
-	};
-	/**
-	 * Delete an Item
-	 * @description Delete an existing Global item.
-	 */
-	deleteSingleItemsGlobal: {
-		parameters: {
-			path: {
-				/** @description Index of the item. */
-				id: number | string;
-			};
-		};
-		responses: {
-			/** @description Successful request */
-			200: {
-				content: never;
-			};
-			401: components['responses']['UnauthorizedError'];
-			404: components['responses']['NotFoundError'];
-		};
-	};
-	/**
-	 * Update an Item
-	 * @description Update an existing Global item.
-	 */
-	updateSingleItemsGlobal: {
-		parameters: {
-			query?: {
-				fields?: components['parameters']['Fields'];
-				meta?: components['parameters']['Meta'];
-			};
-			path: {
-				/** @description Index of the item. */
-				id: number | string;
-			};
-		};
-		requestBody?: {
-			content: {
-				'application/json': components['schemas']['ItemsGlobal'];
-			};
-		};
-		responses: {
-			/** @description Successful request */
-			200: {
-				content: {
-					'application/json': {
-						data?: components['schemas']['ItemsGlobal'];
-					};
-				};
-			};
-			401: components['responses']['UnauthorizedError'];
-			404: components['responses']['NotFoundError'];
-		};
-	};
-	/**
 	 * List Collections
 	 * @description Returns a list of the collections available in the project.
 	 */
@@ -7304,12 +6927,386 @@ export interface operations {
 			404: components['responses']['NotFoundError'];
 		};
 	};
+	/**
+	 * List Items
+	 * @description List the global items.
+	 */
+	readItemsGlobal: {
+		parameters: {
+			query?: {
+				fields?: components['parameters']['Fields'];
+				limit?: components['parameters']['Limit'];
+				meta?: components['parameters']['Meta'];
+				offset?: components['parameters']['Offset'];
+				sort?: components['parameters']['Sort'];
+				filter?: components['parameters']['Filter'];
+				search?: components['parameters']['Search'];
+			};
+		};
+		responses: {
+			/** @description Successful request */
+			200: {
+				content: {
+					'application/json': {
+						data?: components['schemas']['ItemsGlobal'][];
+						meta?: components['schemas']['x-metadata'];
+					};
+				};
+			};
+			401: components['responses']['UnauthorizedError'];
+		};
+	};
+	/**
+	 * Create an Item
+	 * @description Create a new global item.
+	 */
+	createItemsGlobal: {
+		parameters: {
+			query?: {
+				meta?: components['parameters']['Meta'];
+			};
+		};
+		requestBody?: {
+			content: {
+				'application/json':
+					| components['schemas']['ItemsGlobal'][]
+					| components['schemas']['ItemsGlobal'];
+			};
+		};
+		responses: {
+			/** @description Successful request */
+			200: {
+				content: {
+					'application/json': {
+						data?: unknown;
+					};
+				};
+			};
+			401: components['responses']['UnauthorizedError'];
+		};
+	};
+	/**
+	 * Delete Multiple Items
+	 * @description Delete multiple existing global items.
+	 */
+	deleteItemsGlobal: {
+		responses: {
+			/** @description Successful request */
+			200: {
+				content: never;
+			};
+			401: components['responses']['UnauthorizedError'];
+		};
+	};
+	/**
+	 * Update Multiple Items
+	 * @description Update multiple global items at the same time.
+	 */
+	updateItemsGlobal: {
+		parameters: {
+			query?: {
+				fields?: components['parameters']['Fields'];
+				limit?: components['parameters']['Limit'];
+				meta?: components['parameters']['Meta'];
+				offset?: components['parameters']['Offset'];
+				sort?: components['parameters']['Sort'];
+				filter?: components['parameters']['Filter'];
+				search?: components['parameters']['Search'];
+			};
+		};
+		requestBody?: {
+			content: {
+				'application/json':
+					| components['schemas']['ItemsGlobal'][]
+					| components['schemas']['ItemsGlobal'];
+			};
+		};
+		responses: {
+			/** @description Successful request */
+			200: {
+				content: {
+					'application/json': {
+						data?: unknown;
+					};
+				};
+			};
+		};
+	};
+	/**
+	 * Retrieve an Item
+	 * @description Retrieve a single global item by unique identifier.
+	 */
+	readSingleItemsGlobal: {
+		parameters: {
+			query?: {
+				fields?: components['parameters']['Fields'];
+				meta?: components['parameters']['Meta'];
+				version?: components['parameters']['Version'];
+			};
+			path: {
+				/** @description Index of the item. */
+				id: number | string;
+			};
+		};
+		responses: {
+			/** @description Successful request */
+			200: {
+				content: {
+					'application/json': {
+						data?: components['schemas']['ItemsGlobal'];
+					};
+				};
+			};
+			401: components['responses']['UnauthorizedError'];
+			404: components['responses']['NotFoundError'];
+		};
+	};
+	/**
+	 * Delete an Item
+	 * @description Delete an existing global item.
+	 */
+	deleteSingleItemsGlobal: {
+		parameters: {
+			path: {
+				/** @description Index of the item. */
+				id: number | string;
+			};
+		};
+		responses: {
+			/** @description Successful request */
+			200: {
+				content: never;
+			};
+			401: components['responses']['UnauthorizedError'];
+			404: components['responses']['NotFoundError'];
+		};
+	};
+	/**
+	 * Update an Item
+	 * @description Update an existing global item.
+	 */
+	updateSingleItemsGlobal: {
+		parameters: {
+			query?: {
+				fields?: components['parameters']['Fields'];
+				meta?: components['parameters']['Meta'];
+			};
+			path: {
+				/** @description Index of the item. */
+				id: number | string;
+			};
+		};
+		requestBody?: {
+			content: {
+				'application/json': components['schemas']['ItemsGlobal'];
+			};
+		};
+		responses: {
+			/** @description Successful request */
+			200: {
+				content: {
+					'application/json': {
+						data?: components['schemas']['ItemsGlobal'];
+					};
+				};
+			};
+			401: components['responses']['UnauthorizedError'];
+			404: components['responses']['NotFoundError'];
+		};
+	};
+	/**
+	 * List Items
+	 * @description List the global_translations items.
+	 */
+	readItemsGlobalTranslations: {
+		parameters: {
+			query?: {
+				fields?: components['parameters']['Fields'];
+				limit?: components['parameters']['Limit'];
+				meta?: components['parameters']['Meta'];
+				offset?: components['parameters']['Offset'];
+				sort?: components['parameters']['Sort'];
+				filter?: components['parameters']['Filter'];
+				search?: components['parameters']['Search'];
+			};
+		};
+		responses: {
+			/** @description Successful request */
+			200: {
+				content: {
+					'application/json': {
+						data?: components['schemas']['ItemsGlobalTranslations'][];
+						meta?: components['schemas']['x-metadata'];
+					};
+				};
+			};
+			401: components['responses']['UnauthorizedError'];
+		};
+	};
+	/**
+	 * Create an Item
+	 * @description Create a new global_translations item.
+	 */
+	createItemsGlobalTranslations: {
+		parameters: {
+			query?: {
+				meta?: components['parameters']['Meta'];
+			};
+		};
+		requestBody?: {
+			content: {
+				'application/json':
+					| components['schemas']['ItemsGlobalTranslations'][]
+					| components['schemas']['ItemsGlobalTranslations'];
+			};
+		};
+		responses: {
+			/** @description Successful request */
+			200: {
+				content: {
+					'application/json': {
+						data?: unknown;
+					};
+				};
+			};
+			401: components['responses']['UnauthorizedError'];
+		};
+	};
+	/**
+	 * Delete Multiple Items
+	 * @description Delete multiple existing global_translations items.
+	 */
+	deleteItemsGlobalTranslations: {
+		responses: {
+			/** @description Successful request */
+			200: {
+				content: never;
+			};
+			401: components['responses']['UnauthorizedError'];
+		};
+	};
+	/**
+	 * Update Multiple Items
+	 * @description Update multiple global_translations items at the same time.
+	 */
+	updateItemsGlobalTranslations: {
+		parameters: {
+			query?: {
+				fields?: components['parameters']['Fields'];
+				limit?: components['parameters']['Limit'];
+				meta?: components['parameters']['Meta'];
+				offset?: components['parameters']['Offset'];
+				sort?: components['parameters']['Sort'];
+				filter?: components['parameters']['Filter'];
+				search?: components['parameters']['Search'];
+			};
+		};
+		requestBody?: {
+			content: {
+				'application/json':
+					| components['schemas']['ItemsGlobalTranslations'][]
+					| components['schemas']['ItemsGlobalTranslations'];
+			};
+		};
+		responses: {
+			/** @description Successful request */
+			200: {
+				content: {
+					'application/json': {
+						data?: unknown;
+					};
+				};
+			};
+		};
+	};
+	/**
+	 * Retrieve an Item
+	 * @description Retrieve a single global_translations item by unique identifier.
+	 */
+	readSingleItemsGlobalTranslations: {
+		parameters: {
+			query?: {
+				fields?: components['parameters']['Fields'];
+				meta?: components['parameters']['Meta'];
+				version?: components['parameters']['Version'];
+			};
+			path: {
+				/** @description Index of the item. */
+				id: number | string;
+			};
+		};
+		responses: {
+			/** @description Successful request */
+			200: {
+				content: {
+					'application/json': {
+						data?: components['schemas']['ItemsGlobalTranslations'];
+					};
+				};
+			};
+			401: components['responses']['UnauthorizedError'];
+			404: components['responses']['NotFoundError'];
+		};
+	};
+	/**
+	 * Delete an Item
+	 * @description Delete an existing global_translations item.
+	 */
+	deleteSingleItemsGlobalTranslations: {
+		parameters: {
+			path: {
+				/** @description Index of the item. */
+				id: number | string;
+			};
+		};
+		responses: {
+			/** @description Successful request */
+			200: {
+				content: never;
+			};
+			401: components['responses']['UnauthorizedError'];
+			404: components['responses']['NotFoundError'];
+		};
+	};
+	/**
+	 * Update an Item
+	 * @description Update an existing global_translations item.
+	 */
+	updateSingleItemsGlobalTranslations: {
+		parameters: {
+			query?: {
+				fields?: components['parameters']['Fields'];
+				meta?: components['parameters']['Meta'];
+			};
+			path: {
+				/** @description Index of the item. */
+				id: number | string;
+			};
+		};
+		requestBody?: {
+			content: {
+				'application/json': components['schemas']['ItemsGlobalTranslations'];
+			};
+		};
+		responses: {
+			/** @description Successful request */
+			200: {
+				content: {
+					'application/json': {
+						data?: components['schemas']['ItemsGlobalTranslations'];
+					};
+				};
+			};
+			401: components['responses']['UnauthorizedError'];
+			404: components['responses']['NotFoundError'];
+		};
+	};
 }
 
 export type Schema = {
-	Tools: components['schemas']['ItemsTools'][];
-	Global: components['schemas']['ItemsGlobal'][];
 	languages: components['schemas']['ItemsLanguages'][];
 	about: components['schemas']['ItemsAbout'][];
 	about_translations: components['schemas']['ItemsAboutTranslations'][];
+	global: components['schemas']['ItemsGlobal'][];
+	global_translations: components['schemas']['ItemsGlobalTranslations'][];
 };

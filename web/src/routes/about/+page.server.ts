@@ -28,6 +28,6 @@ export const load: PageServerLoad = async ({ fetch, depends }) => {
 	);
 
 	return {
-		about: pages
+		about: pages?.translations[0]?.text
 	};
 };

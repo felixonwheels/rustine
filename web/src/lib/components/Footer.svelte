@@ -3,20 +3,26 @@
 	import GitlabLogo from '$lib/assets/gitlab-logo.svg?raw';
 	import { flags } from '$lib/helpers/flags';
 	import { i18n } from '$lib/i18n';
+	import * as m from '$lib/paraglide/messages.js';
 	import { availableLanguageTags, languageTag } from '$lib/paraglide/runtime.js';
 </script>
 
 <div class="container footer">
 	<section>
 		<nav>
-			<a aria-label="gitlab logo" class="logo" href="https://gitlab.com/rustine/rustine">
+			<a
+				aria-label="gitlab logo"
+				class="logo"
+				data-tooltip={m.footerGitlab()}
+				href="https://gitlab.com/rustine/rustine"
+			>
 				{@html GitlabLogo}
 			</a>
 		</nav>
 	</section>
 
 	<section>
-		<details class="dropdown">
+		<details class="dropdown" data-tooltip={m.footerLanguageSelect({ lang: languageTag() })}>
 			<summary>{flags.get(languageTag())}</summary>
 			<ul>
 				{#each availableLanguageTags as lang}
@@ -35,7 +41,7 @@
 	</section>
 
 	<section>
-		<small>made with 🧡 by omni</small>
+		<small>made with <strong data-tooltip={m.footerLove()}>🧡</strong> by omni</small>
 	</section>
 </div>
 

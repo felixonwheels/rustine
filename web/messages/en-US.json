@@ -3,5 +3,9 @@
 
 	"learn": "learn",
 	"fix": "fix",
-	"about": "about"
+	"about": "about",
+
+	"footerGitlab": "Go to the project's Gitlab page",
+	"footerLanguageSelect": "Current language: {lang}",
+	"footerLove": "Love"
 }

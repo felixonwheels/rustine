@@ -15,6 +15,5 @@
 <h1 in:fly>{m.about()}</h1>
 
 <article>
-	<!-- {@html data.about?.text} -->
-	{@html data.about?.translations[0]?.text}
+	{@html data.about}
 </article>

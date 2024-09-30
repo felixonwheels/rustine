@@ -14,21 +14,13 @@
 </svelte:head>
 
 <section class="hero" in:fly>
-	<!-- <h1>{data.global?.title}</h1> -->
-	<!-- <p>{data.global?.description}</p> -->
-
 	<div class="hero-container">
 		<div class="hero-title">
-			<h1>break something. <mark>repair your bike.</mark> ride. repeat.</h1>
+			{@html data.global?.title}
 		</div>
 
-		<div class="hero-text">
-			<p>your goto location for all things bike mechanics, bike repair, and bike in general.</p>
-
-			<p>
-				navigate through the many resources to learn more about that incredible machine, or use the
-				diagnosis tool to know how to fix your bike.
-			</p>
+		<div class="hero-description">
+			{@html data.global?.description}
 		</div>
 
 		<div class="grid hero-buttons">
@@ -63,7 +55,7 @@
 	</div>
 </section>
 
-<style>
+<style global>
 	.hero {
 		display: flex;
 		flex-direction: column;
@@ -73,7 +65,7 @@
 		align-items: center;
 	}
 
-	.hero-text {
+	.hero-description {
 		text-align: start;
 	}
 
@@ -94,7 +86,7 @@
 			justify-content: center;
 		}
 
-		.hero-text {
+		.hero-description {
 			text-align: center;
 		}
 	}
@@ -105,7 +97,7 @@
 		}
 	}
 
-	.hero-title h1 {
+	.hero-title :global(h1) {
 		font-family: 'Roboto', sans-serif;
 		font-size: 4rem;
 		font-style: italic;
@@ -113,7 +105,7 @@
 		text-align: center;
 	}
 
-	mark {
+	section :global(mark) {
 		background: linear-gradient(to right, var(--pico-primary), var(--pico-color-pumpkin-300));
 		background-clip: text;
 		color: transparent;
