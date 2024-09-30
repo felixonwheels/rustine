@@ -15,7 +15,7 @@
 		<div class="card">
 			<h1>hehe</h1>
 			<p>ohohoho fez fez ofeoz jfijezoi jfoiejzoifjejzoifjeoizj foijezoifjoiez j</p>
-			<a href="/fix/{i}" role="button">go to</a>
+			<a href="/fix" role="button">go to</a>
 		</div>
 	{/each}
 </div>
