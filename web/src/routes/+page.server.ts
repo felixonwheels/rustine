@@ -27,16 +27,10 @@ export const load: PageServerLoad = async ({ fetch, depends }) => {
 		})
 	);
 
-	console.log(pages.length);
-
-	const r = {
+	return {
 		global: {
 			title: pages?.translations[0]?.title?.blocks[0]?.data?.html,
 			description: pages?.translations[0]?.description?.blocks[0]?.data?.html
 		}
 	};
-
-	console.log(r);
-
-	return r;
 };
