@@ -1,10 +1,6 @@
 <script lang="ts">
-	import { page } from '$app/stores';
 	import RustineLogo from '$lib/assets/rustine-logo.svg?raw';
-	import { flags } from '$lib/helpers/flags';
-	import { i18n } from '$lib/i18n';
 	import * as m from '$lib/paraglide/messages.js';
-	import { availableLanguageTags, languageTag } from '$lib/paraglide/runtime.js';
 	import { BookOpenText, CircleHelp, Wrench, Menu } from 'lucide-svelte';
 
 	let width: number;
@@ -35,9 +31,6 @@
 				<li><strong><a class="contrast" href="/fix"><Wrench /> {m.fix()}</a></strong></li>
 				<li><strong><a class="contrast" href="/learn"><BookOpenText /> {m.learn()}</a></strong></li>
 				<li><strong><a class="contrast" href="/about"><CircleHelp /> {m.about()}</a></strong></li>
-				<li>
-					{@render languageSelect()}
-				</li>
 			{:else}
 				<li>
 					<details bind:this={headerRef} class="dropdown">
@@ -64,7 +57,6 @@
 									></strong
 								>
 							</li>
-							<li>{@render languageSelect()}</li>
 						</ul>
 					</details>
 				</li>
@@ -72,29 +64,6 @@
 		</ul>
 	</nav>
 </div>
-
-{#snippet languageSelect()}
-	<details
-		class="dropdown"
-		data-placement="bottom"
-		data-tooltip={m.footerLanguageSelect({ lang: languageTag() })}
-	>
-		<summary>{flags.get(languageTag())}</summary>
-		<ul>
-			{#each availableLanguageTags as lang}
-				<li data-tooltip={lang}>
-					<a
-						aria-current={lang === languageTag() ? 'page' : undefined}
-						href={i18n.route($page.url.pathname)}
-						hreflang={lang}
-					>
-						{flags.get(lang)}
-					</a>
-				</li>
-			{/each}
-		</ul>
-	</details>
-{/snippet}
 
 <style>
 	.rustine-logo {
