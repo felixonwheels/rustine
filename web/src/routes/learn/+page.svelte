@@ -4,7 +4,7 @@
 </script>
 
 <svelte:head>
-	<title>learn</title>
+	<title>{m.learn()}</title>
 	<meta content="learn about bike maintenance" name="description" />
 </svelte:head>
 

@@ -1,37 +1,52 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import * as m from '$lib/paraglide/messages.js';
+	import { languageTag } from '$lib/paraglide/runtime';
 
-	let crumbs: Array<{ label: string; href: string }> = [];
+	const tokens = $derived($page.url.pathname.split('/').slice(2));
 
-	$: {
-		// Remove zero-length tokens.
-		const tokens = $page.url.pathname.split('/').filter((t) => t !== '');
+	let tokenPath = $derived.by(() => {
+		let paths: Array<string> = [];
+		let path = '';
 
-		// Create { label, href } pairs for each token.
-		let tokenPath = '';
-		crumbs = tokens.map((t) => {
-			tokenPath += '/' + t;
-			t = t.charAt(0).toUpperCase() + t.slice(1);
-			return { label: t, href: tokenPath };
-		});
+		for (let token of tokens) {
+			path += '/' + token;
 
-		// Add a way to get home too.
-		crumbs.unshift({ label: 'Home', href: '/' });
-	}
+			paths.push(path);
+		}
+
+		return paths;
+	});
+
+	let crumbs: Array<{ label: string; href: string }> = $derived.by(() => {
+		let crumbs = tokens.map((t, i) => ({ label: decodeURIComponent(t), href: tokenPath[i] }));
+
+		crumbs.unshift({ label: m.home(), href: '/' });
+
+		return crumbs;
+	});
 </script>
 
-<nav aria-label="breadcrumb">
-	<ul>
-		{#each crumbs as c, i}
-			{#if i == crumbs.length - 1}
-				<li>
-					<span class="label">
-						{c.label}
-					</span>
-				</li>
-			{:else}
-				<li><a href={c.href}>{c.label}</a> &gt;&nbsp;</li>
-			{/if}
-		{/each}
-	</ul>
-</nav>
+{#key languageTag()}
+	{#if crumbs.length > 1 && $page.error?.message === undefined}
+		<nav aria-label="breadcrumb">
+			<ul>
+				{#each crumbs as c, i}
+					<li>
+						{#if i == crumbs.length - 1}
+							<span>{c.label} </span>
+						{:else}
+							<a href={c.href}>{c.label}</a>
+						{/if}
+					</li>
+				{/each}
+			</ul>
+		</nav>
+	{/if}
+{/key}
+
+<style>
+	nav {
+		overflow: auto;
+	}
+</style>

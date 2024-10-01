@@ -8,6 +8,11 @@ export const i18n = createI18n(runtime, {
 			'fr-FR': '/apprendre'
 		},
 
+		'/learn/tools': {
+			'en-US': '/learn/tools',
+			'fr-FR': '/apprendre/outils'
+		},
+
 		'/fix': {
 			'en-US': '/fix',
 			'fr-FR': '/réparer'

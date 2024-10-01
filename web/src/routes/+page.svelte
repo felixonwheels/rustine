@@ -9,7 +9,7 @@
 </script>
 
 <svelte:head>
-	<title>Home</title>
+	<title>{m.home()}</title>
 	<meta content="Rustine" name="description" />
 </svelte:head>
 

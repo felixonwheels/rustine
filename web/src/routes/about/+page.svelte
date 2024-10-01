@@ -8,7 +8,7 @@
 </script>
 
 <svelte:head>
-	<title>About</title>
+	<title>{m.about()}</title>
 	<meta content="About this app" name="description" />
 </svelte:head>
 
