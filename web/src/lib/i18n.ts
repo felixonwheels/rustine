@@ -19,5 +19,5 @@ export const i18n = createI18n(runtime, {
 		}
 	},
 	prefixDefaultLanguage: 'always',
-	defaultLanguageTag: "fr-FR"
+	defaultLanguageTag: 'fr-FR'
 });
