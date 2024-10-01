@@ -2,6 +2,7 @@
 	import { page } from '$app/stores';
 	import * as m from '$lib/paraglide/messages.js';
 	import { languageTag } from '$lib/paraglide/runtime';
+	import { slide } from 'svelte/transition';
 
 	const tokens = $derived($page.url.pathname.split('/').slice(2));
 
@@ -29,7 +30,7 @@
 
 {#key languageTag()}
 	{#if crumbs.length > 1 && $page.error?.message === undefined}
-		<nav aria-label="breadcrumb">
+		<nav aria-label="breadcrumb" in:slide={{ duration: 2000, axis: 'x' }}>
 			<ul>
 				{#each crumbs as c, i}
 					<li>
