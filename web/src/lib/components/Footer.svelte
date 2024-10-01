@@ -26,7 +26,7 @@
 			<summary>{flags.get(languageTag())}</summary>
 			<ul>
 				{#each availableLanguageTags as lang}
-					<li>
+					<li data-tooltip={lang}>
 						<a
 							aria-current={lang === languageTag() ? 'page' : undefined}
 							href={i18n.route($page.url.pathname)}

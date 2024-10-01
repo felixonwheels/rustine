@@ -18,5 +18,6 @@ export const i18n = createI18n(runtime, {
 			'fr-FR': '/a-propos'
 		}
 	},
-	prefixDefaultLanguage: 'always'
+	prefixDefaultLanguage: 'always',
+	defaultLanguageTag: "fr-FR"
 });

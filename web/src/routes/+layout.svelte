@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Breadcrumb from '$lib/components/Breadcrumb.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	import Header from '$lib/components/Header.svelte';
 	import { i18n } from '$lib/i18n';
@@ -17,6 +18,7 @@
 	</header>
 
 	<main class="container">
+		<Breadcrumb />
 		{@render children()}
 	</main>
 

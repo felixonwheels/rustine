@@ -11,7 +11,7 @@
 <h1 in:fly>{m.fix()}</h1>
 
 <div class="grid fix-grid">
-	{#each [...Array(10).keys()] as i}
+	{#each [...Array(10).keys()] as _}
 		<div class="card">
 			<h1>hehe</h1>
 			<p>ohohoho fez fez ofeoz jfijezoi jfoiejzoifjejzoifjeoizj foijezoifjoiez j</p>

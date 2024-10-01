@@ -55,13 +55,12 @@
 	</div>
 </section>
 
-<style global>
+<style>
 	.hero {
 		display: flex;
 		flex-direction: column;
 		margin-top: calc(var(--pico-spacing) * 2);
 		margin-bottom: calc(var(--pico-spacing) * 4);
-
 		align-items: center;
 	}
 
@@ -73,6 +72,20 @@
 		display: flex;
 		flex-direction: column;
 		gap: var(--pico-spacing);
+	}
+
+	.hero-title :global(h1) {
+		font-family: 'Roboto', sans-serif;
+		font-size: 4rem;
+		font-style: italic;
+		font-weight: 900;
+		text-align: center;
+	}
+
+	section :global(mark) {
+		background: linear-gradient(to right, var(--pico-primary), var(--pico-color-pumpkin-300));
+		background-clip: text;
+		color: transparent;
 	}
 
 	@media (min-width: 576px) {
@@ -97,17 +110,9 @@
 		}
 	}
 
-	.hero-title :global(h1) {
-		font-family: 'Roboto', sans-serif;
-		font-size: 4rem;
-		font-style: italic;
-		font-weight: 900;
-		text-align: center;
-	}
-
-	section :global(mark) {
-		background: linear-gradient(to right, var(--pico-primary), var(--pico-color-pumpkin-300));
-		background-clip: text;
-		color: transparent;
+	@media (max-width: 576px) {
+		.hero-title :global(h1) {
+			font-size: 3rem;
+		}
 	}
 </style>
