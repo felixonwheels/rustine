@@ -1,6 +1,6 @@
 import getDirectusInstance from '$lib/directus';
 import { languageTag } from '$lib/paraglide/runtime.js';
-import { readItems } from '@directus/sdk';
+import { readSingleton } from '@directus/sdk';
 
 import type { PageServerLoad } from './$types';
 
@@ -9,16 +9,14 @@ export const load: PageServerLoad = async ({ fetch, depends }) => {
 
 	const directus = getDirectusInstance(fetch);
 
-	const pages = await directus.request(
-		readItems('about', {
+	const about = await directus.request(
+		readSingleton('about', {
 			deep: {
 				translations: {
 					_filter: {
-						_and: [
-							{
-								languages_code: { _eq: languageTag() }
-							}
-						]
+						languages_code: {
+							_eq: languageTag()
+						}
 					}
 				}
 			},
@@ -27,7 +25,5 @@ export const load: PageServerLoad = async ({ fetch, depends }) => {
 		})
 	);
 
-	return {
-		about: pages?.translations[0]?.text
-	};
+	return { about: about.translations![0].text };
 };

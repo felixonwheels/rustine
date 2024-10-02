@@ -12,24 +12,6 @@
       "request": "launch",
       "type": "node-terminal",
       "command": "cd web ; pnpm run dev"
-    },
-    {
-      "name": "Run dev environnement",
-      "request": "launch",
-      "type": "node-terminal",
-      "command": "echo dev ready",
-      "dependsOn": ["Run docker-compose.dev.yml", "Run pnpm run dev"]
-    }
-  ],
-  "tasks": [
-    {
-      "type": "typescript",
-      "tsconfig": "tsconfig.json",
-      "problemMatcher": ["$tsc"],
-      "group": {
-        "kind": "build",
-        "isDefault": true
-      }
     }
   ]
 }
