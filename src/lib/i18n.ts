@@ -4,23 +4,23 @@ import { createI18n } from '@inlang/paraglide-sveltekit';
 export const i18n = createI18n(runtime, {
 	pathnames: {
 		'/learn': {
-			'en-US': '/learn',
-			'fr-FR': '/apprendre'
+			'fr-FR': '/apprendre',
+			'en-US': '/learn'
 		},
 
 		'/learn/tools': {
-			'en-US': '/learn/tools',
-			'fr-FR': '/apprendre/outils'
+			'fr-FR': '/apprendre/outils',
+			'en-US': '/learn/tools'
 		},
 
 		'/fix': {
-			'en-US': '/fix',
-			'fr-FR': '/réparer'
+			'fr-FR': '/réparer',
+			'en-US': '/fix'
 		},
 
 		'/about': {
-			'en-US': '/about',
-			'fr-FR': '/a-propos'
+			'fr-FR': '/a-propos',
+			'en-US': '/about'
 		}
 	},
 	prefixDefaultLanguage: 'always',

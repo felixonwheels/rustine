@@ -1,18 +1,26 @@
 {
 	"name": "rustine-web",
 	"version": "0.0.1",
+	"type": "module",
 	"scripts": {
-		"dev": "vite dev",
 		"build": "vite build",
-		"preview": "vite preview",
-		"test": "pnpm run test:integration && pnpm run test:unit",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"lint": "prettier --check . && eslint .",
+		"deploy": "pnpx wrangler pages deploy build",
+		"dev": "vite dev",
 		"format": "prettier --write . && eslint --fix .",
+		"lint": "prettier --check . && eslint .",
+		"preview": "vite preview",
+		"test": "pnpm run test:integration && pnpm run test:unit",
 		"test:integration": "playwright test",
-		"test:unit": "vitest",
-		"deploy": "pnpx wrangler pages deploy build"
+		"test:unit": "vitest"
+	},
+	"dependencies": {
+		"@directus/sdk": "^17.0.1",
+		"@fontsource/roboto": "^5.1.0",
+		"@inlang/paraglide-sveltekit": "0.11.0",
+		"@picocss/pico": "^2.0.6",
+		"lucide-svelte": "^0.441.0"
 	},
 	"devDependencies": {
 		"@eslint/eslintrc": "^3.1.0",
@@ -23,6 +31,8 @@
 		"@sveltejs/kit": "^2.6.2",
 		"@sveltejs/vite-plugin-svelte": "^4.0.0-next.6",
 		"@types/eslint": "^9.6.0",
+		"@typescript-eslint/eslint-plugin": "^8.8.0",
+		"@typescript-eslint/parser": "^8.8.0",
 		"eslint": "^9.0.0",
 		"eslint-config-prettier": "^9.1.0",
 		"eslint-plugin-perfectionist": "^3.8.0",
@@ -37,15 +47,5 @@
 		"vite": "^5.4.8",
 		"vitest": "^2.0.0",
 		"wrangler": "^3.80.0"
-	},
-	"type": "module",
-	"dependencies": {
-		"@directus/sdk": "^17.0.1",
-		"@fontsource/roboto": "^5.1.0",
-		"@inlang/paraglide-sveltekit": "0.11.0",
-		"@picocss/pico": "^2.0.6",
-		"@typescript-eslint/eslint-plugin": "^8.8.0",
-		"@typescript-eslint/parser": "^8.8.0",
-		"lucide-svelte": "^0.441.0"
 	}
 }
