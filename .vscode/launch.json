@@ -1,17 +1,17 @@
 {
-  "version": "2.0.0",
-  "configurations": [
-    {
-      "name": "Run docker-compose.dev.yml",
-      "request": "launch",
-      "type": "node-terminal",
-      "command": "docker compose -f docker-compose.dev.yml up --build --force-recreate --watch"
-    },
-    {
-      "name": "Run pnpm run dev",
-      "request": "launch",
-      "type": "node-terminal",
-      "command": "cd web ; pnpm run dev"
-    }
-  ]
+	"version": "2.0.0",
+	"configurations": [
+		{
+			"name": "Run docker-compose.dev.yml",
+			"request": "launch",
+			"type": "node-terminal",
+			"command": "docker compose -f docker-compose.dev.yml up --build --force-recreate --watch"
+		},
+		{
+			"name": "Run pnpm run dev",
+			"request": "launch",
+			"type": "node-terminal",
+			"command": "cd web ; pnpm run dev"
+		}
+	]
 }
