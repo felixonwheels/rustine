@@ -30,7 +30,8 @@ export default [
 			'**/pnpm-lock.yaml',
 			'**/package-lock.json',
 			'**/yarn.lock',
-			'directus'
+			'directus',
+			'.vite'
 		]
 	},
 	...compat.extends(
