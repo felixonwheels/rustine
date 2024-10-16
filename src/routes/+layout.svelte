@@ -27,10 +27,3 @@
 		<Footer />
 	</footer>
 </ParaglideJS>
-
-<style>
-	main {
-		margin-top: var(--pico-spacing);
-		margin-bottom: var(--pico-spacing);
-	}
-</style>

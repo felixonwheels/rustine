@@ -59,8 +59,8 @@
 	.hero {
 		display: flex;
 		flex-direction: column;
-		margin-top: calc(var(--pico-spacing) * 2);
-		margin-bottom: calc(var(--pico-spacing) * 4);
+		padding-top: calc(var(--pico-spacing) * 2);
+		padding-bottom: calc(var(--pico-spacing) * 4);
 		align-items: center;
 	}
 
