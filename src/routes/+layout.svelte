@@ -4,10 +4,8 @@
 	import Header from '$lib/components/Header.svelte';
 	import { i18n } from '$lib/i18n';
 	import { ParaglideJS } from '@inlang/paraglide-sveltekit';
-	import '@picocss/pico/css/pico.colors.min.css';
-	import '@picocss/pico/css/pico.indigo.min.css';
 
-	import '../app.css';
+	import '../app.pcss';
 
 	let { children } = $props();
 </script>

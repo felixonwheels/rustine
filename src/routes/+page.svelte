@@ -13,6 +13,8 @@
 	<meta content="Rustine" name="description" />
 </svelte:head>
 
+<h1 class="text-xl font-mono underline pt-6">Hello world!</h1>
+
 <section class="hero" in:fly>
 	<div class="hero-container">
 		<div class="hero-title">
