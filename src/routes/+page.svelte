@@ -13,7 +13,19 @@
 	<meta content="Rustine" name="description" />
 </svelte:head>
 
-<h1 class="text-xl font-mono underline pt-6">Hello world!</h1>
+<h1 class="pt-6 font-mono text-xl underline">Hello world!</h1>
+
+<div
+	class="mx-auto flex max-w-sm items-center gap-x-4 rounded-xl bg-white p-6 shadow-lg transition-shadow duration-300 hover:shadow-xl"
+>
+	<div class="shrink-0">
+		<BookOpenText />
+	</div>
+	<div>
+		<div class="text-xl font-medium text-black">ChitChat</div>
+		<p class="text-slate-500">You have a new message!</p>
+	</div>
+</div>
 
 <section class="hero" in:fly>
 	<div class="hero-container">
@@ -25,7 +37,7 @@
 			{@html data.global?.description}
 		</div>
 
-		<div class="grid hero-buttons">
+		<div class="hero-buttons grid">
 			<a class="contrast" href="/learn" role="button">learn about your bike</a>
 			<a href="/fix" role="button">fix your bike!</a>
 		</div>
@@ -33,7 +45,7 @@
 </section>
 
 <section>
-	<div class="grid cards">
+	<div class="cards grid">
 		<article in:fly={{ duration: 120 }}>
 			<h1><BookOpenText color="var(--pico-primary)" size={28} /></h1>
 			<h2>{m.learn()}</h2>
