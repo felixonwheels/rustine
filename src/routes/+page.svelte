@@ -13,20 +13,6 @@
 	<meta content="Rustine" name="description" />
 </svelte:head>
 
-<h1 class="pt-6 font-mono text-xl underline">Hello world!</h1>
-
-<div
-	class="mx-auto flex max-w-sm items-center gap-x-4 rounded-xl bg-white p-6 shadow-lg transition-shadow duration-300 hover:shadow-xl"
->
-	<div class="shrink-0">
-		<BookOpenText />
-	</div>
-	<div>
-		<div class="text-xl font-medium text-black">ChitChat</div>
-		<p class="text-slate-500">You have a new message!</p>
-	</div>
-</div>
-
 <section class="hero" in:fly>
 	<div class="hero-container">
 		<div class="hero-title">
@@ -97,7 +83,7 @@
 	}
 
 	section :global(mark) {
-		background: linear-gradient(to right, var(--pico-primary), var(--pico-color-pumpkin-300));
+		background: linear-gradient(to right, var(--color-rustine-orange), var(--color-rustine-indigo));
 		background-clip: text;
 		color: transparent;
 	}

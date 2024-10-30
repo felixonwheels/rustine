@@ -45,6 +45,9 @@ importers:
       '@sveltejs/vite-plugin-svelte':
         specifier: 4.0.0-next.8
         version: 4.0.0-next.8(svelte@5.0.0-next.230)(vite@5.4.8(@types/node@22.7.5)(lightningcss@1.27.0))
+      '@tailwindcss/typography':
+        specifier: ^0.5.15
+        version: 0.5.15(tailwindcss@4.0.0-alpha.28)
       '@types/eslint':
         specifier: ^9.6.1
         version: 9.6.1
@@ -896,6 +899,11 @@ packages:
     resolution: {integrity: sha512-YqTtFt6LVfsFWfAiaQ13juU63XAc8XNcTq0iljpJTU0W/Be41Wpf4y+aT4gBhJB8qIvQpVh5sfARbn8g47AUdQ==}
     engines: {node: '>= 10'}
 
+  '@tailwindcss/typography@0.5.15':
+    resolution: {integrity: sha512-AqhlCXl+8grUz8uqExv5OTtgpjuVIwFTSXTrh8y9/pw6q2ek7fJ+Y8ZEVw7EB2DCcuCOtEjf9w3+J3rzts01uA==}
+    peerDependencies:
+      tailwindcss: '>=3.0.0 || insiders || >=4.0.0-alpha.20'
+
   '@tailwindcss/vite@4.0.0-alpha.28':
     resolution: {integrity: sha512-FCouNgyaz4fN1ts17jgATKSgD3s8crres8qRbSMwKenZoWECCtdoSN+pHkmrR1yQUjOmYjJu88ahhe/CBcQdOQ==}
     peerDependencies:
@@ -1694,6 +1702,9 @@ packages:
     resolution: {integrity: sha512-iPZK6eYjbxRu3uB4/WZ3EsEIMJFMqAoopl3R+zuq0UjcAm/MO6KCweDgPfP3elTztoKP3KtnVHxTn2NHBSDVUw==}
     engines: {node: '>=10'}
 
+  lodash.castarray@4.4.0:
+    resolution: {integrity: sha512-aVx8ztPv7/2ULbArGJ2Y42bG1mEQ5mGjpdvrbJcJFU3TbYybe+QlLS4pst9zV52ymy2in1KpFPiZnAOATxD4+Q==}
+
   lodash.includes@4.3.0:
     resolution: {integrity: sha512-W3Bx6mdkRTGtlJISOvVD/lbqjTlPPUDTMnlXZFnVwi9NKJ6tiAk6LVdlhZMm17VZisqhKcgzpO5Wz91PCt5b0w==}
 
@@ -1907,6 +1918,10 @@ packages:
     engines: {node: '>=12.0'}
     peerDependencies:
       postcss: ^8.4.29
+
+  postcss-selector-parser@6.0.10:
+    resolution: {integrity: sha512-IQ7TZdoaqbT+LCpShg46jnZVlhWD2w6iQYAcYXfHARZ7X1t/UGhhceQDs5X0cGqKvYlHNOuv7Oa1xmb0oQuA3w==}
+    engines: {node: '>=4'}
 
   postcss-selector-parser@6.1.2:
     resolution: {integrity: sha512-Q8qQfPiZ+THO/3ZrOrO0cJJKfpYCagtMUkXbnEfmgUjwXg6z/WBeOyS9APBBPCTSiDV+s4SwQGu8yFsiMRIudg==}
@@ -3109,6 +3124,14 @@ snapshots:
       '@tailwindcss/oxide-linux-x64-musl': 4.0.0-alpha.28
       '@tailwindcss/oxide-win32-x64-msvc': 4.0.0-alpha.28
 
+  '@tailwindcss/typography@0.5.15(tailwindcss@4.0.0-alpha.28)':
+    dependencies:
+      lodash.castarray: 4.4.0
+      lodash.isplainobject: 4.0.6
+      lodash.merge: 4.6.2
+      postcss-selector-parser: 6.0.10
+      tailwindcss: 4.0.0-alpha.28
+
   '@tailwindcss/vite@4.0.0-alpha.28(vite@5.4.8(@types/node@22.7.5)(lightningcss@1.27.0))':
     dependencies:
       '@tailwindcss/node': 4.0.0-alpha.28
@@ -3917,6 +3940,8 @@ snapshots:
     dependencies:
       p-locate: 5.0.0
 
+  lodash.castarray@4.4.0: {}
+
   lodash.includes@4.3.0: {}
 
   lodash.isboolean@3.0.3: {}
@@ -4097,6 +4122,11 @@ snapshots:
   postcss-scss@4.0.9(postcss@8.4.47):
     dependencies:
       postcss: 8.4.47
+
+  postcss-selector-parser@6.0.10:
+    dependencies:
+      cssesc: 3.0.0
+      util-deprecate: 1.0.2
 
   postcss-selector-parser@6.1.2:
     dependencies:

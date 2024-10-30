@@ -11,17 +11,19 @@
 </script>
 
 <ParaglideJS {i18n}>
-	<header>
-		<Header />
-	</header>
+	<div class="container flex flex-col bg-white dark:bg-gray-800">
+		<header>
+			<Header />
+		</header>
 
-	<main class="container">
-		<Breadcrumb />
+		<main>
+			<Breadcrumb />
 
-		{@render children()}
-	</main>
+			{@render children()}
+		</main>
 
-	<footer>
-		<Footer />
-	</footer>
+		<footer class="pb-4">
+			<Footer />
+		</footer>
+	</div>
 </ParaglideJS>
