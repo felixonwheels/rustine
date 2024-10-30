@@ -1,5 +1,17 @@
+@import 'tailwindcss';
+
+@layer components {
+	.btn-primary {
+		@apply bg-rustine-orange rounded-full py-2 px-5 font-semibold text-white shadow-md hover:bg-purple-800 hover:shadow-slate-400 focus:ring focus:ring-violet-400 focus:outline-none;
+	}
+}
+
+@theme {
+	--color-rustine-orange: oklch(68.71% 0.1877 47.79);
+	--color-rustine-indigo: oklch(54.95% 0.1811 281.97);
+}
+
 body {
-	margin-bottom: 1rem;
 	overflow-y: scroll;
 }
 

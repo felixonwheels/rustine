@@ -7,7 +7,7 @@
 	import { availableLanguageTags, languageTag } from '$lib/paraglide/runtime.js';
 </script>
 
-<div class="container footer">
+<div class="footer container">
 	<section>
 		<nav>
 			<a

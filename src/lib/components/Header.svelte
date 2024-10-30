@@ -3,67 +3,76 @@
 	import * as m from '$lib/paraglide/messages.js';
 	import { BookOpenText, CircleHelp, Wrench, Menu } from 'lucide-svelte';
 
-	let width: number;
+	let showMenu = false;
 
-	let headerRef: HTMLDetailsElement;
-
-	function closeMainNav() {
-		headerRef.removeAttribute('open');
+	function toggleNavbar() {
+		showMenu = !showMenu;
 	}
 </script>
 
-<svelte:window bind:innerWidth={width} />
-
-<div class="container">
-	<nav>
-		<ul>
-			<li class="logo">
-				<a aria-label="rustine logo" class="rustine-logo" href="/">
-					{@html RustineLogo}
+<div>
+	<div class="bg-gray-800">
+		<nav class="container mx-auto py-8 px-6 md:flex md:items-center md:justify-between">
+			<div class="flex items-center justify-between">
+				<a class="text-xl font-bold text-gray-100 hover:text-blue-400 md:text-2xl" href="/home"
+					>Logo
 				</a>
-				<a aria-label="rustine text logo" href="/">
-					<h1 class="title">rustine</h1>
-				</a>
-			</li>
-		</ul>
-		<ul>
-			{#if width > 768}
-				<li><strong><a class="contrast" href="/fix"><Wrench /> {m.fix()}</a></strong></li>
-				<li><strong><a class="contrast" href="/learn"><BookOpenText /> {m.learn()}</a></strong></li>
-				<li><strong><a class="contrast" href="/about"><CircleHelp /> {m.about()}</a></strong></li>
-			{:else}
-				<li>
-					<details bind:this={headerRef} class="dropdown">
-						<summary><Menu size={20} /></summary>
+				<!-- Mobile menu button -->
+				<div class="flex md:hidden">
+					<button
+						type="button"
+						class="text-gray-100 hover:text-gray-400 focus:text-gray-400 focus:outline-none"
+						onclick={toggleNavbar}
+					>
+						<Menu />
+					</button>
+				</div>
+			</div>
 
-						<ul dir="rtl">
-							<li>
-								<strong
-									><a class="contrast" href="/fix" onclick={closeMainNav}>{m.fix()} <Wrench /></a
-									></strong
-								>
-							</li>
-							<li>
-								<strong
-									><a class="contrast" href="/learn" onclick={closeMainNav}
-										>{m.learn()} <BookOpenText /></a
-									></strong
-								>
-							</li>
-							<li>
-								<strong
-									><a class="contrast" href="/about" onclick={closeMainNav}
-										>{m.about()} <CircleHelp /></a
-									></strong
-								>
-							</li>
-						</ul>
-					</details>
-				</li>
-			{/if}
-		</ul>
-	</nav>
+			<!-- Mobile Menu open: "block", Menu closed: "hidden" -->
+			<div
+				class="mt-8 flex-col space-y-4 duration-300 md:mt-0 md:flex md:flex-row md:items-center md:space-y-0 md:space-x-10 {showMenu
+					? 'flex'
+					: 'hidden'}"
+			>
+				<a class="text-gray-100 hover:text-blue-400" href="/home">Home</a>
+				<a class="text-gray-100 hover:text-blue-400" href="/blog">Blogs</a>
+				<a class="text-gray-100 hover:text-blue-400" href="/contact">Contact US</a>
+				<a class="text-gray-100 hover:text-blue-400" href="/about">About Us</a>
+				<div class="space-y-2">
+					<a
+						href="/login"
+						class="block rounded-md border bg-white py-3 px-4 text-center text-gray-800 hover:text-indigo-600 lg:inline lg:border-0"
+					>
+						Login
+					</a>
+					<a
+						href="/signup"
+						class="block rounded-md bg-indigo-600 py-3 px-4 text-center text-white shadow hover:bg-indigo-700 lg:inline"
+					>
+						Sign Up
+					</a>
+				</div>
+			</div>
+		</nav>
+	</div>
 </div>
+
+<!-- <nav class="flex">
+	<div class="logo">
+		<a aria-label="rustine logo" class="rustine-logo" href="/">
+			{@html RustineLogo}
+		</a>
+		<a aria-label="rustine text logo" href="/">
+			<h1 class="title">rustine</h1>
+		</a>
+	</div>
+	<div class="flex">
+		<a class="contrast" href="/fix"><Wrench /> {m.fix()}</a>
+		<a class="contrast" href="/learn"><BookOpenText /> {m.learn()}</a>
+		<a class="contrast" href="/about"><CircleHelp /> {m.about()}</a>
+	</div>
+</nav> -->
 
 <style>
 	.rustine-logo {
@@ -82,7 +91,7 @@
 		font-weight: 900;
 		margin: auto 0.5rem;
 
-		background: linear-gradient(to right, var(--pico-primary), var(--pico-color-pumpkin-300));
+		background: linear-gradient(to right, var(--color-rustine-orange), var(--color-rustine-indigo));
 		background-clip: text;
 		color: transparent;
 	}

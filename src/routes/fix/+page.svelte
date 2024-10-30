@@ -10,7 +10,7 @@
 
 <h1 in:fly>{m.fix()}</h1>
 
-<div class="grid fix-grid">
+<div class="fix-grid grid">
 	{#each [...Array(10).keys()] as _}
 		<div class="card">
 			<h1>hehe</h1>

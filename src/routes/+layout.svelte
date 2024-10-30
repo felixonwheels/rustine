@@ -4,8 +4,6 @@
 	import Header from '$lib/components/Header.svelte';
 	import { i18n } from '$lib/i18n';
 	import { ParaglideJS } from '@inlang/paraglide-sveltekit';
-	import '@picocss/pico/css/pico.colors.min.css';
-	import '@picocss/pico/css/pico.indigo.min.css';
 
 	import '../app.css';
 
@@ -13,17 +11,19 @@
 </script>
 
 <ParaglideJS {i18n}>
-	<header>
-		<Header />
-	</header>
+	<div class="container flex flex-col bg-white dark:bg-gray-800">
+		<header>
+			<Header />
+		</header>
 
-	<main class="container">
-		<Breadcrumb />
+		<main>
+			<Breadcrumb />
 
-		{@render children()}
-	</main>
+			{@render children()}
+		</main>
 
-	<footer>
-		<Footer />
-	</footer>
+		<footer class="pb-4">
+			<Footer />
+		</footer>
+	</div>
 </ParaglideJS>

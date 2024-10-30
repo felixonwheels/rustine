@@ -23,7 +23,7 @@
 			{@html data.global?.description}
 		</div>
 
-		<div class="grid hero-buttons">
+		<div class="hero-buttons grid">
 			<a class="contrast" href="/learn" role="button">learn about your bike</a>
 			<a href="/fix" role="button">fix your bike!</a>
 		</div>
@@ -31,7 +31,7 @@
 </section>
 
 <section>
-	<div class="grid cards">
+	<div class="cards grid">
 		<article in:fly={{ duration: 120 }}>
 			<h1><BookOpenText color="var(--pico-primary)" size={28} /></h1>
 			<h2>{m.learn()}</h2>
@@ -83,7 +83,7 @@
 	}
 
 	section :global(mark) {
-		background: linear-gradient(to right, var(--pico-primary), var(--pico-color-pumpkin-300));
+		background: linear-gradient(to right, var(--color-rustine-orange), var(--color-rustine-indigo));
 		background-clip: text;
 		color: transparent;
 	}
