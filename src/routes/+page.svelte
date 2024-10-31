@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { Button } from '$lib/components/ui/button/index.js';
 	import * as m from '$lib/paraglide/messages.js';
 	import { BookOpenText, CircleHelp, Wrench } from 'lucide-svelte';
 	import { fly } from 'svelte/transition';
@@ -24,8 +25,8 @@
 		</div>
 
 		<div class="hero-buttons grid">
-			<a class="contrast" href="/learn" role="button">learn about your bike</a>
-			<a href="/fix" role="button">fix your bike!</a>
+			<Button href="/learn">learn about your bike</Button>
+			<Button href="/fix">fix your bike!</Button>
 		</div>
 	</div>
 </section>
@@ -83,7 +84,11 @@
 	}
 
 	section :global(mark) {
-		background: linear-gradient(to right, var(--color-rustine-orange), var(--color-rustine-indigo));
+		background: linear-gradient(
+			to right,
+			theme('colors.rustine-orange'),
+			theme('colors.rustine-indigo')
+		);
 		background-clip: text;
 		color: transparent;
 	}

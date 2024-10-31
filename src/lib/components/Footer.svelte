@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import GitlabLogo from '$lib/assets/gitlab-logo.svg?raw';
-	import { flags } from '$lib/helpers/flags';
 	import { i18n } from '$lib/i18n';
 	import * as m from '$lib/paraglide/messages.js';
 	import { availableLanguageTags, languageTag } from '$lib/paraglide/runtime.js';
+	import { flags } from '$lib/utils/flags';
 </script>
 
 <div class="footer container">
