@@ -137,12 +137,13 @@
 <script lang="ts">
 	import type { ComponentProps } from 'svelte';
 
+	import RustineLogo from '$lib/assets/rustine-logo.svg?raw';
 	import NavMain from '$lib/components/nav-main.svelte';
 	import NavProjects from '$lib/components/nav-projects.svelte';
 	import NavSecondary from '$lib/components/nav-secondary.svelte';
 	import NavUser from '$lib/components/nav-user.svelte';
 	import * as Sidebar from '$lib/components/ui/sidebar/index.js';
-	import RustineLogo from '$lib/assets/rustine-logo.svg?raw';
+	import RustineTitle from '$lib/components/RustineTitle.svelte';
 
 	let { ref = $bindable(null), ...restProps }: ComponentProps<typeof Sidebar.Root> = $props();
 </script>
@@ -154,12 +155,11 @@
 				<Sidebar.MenuButton size="lg">
 					{#snippet child({ props })}
 						<a href="/" {...props}>
-							<div class="aspect-square flex size-8 items-center justify-center">
+							<div class="aspect-square flex size-10 items-center justify-center">
 								{@html RustineLogo}
 							</div>
 							<div class="grid flex-1 text-left text-sm leading-tight">
-								<span class="truncate font-semibold">rustine</span>
-								<span class="truncate text-xs">ride repair repeat</span>
+								<RustineTitle />
 							</div>
 						</a>
 					{/snippet}
