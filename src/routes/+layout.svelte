@@ -1,7 +1,9 @@
 <script lang="ts">
+	import AppSidebar from '$lib/components/app-sidebar.svelte';
 	import Breadcrumb from '$lib/components/Breadcrumb.svelte';
 	import Footer from '$lib/components/Footer.svelte';
-	import Header from '$lib/components/Header.svelte';
+	import { Separator } from '$lib/components/ui/separator/index.js';
+	import * as Sidebar from '$lib/components/ui/sidebar/index.js';
 	import { i18n } from '$lib/i18n';
 	import { ParaglideJS } from '@inlang/paraglide-sveltekit';
 
@@ -11,19 +13,27 @@
 </script>
 
 <ParaglideJS {i18n}>
-	<div class="container flex flex-col bg-white dark:bg-gray-800">
-		<header>
-			<Header />
-		</header>
+	<Sidebar.Provider>
+		<AppSidebar />
 
-		<main>
-			<Breadcrumb />
+		<Sidebar.Inset>
+			<header class="flex h-16 shrink-0 items-center gap-2">
+				<div class="flex items-center gap-2 px-4">
+					<Sidebar.Trigger class="-ml-1" />
+					<Separator class="mr-2 h-4" orientation="vertical" />
+					<Breadcrumb />
+				</div>
+			</header>
 
-			{@render children()}
-		</main>
+			<main>
+				<div class="flex flex-1 flex-col gap-4 p-4 pt-0">
+					{@render children()}
+				</div>
+			</main>
 
-		<footer class="pb-4">
-			<Footer />
-		</footer>
-	</div>
+			<footer class="pb-4">
+				<Footer />
+			</footer>
+		</Sidebar.Inset>
+	</Sidebar.Provider>
 </ParaglideJS>

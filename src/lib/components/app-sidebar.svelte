@@ -142,7 +142,7 @@
 	import NavSecondary from '$lib/components/nav-secondary.svelte';
 	import NavUser from '$lib/components/nav-user.svelte';
 	import * as Sidebar from '$lib/components/ui/sidebar/index.js';
-	import Command from 'lucide-svelte/icons/command';
+	import RustineLogo from '$lib/assets/rustine-logo.svg?raw';
 
 	let { ref = $bindable(null), ...restProps }: ComponentProps<typeof Sidebar.Root> = $props();
 </script>
@@ -153,15 +153,13 @@
 			<Sidebar.MenuItem>
 				<Sidebar.MenuButton size="lg">
 					{#snippet child({ props })}
-						<a href="##" {...props}>
-							<div
-								class="aspect-square flex size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground"
-							>
-								<Command class="size-4" />
+						<a href="/" {...props}>
+							<div class="aspect-square flex size-8 items-center justify-center">
+								{@html RustineLogo}
 							</div>
 							<div class="grid flex-1 text-left text-sm leading-tight">
-								<span class="truncate font-semibold">Acme Inc</span>
-								<span class="truncate text-xs">Enterprise</span>
+								<span class="truncate font-semibold">rustine</span>
+								<span class="truncate text-xs">ride repair repeat</span>
 							</div>
 						</a>
 					{/snippet}

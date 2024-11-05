@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import * as Breadcrumb from '$lib/components/ui/breadcrumb/index.js';
 	import * as m from '$lib/paraglide/messages.js';
 	import { languageTag } from '$lib/paraglide/runtime';
-	import { slide } from 'svelte/transition';
 
 	const tokens = $derived($page.url.pathname.split('/').slice(2));
 
@@ -30,24 +30,19 @@
 
 {#key languageTag()}
 	{#if crumbs.length > 1 && $page.error?.message === undefined}
-		<nav aria-label="breadcrumb" in:slide={{ duration: 2000, axis: 'x' }}>
-			<ul>
+		<Breadcrumb.Root>
+			<Breadcrumb.List>
 				{#each crumbs as c, i}
-					<li>
+					<Breadcrumb.Item class="hidden md:block">
 						{#if i == crumbs.length - 1}
-							<span>{c.label} </span>
+							<Breadcrumb.Page>{c.label}</Breadcrumb.Page>
 						{:else}
-							<a href={c.href}>{c.label}</a>
+							<Breadcrumb.Link href={c.href}>{c.label}</Breadcrumb.Link>
 						{/if}
-					</li>
+					</Breadcrumb.Item>
+					{#if i < crumbs.length - 1}<Breadcrumb.Separator class="hidden md:block" />{/if}
 				{/each}
-			</ul>
-		</nav>
+			</Breadcrumb.List>
+		</Breadcrumb.Root>
 	{/if}
 {/key}
-
-<style>
-	nav {
-		overflow: auto;
-	}
-</style>
