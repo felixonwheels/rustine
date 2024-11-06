@@ -1,9 +1,12 @@
 <script lang="ts">
 	import RustineTitle from '$lib/components/RustineTitle.svelte';
 	import { Button } from '$lib/components/ui/button/index.js';
+	import { useSidebar } from '$lib/components/ui/sidebar/index.js';
 	import * as m from '$lib/paraglide/messages.js';
 	import { BookOpenText, CircleHelp, Wrench } from 'lucide-svelte';
 	import { fly } from 'svelte/transition';
+
+	const sidebar = useSidebar();
 
 	import type { PageData } from './$types';
 
@@ -17,9 +20,11 @@
 
 <section in:fly>
 	<div>
-		<div>
-			<RustineTitle />
-		</div>
+		{#if sidebar.isMobile}
+			<div>
+				<RustineTitle />
+			</div>
+		{/if}
 
 		<div>
 			{@html data.global?.title}

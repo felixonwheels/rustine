@@ -1,7 +1,8 @@
 <script lang="ts">
 	import type { ComponentProps } from 'svelte';
 
-	import * as Sidebar from '$lib/components/ui/sidebar/index.js';
+	import { page } from '$app/stores';	import * as Sidebar from '$lib/components/ui/sidebar/index.js';
+	import { i18n } from '$lib/i18n.js';
 
 	let {
 		ref = $bindable(null),
@@ -23,7 +24,7 @@
 		<Sidebar.Menu>
 			{#each items as item (item.title)}
 				<Sidebar.MenuItem>
-					<Sidebar.MenuButton size="sm">
+					<Sidebar.MenuButton isActive={i18n.route($page.url.pathname) === item.url} size="sm">
 						{#snippet tooltipContent()}
 							{item.title}
 						{/snippet}

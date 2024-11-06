@@ -1,6 +1,8 @@
 <script lang="ts">
+	import { page } from '$app/stores';
 	import * as Collapsible from '$lib/components/ui/collapsible/index.js';
 	import * as Sidebar from '$lib/components/ui/sidebar/index.js';
+	import { i18n } from '$lib/i18n.js';
 	import ChevronRight from 'lucide-svelte/icons/chevron-right';
 
 	let {
@@ -27,7 +29,7 @@
 			<Collapsible.Root open={mainItem.isActive}>
 				{#snippet child({ props })}
 					<Sidebar.MenuItem {...props}>
-						<Sidebar.MenuButton>
+						<Sidebar.MenuButton isActive={i18n.route($page.url.pathname) === mainItem.url}>
 							{#snippet tooltipContent()}
 								{mainItem.title}
 							{/snippet}
@@ -51,7 +53,10 @@
 								<Sidebar.MenuSub>
 									{#each mainItem.items as subItem (subItem.title)}
 										<Sidebar.MenuSubItem>
-											<Sidebar.MenuSubButton href={subItem.url}>
+											<Sidebar.MenuSubButton
+												href={subItem.url}
+												isActive={i18n.route($page.url.pathname) === subItem.url}
+											>
 												<span>{subItem.title}</span>
 											</Sidebar.MenuSubButton>
 										</Sidebar.MenuSubItem>
