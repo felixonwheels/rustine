@@ -1,15 +1,19 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
 
-	"home": "home",
+	"home": "Home",
 
-	"learn": "learn",
-	"fix": "fix",
-	"about": "about",
+	"learn": "Learn",
+	"tools": "Tools",
 
-	"tools": "tools",
+	"fix": "Fix",
 
-	"footerGitlab": "Go to the project's Gitlab page",
-	"footerLanguageSelect": "Current language: {lang}",
-	"footerLove": "Love"
+	"about": "About",
+
+	"gitlab": "Gitlab project",
+	"bug": "Report bug",
+
+	"themeDark": "Dark",
+	"themeLight": "Light",
+	"themeSystem": "System"
 }

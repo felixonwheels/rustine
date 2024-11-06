@@ -1,16 +1,18 @@
 <script lang="ts">
 	import AppSidebar from '$lib/components/app-sidebar.svelte';
 	import Breadcrumb from '$lib/components/Breadcrumb.svelte';
-	import Footer from '$lib/components/Footer.svelte';
 	import { Separator } from '$lib/components/ui/separator/index.js';
 	import * as Sidebar from '$lib/components/ui/sidebar/index.js';
 	import { i18n } from '$lib/i18n';
 	import { ParaglideJS } from '@inlang/paraglide-sveltekit';
+	import { ModeWatcher } from 'mode-watcher';
 
 	import '../app.css';
 
 	let { children } = $props();
 </script>
+
+<ModeWatcher />
 
 <ParaglideJS {i18n}>
 	<Sidebar.Provider>
@@ -30,10 +32,6 @@
 					{@render children()}
 				</div>
 			</main>
-
-			<footer class="pb-4">
-				<Footer />
-			</footer>
 		</Sidebar.Inset>
 	</Sidebar.Provider>
 </ParaglideJS>

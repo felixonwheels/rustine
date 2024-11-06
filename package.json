@@ -18,7 +18,8 @@
 	"dependencies": {
 		"@directus/sdk": "^18.0.0",
 		"@fontsource/roboto": "^5.1.0",
-		"@inlang/paraglide-sveltekit": "0.11.5"
+		"@inlang/paraglide-sveltekit": "0.11.5",
+		"mode-watcher": "^0.4.1"
 	},
 	"devDependencies": {
 		"@eslint/eslintrc": "^3.1.0",
@@ -36,7 +37,7 @@
 		"@typescript-eslint/eslint-plugin": "^8.12.2",
 		"@typescript-eslint/parser": "^8.12.2",
 		"autoprefixer": "^10.4.20",
-		"bits-ui": "1.0.0-next.34",
+		"bits-ui": "1.0.0-next.45",
 		"clsx": "^2.1.1",
 		"eslint": "^9.13.0",
 		"eslint-config-prettier": "^9.1.0",

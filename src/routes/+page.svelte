@@ -1,4 +1,5 @@
 <script lang="ts">
+	import RustineTitle from '$lib/components/RustineTitle.svelte';
 	import { Button } from '$lib/components/ui/button/index.js';
 	import * as m from '$lib/paraglide/messages.js';
 	import { BookOpenText, CircleHelp, Wrench } from 'lucide-svelte';
@@ -14,17 +15,21 @@
 	<meta content="Rustine" name="description" />
 </svelte:head>
 
-<section class="hero" in:fly>
-	<div class="hero-container">
-		<div class="hero-title">
+<section in:fly>
+	<div>
+		<div>
+			<RustineTitle />
+		</div>
+
+		<div>
 			{@html data.global?.title}
 		</div>
 
-		<div class="hero-description">
+		<div>
 			{@html data.global?.description}
 		</div>
 
-		<div class="hero-buttons grid">
+		<div>
 			<Button href="/learn">learn about your bike</Button>
 			<Button href="/fix">fix your bike!</Button>
 		</div>
@@ -32,7 +37,7 @@
 </section>
 
 <section>
-	<div class="cards grid">
+	<div>
 		<article in:fly={{ duration: 120 }}>
 			<h1><BookOpenText color="var(--pico-primary)" size={28} /></h1>
 			<h2>{m.learn()}</h2>
@@ -55,69 +60,3 @@
 		</article>
 	</div>
 </section>
-
-<style>
-	.hero {
-		display: flex;
-		flex-direction: column;
-		padding-top: calc(var(--pico-spacing) * 2);
-		padding-bottom: calc(var(--pico-spacing) * 4);
-		align-items: center;
-	}
-
-	.hero-description {
-		text-align: start;
-	}
-
-	.hero-container {
-		display: flex;
-		flex-direction: column;
-		gap: var(--pico-spacing);
-	}
-
-	.hero-title :global(h1) {
-		font-family: 'Roboto', sans-serif;
-		font-size: 4rem;
-		font-style: italic;
-		font-weight: 900;
-		text-align: center;
-	}
-
-	section :global(mark) {
-		background: linear-gradient(
-			to right,
-			theme('colors.rustine-orange'),
-			theme('colors.rustine-indigo')
-		);
-		background-clip: text;
-		color: transparent;
-	}
-
-	@media (min-width: 576px) {
-		.hero-container {
-			max-width: 60vw;
-			gap: calc(var(--pico-spacing) * 2.5);
-		}
-
-		.hero-buttons {
-			display: flex;
-			justify-content: center;
-		}
-
-		.hero-description {
-			text-align: center;
-		}
-	}
-
-	@media (max-width: 1280px) {
-		.cards {
-			grid-template-columns: 1fr;
-		}
-	}
-
-	@media (max-width: 576px) {
-		.hero-title :global(h1) {
-			font-size: 3rem;
-		}
-	}
-</style>

@@ -1,164 +1,82 @@
-<script lang="ts" module>
-	import BookOpen from 'lucide-svelte/icons/book-open';
-	import Bot from 'lucide-svelte/icons/bot';
-	import ChartPie from 'lucide-svelte/icons/chart-pie';
-	import Frame from 'lucide-svelte/icons/frame';
-	import LifeBuoy from 'lucide-svelte/icons/life-buoy';
-	import Map from 'lucide-svelte/icons/map';
-	import Send from 'lucide-svelte/icons/send';
-	import Settings2 from 'lucide-svelte/icons/settings-2';
-	import SquareTerminal from 'lucide-svelte/icons/square-terminal';
-
-	const data = {
-		user: {
-			name: 'shadcn',
-			email: 'm@example.com',
-			avatar: '/avatars/shadcn.jpg'
-		},
-		navMain: [
-			{
-				title: 'Playground',
-				url: '#',
-				icon: SquareTerminal,
-				isActive: true,
-				items: [
-					{
-						title: 'History',
-						url: '#'
-					},
-					{
-						title: 'Starred',
-						url: '#'
-					},
-					{
-						title: 'Settings',
-						url: '#'
-					}
-				]
-			},
-			{
-				title: 'Models',
-				url: '#',
-				icon: Bot,
-				items: [
-					{
-						title: 'Genesis',
-						url: '#'
-					},
-					{
-						title: 'Explorer',
-						url: '#'
-					},
-					{
-						title: 'Quantum',
-						url: '#'
-					}
-				]
-			},
-			{
-				title: 'Documentation',
-				url: '#',
-				icon: BookOpen,
-				items: [
-					{
-						title: 'Introduction',
-						url: '#'
-					},
-					{
-						title: 'Get Started',
-						url: '#'
-					},
-					{
-						title: 'Tutorials',
-						url: '#'
-					},
-					{
-						title: 'Changelog',
-						url: '#'
-					}
-				]
-			},
-			{
-				title: 'Settings',
-				url: '#',
-				icon: Settings2,
-				items: [
-					{
-						title: 'General',
-						url: '#'
-					},
-					{
-						title: 'Team',
-						url: '#'
-					},
-					{
-						title: 'Billing',
-						url: '#'
-					},
-					{
-						title: 'Limits',
-						url: '#'
-					}
-				]
-			}
-		],
-		navSecondary: [
-			{
-				title: 'Support',
-				url: '#',
-				icon: LifeBuoy
-			},
-			{
-				title: 'Feedback',
-				url: '#',
-				icon: Send
-			}
-		],
-		projects: [
-			{
-				name: 'Design Engineering',
-				url: '#',
-				icon: Frame
-			},
-			{
-				name: 'Sales & Marketing',
-				url: '#',
-				icon: ChartPie
-			},
-			{
-				name: 'Travel',
-				url: '#',
-				icon: Map
-			}
-		]
-	};
-</script>
-
 <script lang="ts">
 	import type { ComponentProps } from 'svelte';
 
 	import RustineLogo from '$lib/assets/rustine-logo.svg?raw';
+	import LanguageSwitcher from '$lib/components/LanguageSwitcher.svelte';
+	import ModeSwitcher from '$lib/components/ModeSwitcher.svelte';
 	import NavMain from '$lib/components/nav-main.svelte';
-	import NavProjects from '$lib/components/nav-projects.svelte';
 	import NavSecondary from '$lib/components/nav-secondary.svelte';
-	import NavUser from '$lib/components/nav-user.svelte';
-	import * as Sidebar from '$lib/components/ui/sidebar/index.js';
 	import RustineTitle from '$lib/components/RustineTitle.svelte';
+	import * as Sidebar from '$lib/components/ui/sidebar/index.js';
+	import * as m from '$lib/paraglide/messages.js';
+	import BookOpenText from 'lucide-svelte/icons/book-open-text';
+	import Bug from 'lucide-svelte/icons/bug';
+	import CircleHelp from 'lucide-svelte/icons/circle-help';
+	import CodeXml from 'lucide-svelte/icons/code-xml';
+	import House from 'lucide-svelte/icons/house';
+	import Wrench from 'lucide-svelte/icons/wrench';
+
+	const data = {
+		navMain: [
+			{
+				title: m.home(),
+				url: '/',
+				icon: House,
+				items: []
+			},
+			{
+				title: m.learn(),
+				url: '/learn',
+				icon: BookOpenText,
+				items: [
+					{
+						title: m.tools(),
+						url: '/learn/tools'
+					}
+				],
+				isActive: true
+			},
+			{
+				title: m.fix(),
+				url: '/fix',
+				icon: Wrench,
+				items: [],
+				isActive: true
+			}
+		],
+		navSecondary: [
+			{
+				title: m.about(),
+				url: '/about',
+				icon: CircleHelp
+			},
+			{
+				title: m.gitlab(),
+				url: 'https://gitlab.com/rustine/rustine',
+				icon: CodeXml
+			},
+			{
+				title: m.bug(),
+				url: 'https://gitlab.com/rustine/rustine/-/issues/new',
+				icon: Bug
+			}
+		]
+	};
 
 	let { ref = $bindable(null), ...restProps }: ComponentProps<typeof Sidebar.Root> = $props();
 </script>
 
-<Sidebar.Root bind:ref variant="inset" {...restProps}>
+<Sidebar.Root bind:ref collapsible="icon" variant="inset" {...restProps}>
 	<Sidebar.Header>
 		<Sidebar.Menu>
 			<Sidebar.MenuItem>
-				<Sidebar.MenuButton size="lg">
+				<Sidebar.MenuButton class="gap-0" size="lg">
 					{#snippet child({ props })}
 						<a href="/" {...props}>
-							<div class="aspect-square flex size-10 items-center justify-center">
+							<div class="aspect-square flex size-8 items-center justify-center rounded-lg">
 								{@html RustineLogo}
 							</div>
-							<div class="grid flex-1 text-left text-sm leading-tight">
+							<div class="flex-1 truncate text-center">
 								<RustineTitle />
 							</div>
 						</a>
@@ -169,10 +87,13 @@
 	</Sidebar.Header>
 	<Sidebar.Content>
 		<NavMain items={data.navMain} />
-		<NavProjects projects={data.projects} />
 		<NavSecondary class="mt-auto" items={data.navSecondary} />
 	</Sidebar.Content>
-	<Sidebar.Footer>
-		<NavUser user={data.user} />
-	</Sidebar.Footer>
+	<footer>
+		<Sidebar.Footer>
+			<LanguageSwitcher />
+			<ModeSwitcher />
+		</Sidebar.Footer>
+	</footer>
+	<Sidebar.Rail />
 </Sidebar.Root>
