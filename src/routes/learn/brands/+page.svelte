@@ -25,9 +25,9 @@
 				<Card.Description>Deploy your new project in one-click.</Card.Description>
 			</Card.Header>
 			<Card.Content>
-				<AspectRatio class="bg-muted" ratio={16 / 9}>
+				<!-- <AspectRatio class="bg-muted" ratio={16 / 9}>
 					<img alt="..." class="rounded-md object-cover" src={brand.logo} />
-				</AspectRatio>
+				</AspectRatio> -->
 			</Card.Content>
 			<Card.Footer class="flex justify-between">
 				<Button variant="outline">Cancel</Button>
