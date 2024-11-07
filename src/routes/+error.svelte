@@ -1,30 +1,20 @@
 <script lang="ts">
-	import { page } from '$app/stores';
+	import { page } from '$app/stores';	import * as Tooltip from '$lib/components/ui/tooltip/index.js';
 </script>
 
-<section class="container">
-	<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/{$page.status}">
-		<h1>{$page.status}</h1>
-	</a>
-	<h2>🧘</h2>
-	<small>it's gonna be alright</small>
-</section>
+<Tooltip.Provider>
+	<Tooltip.Root>
+		<div class="container flex min-h-[50vh] flex-col place-content-center gap-6 text-center">
+			<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/{$page.status}">
+				<h1 class="font-roboto text-6xl font-extrabold italic">
+					{$page.status}
+				</h1>
+			</a>
 
-<style>
-	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		gap: 1rem;
-		min-height: 50vh;
-		text-align: center;
-	}
-
-	section h1 {
-		font-family: 'Roboto', sans-serif;
-		font-size: 4rem;
-		font-style: italic;
-		font-weight: 900;
-		text-align: center;
-	}
-</style>
+			<Tooltip.Trigger><h2 class="animate-spin text-4xl">🌀</h2></Tooltip.Trigger>
+			<Tooltip.Content>
+				<small>it's gonna be alright</small>
+			</Tooltip.Content>
+		</div>
+	</Tooltip.Root>
+</Tooltip.Provider>

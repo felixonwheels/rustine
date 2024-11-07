@@ -8,7 +8,7 @@
 	<meta content="fix your bike" name="description" />
 </svelte:head>
 
-<h1 in:fly>{m.fix()}</h1>
+<h1 class="text-2xl font-bold" in:fly>{m.fix()}</h1>
 
 <div class="fix-grid grid w-screen">
 	{#each [...Array(1).keys()] as _}

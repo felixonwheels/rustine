@@ -8,7 +8,7 @@
 	<meta content="learn about bike maintenance" name="description" />
 </svelte:head>
 
-<h1 in:fly>{m.learn()}</h1>
+<h1 class="text-2xl font-bold" in:fly>{m.learn()}</h1>
 
 {#each [...Array(8).keys()] as _, i}
 	<article in:fly|global={{ duration: 120, delay: i * 100 }}>

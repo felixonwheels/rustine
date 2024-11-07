@@ -17,6 +17,24 @@ export type AboutTranslations = {
 	text?: string | null;
 };
 
+export type Brand = {
+	date_created?: string | null;
+	date_updated?: string | null;
+	id: number;
+	logo?: string | DirectusFiles | null;
+	name?: string | null;
+	translations: any[] | BrandTranslations[];
+	user_created?: string | DirectusUsers | null;
+	user_updated?: string | DirectusUsers | null;
+};
+
+export type BrandTranslations = {
+	brand_id?: number | Brand | null;
+	description?: string | null;
+	id: number;
+	languages_code?: string | Languages | null;
+};
+
 export type DirectusAccess = {
 	id?: string | null;
 	policy: string | DirectusPolicies;
@@ -60,6 +78,17 @@ export type DirectusCollections = {
 	translations?: unknown | null;
 	unarchive_value?: string | null;
 	versioning: boolean;
+};
+
+export type DirectusComments = {
+	collection: string | DirectusCollections;
+	comment: string;
+	date_created?: string | null;
+	date_updated?: string | null;
+	id: string;
+	item: string;
+	user_created?: string | DirectusUsers | null;
+	user_updated?: string | DirectusUsers | null;
 };
 
 export type DirectusDashboards = {
@@ -386,6 +415,7 @@ export type DirectusVersions = {
 	collection: string | DirectusCollections;
 	date_created?: string | null;
 	date_updated?: string | null;
+	delta?: unknown | null;
 	hash?: string | null;
 	id: string;
 	item: string;
@@ -428,12 +458,80 @@ export type Languages = {
 	name?: string | null;
 };
 
-export type Schema = {
+export type Tool = {
+	brand?: number | Brand | null;
+	date_created?: string | null;
+	date_updated?: string | null;
+	id: number;
+	image?: string | DirectusFiles | null;
+	model?: string | null;
+	productLink?: string | null;
+	ref?: number | ToolRef | null;
+	slug?: string | null;
+	translations: any[] | ToolTranslations[];
+	user_created?: string | DirectusUsers | null;
+	user_updated?: string | DirectusUsers | null;
+};
+
+export type ToolTranslations = {
+	description?: string | null;
+	id: number;
+	languages_code?: string | Languages | null;
+	tool_id?: number | Tool | null;
+};
+
+export type ToolCategory = {
+	date_created?: string | null;
+	date_updated?: string | null;
+	id: number;
+	slug?: string | null;
+	translations: any[] | ToolCategoryTranslations[];
+	user_created?: string | DirectusUsers | null;
+	user_updated?: string | DirectusUsers | null;
+};
+
+export type ToolCategoryTranslations = {
+	id: number;
+	languages_code?: string | Languages | null;
+	name?: string | null;
+	toolCategory_id?: number | ToolCategory | null;
+};
+
+export type ToolRef = {
+	categories: any[] | ToolRefToolCategory[];
+	date_created?: string | null;
+	date_updated?: string | null;
+	id: number;
+	image?: string | DirectusFiles | null;
+	slug?: string | null;
+	translations: any[] | ToolRefTranslations[];
+	user_created?: string | DirectusUsers | null;
+	user_updated?: string | DirectusUsers | null;
+};
+
+export type ToolRefToolCategory = {
+	id: number;
+	toolCategory_id?: number | ToolCategory | null;
+	toolRef_id?: number | ToolRef | null;
+};
+
+export type ToolRefTranslations = {
+	description?: string | null;
+	id: number;
+	languages_code?: string | Languages | null;
+	name?: string | null;
+	toolRef_id?: number | ToolRef | null;
+};
+
+export type CustomDirectusTypes = {
 	about: About;
 	about_translations: AboutTranslations[];
+	brand: Brand[];
+	brand_translations: BrandTranslations[];
 	directus_access: DirectusAccess[];
 	directus_activity: DirectusActivity[];
 	directus_collections: DirectusCollections[];
+	directus_comments: DirectusComments[];
 	directus_dashboards: DirectusDashboards[];
 	directus_extensions: DirectusExtensions[];
 	directus_fields: DirectusFields[];
@@ -460,4 +558,11 @@ export type Schema = {
 	global: Global;
 	global_translations: GlobalTranslations[];
 	languages: Languages[];
+	tool: Tool[];
+	tool_translations: ToolTranslations[];
+	toolCategory: ToolCategory[];
+	toolCategory_translations: ToolCategoryTranslations[];
+	toolRef: ToolRef[];
+	toolRef_toolCategory: ToolRefToolCategory[];
+	toolRef_translations: ToolRefTranslations[];
 };

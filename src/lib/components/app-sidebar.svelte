@@ -13,7 +13,9 @@
 	import Bug from 'lucide-svelte/icons/bug';
 	import CircleHelp from 'lucide-svelte/icons/circle-help';
 	import CodeXml from 'lucide-svelte/icons/code-xml';
+	import Hammer from 'lucide-svelte/icons/hammer';
 	import House from 'lucide-svelte/icons/house';
+	import Tag from 'lucide-svelte/icons/tag';
 	import Wrench from 'lucide-svelte/icons/wrench';
 
 	const data = {
@@ -31,7 +33,13 @@
 				items: [
 					{
 						title: m.tools(),
-						url: '/learn/tools'
+						url: '/learn/tools',
+						icon: Hammer
+					},
+					{
+						title: m.brands(),
+						url: '/learn/brands',
+						icon: Tag
 					}
 				],
 				isActive: true
@@ -53,12 +61,14 @@
 			{
 				title: m.gitlab(),
 				url: 'https://gitlab.com/rustine/rustine',
-				icon: CodeXml
+				icon: CodeXml,
+				isExternal: true
 			},
 			{
 				title: m.bug(),
 				url: 'https://gitlab.com/rustine/rustine/-/issues/new',
-				icon: Bug
+				icon: Bug,
+				isExternal: true
 			}
 		]
 	};

@@ -18,6 +18,7 @@
 			items?: {
 				title: string;
 				url: string;
+				icon: any;
 			}[];
 		}[];
 	} = $props();
@@ -57,7 +58,10 @@
 												href={subItem.url}
 												isActive={i18n.route($page.url.pathname) === subItem.url}
 											>
-												<span>{subItem.title}</span>
+												<div class="flex items-center">
+													<subItem.icon class="mr-2 size-4" />
+													<span>{subItem.title}</span>
+												</div>
 											</Sidebar.MenuSubButton>
 										</Sidebar.MenuSubItem>
 									{/each}

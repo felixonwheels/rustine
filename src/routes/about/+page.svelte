@@ -12,7 +12,7 @@
 	<meta content="About this app" name="description" />
 </svelte:head>
 
-<h1 in:fly>{m.about()}</h1>
+<h1 class="text-2xl font-bold" in:fly>{m.about()}</h1>
 
 <article>
 	{@html data.about}

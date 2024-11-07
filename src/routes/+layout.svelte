@@ -28,7 +28,7 @@
 			</header>
 
 			<main>
-				<div class="flex flex-1 flex-col gap-4 p-4 pt-0">
+				<div class="container flex flex-1 flex-col gap-4 p-4 pt-0">
 					{@render children()}
 				</div>
 			</main>

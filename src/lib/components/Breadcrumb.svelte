@@ -20,7 +20,14 @@
 	});
 
 	let crumbs: Array<{ label: string; href: string }> = $derived.by(() => {
-		let crumbs = tokens.map((t, i) => ({ label: decodeURIComponent(t), href: tokenPath[i] }));
+		let crumbs = tokens.map((t, i) => {
+			const decodedLabel = decodeURIComponent(t);
+
+			return {
+				label: decodedLabel.charAt(0).toUpperCase() + decodedLabel.slice(1),
+				href: tokenPath[i]
+			};
+		});
 
 		crumbs.unshift({ label: m.home(), href: '/' });
 
