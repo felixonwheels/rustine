@@ -1,32 +1,39 @@
 <script lang="ts">
-	import type { ComponentProps } from 'svelte';
-
 	import { page } from '$app/stores';
 	import { Separator } from '$lib/components/ui/separator/index.js';
 	import * as Sidebar from '$lib/components/ui/sidebar/index.js';
 	import { useSidebar } from '$lib/components/ui/sidebar/index.js';
 	import { i18n } from '$lib/i18n.js';
+	import * as m from '$lib/paraglide/messages.js';
+	import Bug from 'lucide-svelte/icons/bug';
+	import CircleHelp from 'lucide-svelte/icons/circle-help';
+	import CodeXml from 'lucide-svelte/icons/code-xml';
 	import ExternalLink from 'lucide-svelte/icons/external-link';
 
 	const sidebar = useSidebar();
 
-	let {
-		ref = $bindable(null),
-		items,
-		...restProps
-	}: {
-		items: {
-			title: string;
-			url: string;
-			// This should be `Component` after lucide-svelte updates types
-			// eslint-disable-next-line @typescript-eslint/no-explicit-any
-			icon: any;
-			isExternal?: boolean;
-		}[];
-	} & ComponentProps<typeof Sidebar.Group> = $props();
+	let items = [
+		{
+			title: m.about(),
+			url: '/about',
+			icon: CircleHelp
+		},
+		{
+			title: m.gitlab(),
+			url: 'https://gitlab.com/rustine/rustine',
+			icon: CodeXml,
+			isExternal: true
+		},
+		{
+			title: m.bug(),
+			url: 'https://gitlab.com/rustine/rustine/-/issues/new',
+			icon: Bug,
+			isExternal: true
+		}
+	];
 </script>
 
-<Sidebar.Group bind:ref {...restProps}>
+<Sidebar.Group class="mt-auto">
 	<Sidebar.GroupContent>
 		<Separator class={sidebar.open ? 'm-2' : 'my-2'} />
 
@@ -39,7 +46,7 @@
 						{/snippet}
 						{#snippet child({ props })}
 							<a href={item.url} {...props} target={item.isExternal ? '_blank' : ''}>
-								<item.icon />
+								<item.icon strokeWidth={1} />
 								<span>{item.title}</span>
 							</a>
 						{/snippet}

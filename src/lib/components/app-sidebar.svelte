@@ -1,6 +1,4 @@
 <script lang="ts">
-	import type { ComponentProps } from 'svelte';
-
 	import RustineLogo from '$lib/assets/rustine-logo.svg?raw';
 	import LanguageSwitcher from '$lib/components/LanguageSwitcher.svelte';
 	import ModeSwitcher from '$lib/components/ModeSwitcher.svelte';
@@ -8,75 +6,9 @@
 	import NavSecondary from '$lib/components/nav-secondary.svelte';
 	import RustineTitle from '$lib/components/RustineTitle.svelte';
 	import * as Sidebar from '$lib/components/ui/sidebar/index.js';
-	import * as m from '$lib/paraglide/messages.js';
-	import BookOpenText from 'lucide-svelte/icons/book-open-text';
-	import Bug from 'lucide-svelte/icons/bug';
-	import CircleHelp from 'lucide-svelte/icons/circle-help';
-	import CodeXml from 'lucide-svelte/icons/code-xml';
-	import Hammer from 'lucide-svelte/icons/hammer';
-	import House from 'lucide-svelte/icons/house';
-	import Tag from 'lucide-svelte/icons/tag';
-	import Wrench from 'lucide-svelte/icons/wrench';
-
-	const data = {
-		navMain: [
-			{
-				title: m.home(),
-				url: '/',
-				icon: House,
-				items: []
-			},
-			{
-				title: m.learn(),
-				url: '/learn',
-				icon: BookOpenText,
-				items: [
-					{
-						title: m.tools(),
-						url: '/learn/tools',
-						icon: Hammer
-					},
-					{
-						title: m.brands(),
-						url: '/learn/brands',
-						icon: Tag
-					}
-				],
-				isActive: true
-			},
-			{
-				title: m.fix(),
-				url: '/fix',
-				icon: Wrench,
-				items: [],
-				isActive: true
-			}
-		],
-		navSecondary: [
-			{
-				title: m.about(),
-				url: '/about',
-				icon: CircleHelp
-			},
-			{
-				title: m.gitlab(),
-				url: 'https://gitlab.com/rustine/rustine',
-				icon: CodeXml,
-				isExternal: true
-			},
-			{
-				title: m.bug(),
-				url: 'https://gitlab.com/rustine/rustine/-/issues/new',
-				icon: Bug,
-				isExternal: true
-			}
-		]
-	};
-
-	let { ref = $bindable(null), ...restProps }: ComponentProps<typeof Sidebar.Root> = $props();
 </script>
 
-<Sidebar.Root bind:ref collapsible="icon" variant="inset" {...restProps}>
+<Sidebar.Root collapsible="icon" variant="inset">
 	<Sidebar.Header>
 		<Sidebar.Menu>
 			<Sidebar.MenuItem>
@@ -96,8 +28,8 @@
 		</Sidebar.Menu>
 	</Sidebar.Header>
 	<Sidebar.Content>
-		<NavMain items={data.navMain} />
-		<NavSecondary class="mt-auto" items={data.navSecondary} />
+		<NavMain />
+		<NavSecondary />
 	</Sidebar.Content>
 	<footer>
 		<Sidebar.Footer>

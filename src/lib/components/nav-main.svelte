@@ -3,25 +3,47 @@
 	import * as Collapsible from '$lib/components/ui/collapsible/index.js';
 	import * as Sidebar from '$lib/components/ui/sidebar/index.js';
 	import { i18n } from '$lib/i18n.js';
+	import * as m from '$lib/paraglide/messages.js';
+	import BookOpenText from 'lucide-svelte/icons/book-open-text';
 	import ChevronRight from 'lucide-svelte/icons/chevron-right';
+	import Hammer from 'lucide-svelte/icons/hammer';
+	import House from 'lucide-svelte/icons/house';
+	import Tag from 'lucide-svelte/icons/tag';
+	import Wrench from 'lucide-svelte/icons/wrench';
 
-	let {
-		items
-	}: {
-		items: {
-			title: string;
-			url: string;
-			// This should be `Component` after lucide-svelte updates types
-			// eslint-disable-next-line @typescript-eslint/no-explicit-any
-			icon: any;
-			isActive?: boolean;
-			items?: {
-				title: string;
-				url: string;
-				icon: any;
-			}[];
-		}[];
-	} = $props();
+	let items = [
+		{
+			title: m.home(),
+			url: '/',
+			icon: House,
+			items: []
+		},
+		{
+			title: m.learn(),
+			url: '/learn',
+			icon: BookOpenText,
+			items: [
+				{
+					title: m.tools(),
+					url: '/learn/tools',
+					icon: Hammer
+				},
+				{
+					title: m.brands(),
+					url: '/learn/brands',
+					icon: Tag
+				}
+			],
+			isActive: true
+		},
+		{
+			title: m.fix(),
+			url: '/fix',
+			icon: Wrench,
+			items: [],
+			isActive: true
+		}
+	];
 </script>
 
 <Sidebar.Group>
@@ -36,7 +58,7 @@
 							{/snippet}
 							{#snippet child({ props })}
 								<a href={mainItem.url} {...props}>
-									<mainItem.icon />
+									<mainItem.icon strokeWidth={1} />
 									<span>{mainItem.title}</span>
 								</a>
 							{/snippet}
@@ -59,7 +81,7 @@
 												isActive={i18n.route($page.url.pathname) === subItem.url}
 											>
 												<div class="flex items-center">
-													<subItem.icon class="mr-2 size-4" />
+													<subItem.icon class="mr-2 size-4" strokeWidth={1} />
 													<span>{subItem.title}</span>
 												</div>
 											</Sidebar.MenuSubButton>

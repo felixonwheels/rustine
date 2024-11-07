@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { page } from '$app/stores';	import * as Tooltip from '$lib/components/ui/tooltip/index.js';
+	import { page } from '$app/stores';
+	import * as Tooltip from '$lib/components/ui/tooltip/index.js';
 </script>
 
 <Tooltip.Provider>

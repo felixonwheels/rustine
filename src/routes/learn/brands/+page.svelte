@@ -18,7 +18,7 @@
 <h1 class="text-2xl font-bold" in:fly>{m.brands()}</h1>
 
 <section class="grid grid-cols-1 gap-y-4 md:grid-cols-2 md:gap-2 lg:grid-cols-3 xl:grid-cols-4">
-	{#each data.brands as brand, i}
+	{#each data.brands as brand, _}
 		<Card.Root class="transition hover:shadow-md">
 			<Card.Header>
 				<Card.Title>{brand.name}</Card.Title>
