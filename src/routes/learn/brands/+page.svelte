@@ -9,7 +9,7 @@
 
 	import type { PageData } from './$types';
 
-	export let data: PageData;
+	let { data }: { data: PageData } = $props();
 </script>
 
 <svelte:head>
@@ -32,7 +32,7 @@
 								class="object-contain"
 								src={`${PUBLIC_APIURL}/assets/${brand.logo}`}
 							/>
-							<Avatar.Fallback>{brand.name[0].toUpperCase()}</Avatar.Fallback>
+							<Avatar.Fallback>{brand.name?.[0].toUpperCase() ?? '-'}</Avatar.Fallback>
 						</Avatar.Root>
 					</div>
 					<Card.Description>Deploy your new project in one-click.</Card.Description>

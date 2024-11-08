@@ -1,7 +1,8 @@
-import type { PageServerLoad } from './$types';
 import getDirectusInstance from '$lib/directus';
 import { languageTag } from '$lib/paraglide/runtime.js';
 import { readItems } from '@directus/sdk';
+
+import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async ({ fetch, depends }) => {
 	depends('paraglide:lang');

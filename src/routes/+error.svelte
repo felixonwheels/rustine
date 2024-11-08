@@ -1,12 +1,12 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import * as Tooltip from '$lib/components/ui/tooltip/index.js';
+	import * as Tooltip from '$lib/components/ui/tooltip/index.js';	import { languageTag } from '$lib/paraglide/runtime.js';
 </script>
 
 <Tooltip.Provider>
 	<Tooltip.Root>
 		<div class="container flex min-h-[50vh] flex-col place-content-center gap-6 text-center">
-			<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/{$page.status}">
+			<a href="https://developer.mozilla.org/{languageTag()}/docs/Web/HTTP/Status/{$page.status}">
 				<h1 class="font-roboto text-6xl font-extrabold italic">
 					{$page.status}
 				</h1>

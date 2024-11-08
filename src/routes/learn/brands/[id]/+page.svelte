@@ -4,11 +4,12 @@
 	import * as Avatar from '$lib/components/ui/avatar/index.js';
 	import { Button } from '$lib/components/ui/button/index.js';
 	import * as Card from '$lib/components/ui/card/index.js';
-	import * as m from '$lib/paraglide/messages.js';	import { DateRangeField } from 'bits-ui';
+	import * as m from '$lib/paraglide/messages.js';
+	import { DateRangeField } from 'bits-ui';
 
 	import type { PageData } from './$types';
 
-	export let data: PageData;
+	let { data }: { data: PageData } = $props();
 </script>
 
 <svelte:head>
