@@ -2,7 +2,6 @@
 	import { Button } from '$lib/components/ui/button/index.js';
 	import * as Card from '$lib/components/ui/card/index.js';
 	import * as m from '$lib/paraglide/messages.js';
-	import { fly } from 'svelte/transition';
 </script>
 
 <svelte:head>
@@ -10,7 +9,7 @@
 	<meta content="tools" name="description" />
 </svelte:head>
 
-<h1 class="text-2xl font-bold" in:fly>{m.tools()}</h1>
+<h1 class="text-2xl font-bold">{m.tools()}</h1>
 
 <section class="grid grid-cols-1 gap-y-4 md:grid-cols-2 md:gap-2 lg:grid-cols-3 xl:grid-cols-4">
 	{#each [...Array(4).keys()] as _, i}

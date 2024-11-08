@@ -18,7 +18,7 @@
 	<meta content="Rustine" name="description" />
 </svelte:head>
 
-<section in:fly>
+<section>
 	<div>
 		{#if sidebar.isMobile}
 			<div>

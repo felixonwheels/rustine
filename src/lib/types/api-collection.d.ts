@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-
 export type About = {
 	date_created?: string | null;
 	date_updated?: string | null;
@@ -22,6 +21,7 @@ export type Brand = {
 	date_updated?: string | null;
 	id: number;
 	logo?: string | DirectusFiles | null;
+	logo_alt?: string | null;
 	name?: string | null;
 	translations: any[] | BrandTranslations[];
 	user_created?: string | DirectusUsers | null;
@@ -503,6 +503,7 @@ export type ToolRef = {
 	date_updated?: string | null;
 	id: number;
 	image?: string | DirectusFiles | null;
+	image_alt?: string | null;
 	slug?: string | null;
 	translations: any[] | ToolRefTranslations[];
 	user_created?: string | DirectusUsers | null;

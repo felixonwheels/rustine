@@ -1,15 +1,17 @@
-import type { PageServerLoad } from './$types';
 import getDirectusInstance from '$lib/directus';
 import { languageTag } from '$lib/paraglide/runtime.js';
-import { readItems } from '@directus/sdk';
+import { readItem } from '@directus/sdk';
+import { error } from '@sveltejs/kit';
 
-export const load: PageServerLoad = async ({ fetch, depends }) => {
+import type { PageServerLoad } from './$types';
+
+export const load: PageServerLoad = async ({ params, fetch, depends }) => {
 	depends('paraglide:lang');
 
 	const directus = getDirectusInstance(fetch);
 
-	const brands = await directus.request(
-		readItems('brand', {
+	const brand = await directus.request(
+		readItem('brand', params.id, {
 			deep: {
 				translations: {
 					_filter: {
@@ -23,5 +25,9 @@ export const load: PageServerLoad = async ({ fetch, depends }) => {
 		})
 	);
 
-	return { brands: brands };
+	if (brand) {
+		return brand;
+	}
+
+	error(404);
 };
