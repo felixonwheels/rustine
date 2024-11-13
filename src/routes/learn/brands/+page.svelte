@@ -4,6 +4,7 @@
 	import * as Avatar from '$lib/components/ui/avatar/index.js';
 	import { Button } from '$lib/components/ui/button/index.js';
 	import * as Card from '$lib/components/ui/card/index.js';
+	import { i18n } from '$lib/i18n.js';
 	import * as m from '$lib/paraglide/messages.js';
 	import { fly } from 'svelte/transition';
 

@@ -18,6 +18,11 @@ export const i18n = createI18n(runtime, {
 			'en-US': '/learn/brands'
 		},
 
+		'/learn/brands/[id]': {
+			'fr-FR': '/apprendre/marques/[id]',
+			'en-US': '/learn/brands/[id]'
+		},
+
 		'/fix': {
 			'fr-FR': '/réparer',
 			'en-US': '/fix'
