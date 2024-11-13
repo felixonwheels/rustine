@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import * as Tooltip from '$lib/components/ui/tooltip/index.js';	import { languageTag } from '$lib/paraglide/runtime.js';
+	import * as Tooltip from '$lib/components/ui/tooltip/index.js';
+	import { languageTag } from '$lib/paraglide/runtime.js';
 </script>
 
 <Tooltip.Provider>

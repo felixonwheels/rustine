@@ -13,12 +13,14 @@
 
 	let items = [
 		{
+			groupLabel: null,
 			title: m.home(),
 			url: '/',
 			icon: House,
 			items: []
 		},
 		{
+			groupLabel: m.learn(),
 			title: m.learn(),
 			url: '/learn',
 			icon: BookOpenText,
@@ -37,6 +39,7 @@
 			isActive: true
 		},
 		{
+			groupLabel: m.fix(),
 			title: m.fix(),
 			url: '/fix',
 			icon: Wrench,
@@ -47,52 +50,57 @@
 </script>
 
 <Sidebar.Group>
-	<Sidebar.Menu>
-		{#each items as mainItem (mainItem.title)}
-			<Collapsible.Root open={mainItem.isActive}>
-				{#snippet child({ props })}
-					<Sidebar.MenuItem {...props}>
-						<Sidebar.MenuButton isActive={i18n.route($page.url.pathname) === mainItem.url}>
-							{#snippet tooltipContent()}
-								{mainItem.title}
-							{/snippet}
-							{#snippet child({ props })}
-								<a href={mainItem.url} {...props}>
-									<mainItem.icon strokeWidth={1} />
-									<span>{mainItem.title}</span>
-								</a>
-							{/snippet}
-						</Sidebar.MenuButton>
-						{#if mainItem.items?.length}
-							<Collapsible.Trigger>
-								{#snippet child({ props })}
-									<Sidebar.MenuAction {...props} class="data-[state=open]:rotate-90">
-										<ChevronRight />
-										<span class="sr-only">Toggle</span>
-									</Sidebar.MenuAction>
+	{#each items as mainItem (mainItem.title)}
+		{#if mainItem.groupLabel}
+			<Sidebar.GroupLabel class="mt-2">{mainItem.groupLabel}</Sidebar.GroupLabel>
+		{/if}
+		<Sidebar.GroupContent>
+			<Sidebar.Menu>
+				<Collapsible.Root open={mainItem.isActive}>
+					{#snippet child({ props })}
+						<Sidebar.MenuItem {...props}>
+							<Sidebar.MenuButton isActive={i18n.route($page.url.pathname) === mainItem.url}>
+								{#snippet tooltipContent()}
+									{mainItem.title}
 								{/snippet}
-							</Collapsible.Trigger>
-							<Collapsible.Content>
-								<Sidebar.MenuSub>
-									{#each mainItem.items as subItem (subItem.title)}
-										<Sidebar.MenuSubItem>
-											<Sidebar.MenuSubButton
-												href={subItem.url}
-												isActive={i18n.route($page.url.pathname) === subItem.url}
-											>
-												<div class="flex items-center">
-													<subItem.icon class="mr-2 size-4" strokeWidth={1} />
-													<span>{subItem.title}</span>
-												</div>
-											</Sidebar.MenuSubButton>
-										</Sidebar.MenuSubItem>
-									{/each}
-								</Sidebar.MenuSub>
-							</Collapsible.Content>
-						{/if}
-					</Sidebar.MenuItem>
-				{/snippet}
-			</Collapsible.Root>
-		{/each}
-	</Sidebar.Menu>
+								{#snippet child({ props })}
+									<a href={mainItem.url} {...props}>
+										<mainItem.icon strokeWidth={1} />
+										<span>{mainItem.title}</span>
+									</a>
+								{/snippet}
+							</Sidebar.MenuButton>
+							{#if mainItem.items?.length}
+								<Collapsible.Trigger>
+									{#snippet child({ props })}
+										<Sidebar.MenuAction {...props} class="data-[state=open]:rotate-90">
+											<ChevronRight />
+											<span class="sr-only">Toggle</span>
+										</Sidebar.MenuAction>
+									{/snippet}
+								</Collapsible.Trigger>
+								<Collapsible.Content>
+									<Sidebar.MenuSub>
+										{#each mainItem.items as subItem (subItem.title)}
+											<Sidebar.MenuSubItem>
+												<Sidebar.MenuSubButton
+													href={subItem.url}
+													isActive={i18n.route($page.url.pathname) === subItem.url}
+												>
+													<div class="flex items-center">
+														<subItem.icon class="mr-2 size-4" strokeWidth={1} />
+														<span>{subItem.title}</span>
+													</div>
+												</Sidebar.MenuSubButton>
+											</Sidebar.MenuSubItem>
+										{/each}
+									</Sidebar.MenuSub>
+								</Collapsible.Content>
+							{/if}
+						</Sidebar.MenuItem>
+					{/snippet}
+				</Collapsible.Root>
+			</Sidebar.Menu>
+		</Sidebar.GroupContent>
+	{/each}
 </Sidebar.Group>
