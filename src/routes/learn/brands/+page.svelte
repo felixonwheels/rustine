@@ -30,7 +30,7 @@
 						<Avatar.Root>
 							<Avatar.Image
 								alt={brand.logo_alt ?? ''}
-								class="object-contain"
+								class="bg-slate-300 object-contain"
 								src={`${PUBLIC_APIURL}/assets/${brand.logo}`}
 							/>
 							<Avatar.Fallback>{brand.name?.[0].toUpperCase() ?? '-'}</Avatar.Fallback>
