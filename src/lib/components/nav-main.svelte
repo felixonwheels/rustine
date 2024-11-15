@@ -13,14 +13,12 @@
 
 	let items = [
 		{
-			groupLabel: null,
 			title: m.home(),
 			url: '/',
 			icon: House,
 			items: []
 		},
 		{
-			groupLabel: m.learn(),
 			title: m.learn(),
 			url: '/learn',
 			icon: BookOpenText,
@@ -39,7 +37,6 @@
 			isActive: true
 		},
 		{
-			groupLabel: m.fix(),
 			title: m.fix(),
 			url: '/fix',
 			icon: Wrench,
@@ -51,10 +48,7 @@
 
 <Sidebar.Group>
 	{#each items as mainItem (mainItem.title)}
-		{#if mainItem.groupLabel}
-			<Sidebar.GroupLabel class="mt-2">{mainItem.groupLabel}</Sidebar.GroupLabel>
-		{/if}
-		<Sidebar.GroupContent>
+		<Sidebar.GroupContent class="mb-2">
 			<Sidebar.Menu>
 				<Collapsible.Root open={mainItem.isActive}>
 					{#snippet child({ props })}

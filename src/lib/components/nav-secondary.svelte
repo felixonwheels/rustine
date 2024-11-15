@@ -19,14 +19,14 @@
 			icon: CircleHelp
 		},
 		{
-			title: m.gitlab(),
-			url: 'https://gitlab.com/rustine/rustine',
+			title: m.github(),
+			url: 'https://github.com/omnitrogen/rustine',
 			icon: CodeXml,
 			isExternal: true
 		},
 		{
 			title: m.bug(),
-			url: 'https://gitlab.com/rustine/rustine/-/issues/new',
+			url: 'https://github.com/omnitrogen/rustine/issues/new?labels=bug',
 			icon: Bug,
 			isExternal: true
 		}
