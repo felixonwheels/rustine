@@ -1,8 +1,11 @@
+> [!NOTE]  
+> This is a work in progress. It doesn't do much for now, it's just a repo to noodle around :ramen:
+
 <a id="readme-top"></a>
 
 <div align="center">
   <a href="https://github.com/omnitrogen/rustine">
-    <img src="./src/lib/assets/rustine-logo.svg" alt="Logo" width="80" height="80">
+    <img src="./src/lib/assets/rustine-logo.svg" alt="Logo" width="200" height="200">
   </a>
 
   <h3 align="center">Rustine</h3>
