@@ -5,7 +5,7 @@ async function directusHeaders({ event, resolve }) {
 	return await resolve(event, {
 		filterSerializedResponseHeaders: (key, _) => {
 			return key.toLowerCase() === 'content-type';
-		}
+		},
 	});
 }
 

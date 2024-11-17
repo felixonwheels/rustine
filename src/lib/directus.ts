@@ -7,7 +7,8 @@ import { type LoadEvent } from '@sveltejs/kit';
 export default function getDirectusInstance(fetch: LoadEvent['fetch']) {
 	const options = { globals: { fetch } };
 
-	const directus = createDirectus<CustomDirectusTypes>(PUBLIC_APIURL, options).with(rest());
+	const directus = createDirectus<CustomDirectusTypes>(PUBLIC_APIURL, options)
+		.with(rest());
 
 	return directus;
 }

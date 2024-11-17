@@ -5,34 +5,34 @@ export const i18n = createI18n(runtime, {
 	pathnames: {
 		'/learn': {
 			'fr-FR': '/apprendre',
-			'en-US': '/learn'
+			'en-US': '/learn',
 		},
 
 		'/learn/tools': {
 			'fr-FR': '/apprendre/outils',
-			'en-US': '/learn/tools'
+			'en-US': '/learn/tools',
 		},
 
 		'/learn/brands': {
 			'fr-FR': '/apprendre/marques',
-			'en-US': '/learn/brands'
+			'en-US': '/learn/brands',
 		},
 
 		'/learn/brands/[id]': {
 			'fr-FR': '/apprendre/marques/[id]',
-			'en-US': '/learn/brands/[id]'
+			'en-US': '/learn/brands/[id]',
 		},
 
 		'/fix': {
 			'fr-FR': '/réparer',
-			'en-US': '/fix'
+			'en-US': '/fix',
 		},
 
 		'/about': {
 			'fr-FR': '/a-propos',
-			'en-US': '/about'
-		}
+			'en-US': '/about',
+		},
 	},
 	prefixDefaultLanguage: 'always',
-	defaultLanguageTag: 'fr-FR'
+	defaultLanguageTag: 'fr-FR',
 });

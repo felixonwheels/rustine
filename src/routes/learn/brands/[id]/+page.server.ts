@@ -16,13 +16,13 @@ export const load: PageServerLoad = async ({ params, fetch, depends }) => {
 				translations: {
 					_filter: {
 						languages_code: {
-							_eq: languageTag()
-						}
-					}
-				}
+							_eq: languageTag(),
+						},
+					},
+				},
 			},
-			fields: ['*', { translations: ['*'] }]
-		})
+			fields: ['*', { translations: ['*'] }],
+		}),
 	);
 
 	if (brand) {

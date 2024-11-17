@@ -15,13 +15,13 @@ export const load: PageServerLoad = async ({ fetch, depends }) => {
 				translations: {
 					_filter: {
 						languages_code: {
-							_eq: languageTag()
-						}
-					}
-				}
+							_eq: languageTag(),
+						},
+					},
+				},
 			},
-			fields: ['*', { translations: ['*'] }]
-		})
+			fields: ['*', { translations: ['*'] }],
+		}),
 	);
 
 	return { brands: brands };

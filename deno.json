@@ -1,0 +1,90 @@
+{
+	"compilerOptions": {
+		"checkJs": true,
+		"strict": true
+	},
+	"tasks": {
+		"build": "deno run -A npm:vite build",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"deploy": "dpx wrangler pages deploy build",
+		"dev": "deno run -A npm:vite dev",
+		"format": "deno fmt",
+		"lint": "deno fmt --check && deno lint",
+		"preview": "deno run -A npm:vite preview",
+		"test": "deno test",
+		"test:integration": "deno run -A npm:playwright test"
+	},
+	"imports": {
+		"$lib": "./src/lib",
+		"$lib/": "./src/lib/",
+		"$env/static/public": "./.svelte-kit/ambient.d.ts",
+		"$env/static/private": "./.svelte-kit/ambient.d.ts",
+		"$env/dynamic/public": "./.svelte-kit/ambient.d.ts",
+		"$env/dynamic/private": "./.svelte-kit/ambient.d.ts",
+		"$app/forms": "./node_modules/@sveltejs/kit/types/index.d.ts",
+		"$app/environment": "./node_modules/@sveltejs/kit/types/index.d.ts",
+		"$app/navigation": "./node_modules/@sveltejs/kit/types/index.d.ts",
+		"$app/server": "./node_modules/@sveltejs/kit/types/index.d.ts",
+		"$app/stores": "./node_modules/@sveltejs/kit/types/index.d.ts",
+		"@directus/sdk": "npm:@directus/sdk@^18.0.0",
+		"@fontsource/roboto": "npm:@fontsource/roboto@^5.1.0",
+		"mode-watcher": "npm:mode-watcher@^0.4.1",
+		"@playwright/test": "npm:@playwright/test@^1.48.2",
+		"@sveltejs/adapter-static": "npm:@sveltejs/adapter-static@^3.0.6",
+		"@sveltejs/kit": "npm:@sveltejs/kit@^2.7.7",
+		"@sveltejs/vite-plugin-svelte": "npm:@sveltejs/vite-plugin-svelte@4.0.0",
+		"@tailwindcss/aspect-ratio": "npm:@tailwindcss/aspect-ratio@^0.4.2",
+		"@tailwindcss/container-queries": "npm:@tailwindcss/container-queries@^0.1.1",
+		"@tailwindcss/forms": "npm:@tailwindcss/forms@^0.5.9",
+		"@tailwindcss/typography": "npm:@tailwindcss/typography@^0.5.15",
+		"@types/eslint": "npm:@types/eslint@^9.6.1",
+		"autoprefixer": "npm:autoprefixer@^10.4.20",
+		"bits-ui": "npm:bits-ui@1.0.0-next.46",
+		"clsx": "npm:clsx@^2.1.1",
+		"globals": "npm:globals@^15.12.0",
+		"svelte": "npm:svelte@^5.1.11",
+		"svelte-check": "npm:svelte-check@^4.0.5",
+		"tailwind-merge": "npm:tailwind-merge@^2.5.4",
+		"tailwind-variants": "npm:tailwind-variants@^0.2.1",
+		"tailwindcss": "npm:tailwindcss@^3.4.14",
+		"tailwindcss-animate": "npm:tailwindcss-animate@^1.0.7",
+		"tslib": "npm:tslib@^2.8.1",
+		"typescript": "npm:typescript@^5.6.3",
+		"vaul-svelte": "npm:vaul-svelte@1.0.0-next.1",
+		"vite": "npm:vite@^5.4.10",
+		"vitest": "npm:vitest@^2.1.4",
+		"wrangler": "npm:wrangler@^3.85.0"
+	},
+	"nodeModulesDir": "auto",
+	"lint": {
+		"include": ["src/"],
+		"rules": {
+			"tags": ["recommended"]
+		}
+	},
+	"fmt": {
+		"useTabs": true,
+		"lineWidth": 80,
+		"indentWidth": 4,
+		"semiColons": true,
+		"singleQuote": true,
+		"proseWrap": "preserve",
+		"include": ["."]
+	},
+	"exclude": [
+		"**/.DS_Store",
+		"**/node_modules",
+		"build",
+		".svelte-kit",
+		"package",
+		"**/.env",
+		"**/.env.*",
+		"!**/.env.example",
+		"**/pnpm-lock.yaml",
+		"**/package-lock.json",
+		"**/yarn.lock",
+		"directus",
+		".vite"
+	]
+}

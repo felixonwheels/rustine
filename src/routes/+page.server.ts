@@ -16,21 +16,22 @@ export const load: PageServerLoad = async ({ fetch, depends }) => {
 					_filter: {
 						_and: [
 							{
-								languages_code: { _eq: languageTag() }
-							}
-						]
-					}
-				}
+								languages_code: { _eq: languageTag() },
+							},
+						],
+					},
+				},
 			},
 			fields: ['*', { translations: ['*'] }],
-			limit: 1
-		})
+			limit: 1,
+		}),
 	);
 
 	return {
 		global: {
 			title: global?.translations![0]?.title?.blocks[0]?.data?.html,
-			description: global?.translations![0]?.description?.blocks[0]?.data?.html
-		}
+			description: global?.translations![0]?.description?.blocks[0]?.data
+				?.html,
+		},
 	};
 };

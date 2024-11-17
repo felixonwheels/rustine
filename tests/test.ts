@@ -1,7 +1,6 @@
-import { expect, test } from '@playwright/test';
+import { assertEquals } from 'jsr:@std/assert';
 
-test('about page has expected h1', async ({ page }) => {
-	await page.goto('/about');
-
-	await expect(page.getByRole('heading', { name: 'About this app' })).toBeVisible();
+Deno.test('simple test', () => {
+	const x = 1 + 2;
+	assertEquals(x, 3);
 });

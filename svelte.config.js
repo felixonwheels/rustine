@@ -6,8 +6,8 @@ const config = {
 	preprocess: [vitePreprocess({})],
 	kit: {
 		adapter: adapter({
-			pages: 'build'
-		})
-	}
+			pages: 'build',
+		}),
+	},
 };
 export default config;

@@ -8,9 +8,11 @@ export class IsMobile {
 	constructor() {
 		$effect(() => {
 			return untrack(() => {
-				const mql = window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT - 1}px)`);
+				const mql = globalThis.matchMedia(
+					`(max-width: ${MOBILE_BREAKPOINT - 1}px)`,
+				);
 				const onChange = () => {
-					this.#current = window.innerWidth < MOBILE_BREAKPOINT;
+					this.#current = globalThis.innerWidth < MOBILE_BREAKPOINT;
 				};
 				mql.addEventListener('change', onChange);
 				onChange();

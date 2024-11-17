@@ -1,5 +1,6 @@
-> [!NOTE]  
-> This is a work in progress. It doesn't do much for now, it's just a repo to noodle around :ramen:
+> [!NOTE]\
+> This is a work in progress. It doesn't do much for now, it's just a repo to
+> noodle around :ramen:
 
 <a id="readme-top"></a>
 
@@ -8,9 +9,9 @@
     <img src="./src/lib/assets/rustine-logo.svg" alt="Logo" width="200" height="200">
   </a>
 
-  <h3 align="center">Rustine</h3>
+<h3 align="center">Rustine</h3>
 
-  <p align="center">
+<p align="center">
     Tool to help you fix your bike in an easy way!
     <br />
     <a href="https://github.com/omnitrogen/rustine/wiki"><strong>Explore the wiki</strong></a>
@@ -46,10 +47,13 @@
 
 ## Contributing
 
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+Contributions are what make the open source community such an amazing place to
+learn, inspire, and create. Any contributions you make are **greatly
+appreciated**.
 
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
+If you have a suggestion that would make this better, please fork the repo and
+create a pull request. You can also simply open an issue with the tag
+"enhancement". Don't forget to give the project a star! Thanks again!
 
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
