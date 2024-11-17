@@ -2,6 +2,11 @@
 	"$schema": "https://inlang.com/schema/inlang-message-format",
 
 	"home": "Accueil",
+	"titleStart": "roulez. cassez. ",
+	"titleMark": "réparez votre votre vélo.",
+	"titleEnd": " recommencez.",
+	"learnButton": "En apprendre plus sur votre vélo",
+	"fixButton": "Réparer votre vélo",
 
 	"learn": "Apprendre",
 	"tools": "Outils",
