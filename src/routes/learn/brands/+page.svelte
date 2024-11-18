@@ -23,7 +23,7 @@
 <section class="grid grid-cols-1 gap-2 md:grid-cols-2 md:gap-4 lg:grid-cols-3 xl:grid-cols-4">
 	{#each data.brands as brand}
 		<a href="/learn/brands/{brand.id}">
-			<Card.Root class=" transition hover:shadow-md">
+			<Card.Root class="transition hover:shadow-md">
 				<Card.Content class="flex flex-col px-6 py-4">
 					<div class="flex flex-row items-center justify-between">
 						<Card.Title>{brand.name}</Card.Title>

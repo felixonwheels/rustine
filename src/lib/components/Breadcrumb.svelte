@@ -40,14 +40,14 @@
 		<Breadcrumb.Root>
 			<Breadcrumb.List>
 				{#each crumbs as c, i}
-					<Breadcrumb.Item class="hidden md:block">
+					<Breadcrumb.Item>
 						{#if i == crumbs.length - 1}
 							<Breadcrumb.Page>{c.label}</Breadcrumb.Page>
 						{:else}
 							<Breadcrumb.Link href={c.href}>{c.label}</Breadcrumb.Link>
 						{/if}
 					</Breadcrumb.Item>
-					{#if i < crumbs.length - 1}<Breadcrumb.Separator class="hidden md:block" />{/if}
+					{#if i < crumbs.length - 1}<Breadcrumb.Separator />{/if}
 				{/each}
 			</Breadcrumb.List>
 		</Breadcrumb.Root>

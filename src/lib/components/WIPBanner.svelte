@@ -1,8 +1,7 @@
 <div
-	class="flex place-content-center gap-x-6 overflow-hidden bg-gradient-to-r from-primary/70 to-primary/30 p-2 text-center shadow-md md:rounded-t-xl"
+	class="flex place-content-center bg-destructive p-2 text-center text-destructive-foreground shadow-md md:rounded-t-xl"
 >
-	<div class="absolute w-full bg-gradient-to-r from-rustine-orange to-rustine-indigo"></div>
-	<div class="text-sm/6 opacity-100">
+	<div class="font-bold">
 		⚠️ This is a work in progress. It doesn't do much for now, I'm just noodling around 🍜
 	</div>
 </div>

@@ -445,11 +445,11 @@ export type Global = {
 };
 
 export type GlobalTranslations = {
-	description?: string | null;
 	global_id?: number | Global | null;
 	id: number;
 	languages_code?: string | Languages | null;
-	name?: string | null;
+	subtitle?: string | null;
+	subtitle_description?: string | null;
 	title?: string | null;
 };
 

@@ -1,34 +1,69 @@
 <script lang="ts">
-	import { Button } from '$lib/components/ui/button/index.js';
+	import * as Card from '$lib/components/ui/card/index.js';
 	import * as m from '$lib/paraglide/messages.js';
-	import { Wrench } from 'lucide-svelte';
+	import BookOpenText from 'lucide-svelte/icons/book-open-text';
+	import Hammer from 'lucide-svelte/icons/hammer';
+	import Users from 'lucide-svelte/icons/users';
+	import Wrench from 'lucide-svelte/icons/wrench';
+
+	let { subtitle, subtitle_description } = $props();
+
+	let features = [
+		{
+			icon: Wrench,
+			href: '/fix',
+			title: 'featuresFixTitle',
+			subtitle: 'featuresFixSubtitle'
+		},
+		{
+			icon: BookOpenText,
+			href: '/learn',
+			title: 'featuresLearnTitle',
+			subtitle: 'featuresLearnSubtitle'
+		},
+		{
+			icon: Users,
+			href: '/',
+			title: 'featuresRepairCafeTitle',
+			subtitle: 'featuresRepairCafeSubtitle'
+		},
+		{
+			icon: Hammer,
+			href: '/learn/tools',
+			title: 'featuresToolsTitle',
+			subtitle: 'featuresToolsSubtitle'
+		}
+	];
 </script>
 
-<div class="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
-	<Button class="flex items-center justify-center gap-1" href="/learn" variant="outline"
-		>{m.learnButton()}</Button
-	>
-	<Button class="flex items-center justify-center gap-1" href="/fix">{m.fixButton()}</Button>
-</div>
-
 <div class="mt-16">
-	<h2 class="text-4xl font-bold lg:text-5xl lg:tracking-tight">
-		Everything you need to fix your bike
+	<h2 class="m-auto max-w-lg text-4xl font-bold lg:text-center lg:text-5xl">
+		{subtitle}
 	</h2>
-	<p class="mt-4 text-lg text-slate-600">a very convincing description</p>
+	<p class="m-auto mt-4 max-w-lg text-lg text-slate-500 dark:text-slate-400 lg:text-center">
+		{subtitle_description}
+	</p>
 </div>
 
-<div class="mt-16 grid gap-16 sm:grid-cols-2 xl:grid-cols-3">
-	{#each [...Array(8).keys()] as _, i}
-		<div class="flex items-start gap-4">
-			<div class="mt-1 h-8 w-8 shrink-0 rounded-full bg-black p-2">
-				<Wrench />
-			</div>
-			<div>
-				<h3 class="text-lg font-semibold">hehe</h3>
-				{' '}
-				<p class="mt-2 leading-relaxed text-slate-500">plouf</p>
-			</div>
-		</div>
+<div class="mx-auto mt-16 grid gap-4 sm:grid-cols-2 md:gap-16 xl:grid-cols-3">
+	{#each features as feature (feature.title)}
+		<a href={feature.href}>
+			<Card.Root class="flex transition hover:shadow-md">
+				<Card.Content>
+					<div class="flex items-center gap-4">
+						<div
+							class="place-content-center rounded-md bg-primary p-2 text-primary-foreground shadow"
+						>
+							<feature.icon />
+						</div>
+						<h3 class="text-md font-semibold md:text-lg">
+							{m[feature.title as keyof typeof m]()}
+						</h3>
+					</div>
+					<Card.Description class="mt-4">{m[feature.subtitle as keyof typeof m]()}</Card.Description
+					>
+				</Card.Content>
+			</Card.Root>
+		</a>
 	{/each}
 </div>
