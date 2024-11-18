@@ -2,9 +2,9 @@
 	"$schema": "https://inlang.com/schema/inlang-message-format",
 
 	"home": "Home",
-	"titleStart": "ride. break. ",
-	"titleMark": "repair your bike.",
-	"titleEnd": " repeat.",
+	"titleStart": "Ride. Break. ",
+	"titleMark": "Repair.",
+	"titleEnd": " Repeat.",
 	"learnButton": "Learn more about your bike",
 	"fixButton": "Fix your bike",
 

@@ -7,7 +7,7 @@
 	import { i18n } from '$lib/i18n';
 	import { ParaglideJS } from '@inlang/paraglide-sveltekit';
 	import { ModeWatcher } from 'mode-watcher';
-	import '@fontsource/roboto/900.css';
+	import '@fontsource/pacifico';
 
 	import '../app.css';
 

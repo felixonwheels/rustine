@@ -27,10 +27,5 @@ export const load: PageServerLoad = async ({ fetch, depends }) => {
 		})
 	);
 
-	return {
-		global: {
-			title: global?.translations![0]?.title?.blocks[0]?.data?.html,
-			description: global?.translations![0]?.description?.blocks[0]?.data?.html
-		}
-	};
+	return global?.translations![0];
 };
