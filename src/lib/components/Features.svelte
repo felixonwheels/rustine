@@ -36,34 +36,34 @@
 	];
 </script>
 
-<div class="mt-16">
-	<h2 class="m-auto max-w-lg text-4xl font-bold lg:text-center lg:text-5xl">
-		{subtitle}
-	</h2>
-	<p class="m-auto mt-4 max-w-lg text-lg text-slate-500 dark:text-slate-400 lg:text-center">
-		{subtitle_description}
-	</p>
-</div>
+<h2 class="m-auto mt-16 max-w-lg text-4xl font-bold lg:text-center lg:text-5xl">
+	{subtitle}
+</h2>
 
-<div class="mx-auto mt-16 grid gap-4 sm:grid-cols-2 md:gap-16 xl:grid-cols-3">
-	{#each features as feature (feature.title)}
-		<a href={feature.href}>
-			<Card.Root class="flex transition hover:shadow-md">
-				<Card.Content>
-					<div class="flex items-center gap-4">
+<p class="m-auto mt-4 max-w-lg text-lg text-slate-500 dark:text-slate-400 lg:text-center">
+	{subtitle_description}
+</p>
+
+<div class="flex place-content-center content-center items-center">
+	<div class="my-4 columns-1 gap-2 sm:columns-2 md:my-8 xl:columns-4">
+		{#each features as feature (feature.title)}
+			<a href={feature.href}>
+				<Card.Root class="my-4 flex break-inside-avoid transition-shadow hover:shadow-md sm:m-4">
+					<Card.Content>
 						<div
-							class="place-content-center rounded-md bg-primary p-2 text-primary-foreground shadow"
+							class="h-10 w-10 place-content-center rounded-md bg-primary p-2 text-primary-foreground shadow"
 						>
-							<feature.icon />
+							<feature.icon class="h-full w-full" />
 						</div>
-						<h3 class="text-md font-semibold md:text-lg">
+						<h3 class="text-md mt-2 font-semibold md:text-lg">
 							{m[feature.title as keyof typeof m]()}
 						</h3>
-					</div>
-					<Card.Description class="mt-4">{m[feature.subtitle as keyof typeof m]()}</Card.Description
-					>
-				</Card.Content>
-			</Card.Root>
-		</a>
-	{/each}
+						<Card.Description class="mt-4">
+							{m[feature.subtitle as keyof typeof m]()}
+						</Card.Description>
+					</Card.Content>
+				</Card.Root>
+			</a>
+		{/each}
+	</div>
 </div>

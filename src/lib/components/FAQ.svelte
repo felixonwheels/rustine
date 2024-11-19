@@ -18,13 +18,11 @@
 	];
 </script>
 
-<div class="mt-16">
-	<h2 class="m-auto max-w-lg text-4xl font-bold lg:text-center lg:text-5xl">
-		{m.faq()}
-	</h2>
-</div>
+<h2 class="m-auto mt-16 max-w-lg text-4xl font-bold lg:text-center lg:text-5xl">
+	{m.faq()}
+</h2>
 
-<div class="m-2 flex flex-1 place-content-center md:m-6">
+<div class="m-2 mb-24 flex flex-1 place-content-center md:m-6">
 	<Accordion.Root class="min-w-full" type="multiple">
 		{#each items as item (item.title)}
 			<Accordion.Item value={item.title}>
