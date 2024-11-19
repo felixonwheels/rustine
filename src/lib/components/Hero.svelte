@@ -13,7 +13,7 @@
 </div>
 
 <h1
-	class="z-5 isolate mx-auto mt-6 inline-block bg-gradient-to-r from-primary to-rustine-indigo bg-clip-text px-2 text-center font-[Pacifico] text-5xl font-bold text-primary text-transparent drop-shadow-md md:text-7xl xl:text-8xl"
+	class="z-5 isolate mx-auto mt-6 inline-block bg-gradient-to-r from-primary to-rustine-indigo bg-clip-text px-2 text-center font-[Pacifico] text-5xl font-bold text-transparent drop-shadow-md md:text-7xl xl:text-8xl"
 >
 	{title}
 </h1>
