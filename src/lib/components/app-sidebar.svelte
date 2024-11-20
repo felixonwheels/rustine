@@ -14,12 +14,14 @@
 				<Sidebar.MenuButton class="group gap-0" size="lg">
 					{#snippet child({ props })}
 						<a href="/" {...props}>
-							<div class="aspect-square flex size-10 items-center justify-center rounded-lg">
+							<div
+								class="aspect-square hidden size-8 truncate text-center group-data-[collapsible=icon]:inline-block"
+							>
 								{@html RustineLogo}
 							</div>
-							<div class="flex-1 truncate text-center">
+							<div class="flex-1 truncate text-center group-data-[collapsible=icon]:hidden">
 								<h1
-									class="group-hover:duration-400 mx-2 pr-2 font-[Pacifico] text-3xl font-bold group-hover:bg-gradient-to-r group-hover:from-primary group-hover:to-rustine-indigo group-hover:bg-clip-text group-hover:text-transparent group-hover:transition-colors group-hover:ease-in-out md:text-4xl"
+									class="group-hover:duration-400 mx-2 pr-2 font-[Pacifico] text-4xl font-bold group-hover:bg-gradient-to-r group-hover:from-primary group-hover:to-rustine-indigo group-hover:bg-clip-text group-hover:text-transparent group-hover:transition-colors group-hover:ease-in-out"
 								>
 									Rustine
 								</h1>
