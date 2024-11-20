@@ -15,7 +15,7 @@
 					{#snippet child({ props })}
 						<a href="/" {...props}>
 							<div
-								class="aspect-square hidden size-8 truncate text-center group-data-[collapsible=icon]:inline-block"
+								class="aspect-square hidden size-8 animate-[spin_1.5s_ease-out_1_0s] truncate text-center group-data-[collapsible=icon]:inline-block"
 							>
 								{@html RustineLogo}
 							</div>
