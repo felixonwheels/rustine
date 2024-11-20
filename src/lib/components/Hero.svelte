@@ -47,7 +47,7 @@
 		}}
 	>
 		<h1
-			class="z-5 isolate mx-auto mt-12 inline-block bg-gradient-to-r from-primary to-rustine-indigo bg-clip-text px-2 text-center font-[Pacifico] text-5xl font-bold text-transparent drop-shadow-md md:text-7xl xl:text-8xl"
+			class="z-5 isolate mx-auto mt-12 inline-block bg-gradient-to-r from-primary to-rustine-indigo bg-clip-text px-2 text-center font-[Pacifico] text-5xl font-bold text-transparent drop-shadow-md md:mt-24 md:text-7xl xl:text-8xl"
 			in:slide={{
 				delay: transition_delay_start + 1 * transition_delay_step,
 				axis: 'y',
@@ -88,7 +88,7 @@
 		}}
 	>
 		<div
-			class="mt-12 flex flex-col justify-center gap-3 sm:my-12 sm:flex-row sm:gap-6"
+			class="mt-12 flex flex-col justify-center gap-3 sm:my-12 sm:flex-row sm:gap-6 md:mt-24"
 			in:slide={{
 				delay: transition_delay_start + 3 * transition_delay_step,
 				axis: 'y',

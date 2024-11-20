@@ -39,7 +39,7 @@
 		}}
 	>
 		<h2
-			class="m-auto mt-16 max-w-lg text-4xl font-bold lg:text-center lg:text-5xl"
+			class="m-auto mt-24 max-w-lg text-4xl font-bold md:mt-32 lg:text-center lg:text-5xl"
 			in:slide={{
 				delay: transition_delay_start + 7 * transition_delay_step,
 				axis: 'y',
