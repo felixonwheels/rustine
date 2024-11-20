@@ -76,3 +76,7 @@
 .lucide * {
 	vector-effect: non-scaling-stroke;
 }
+
+body {
+	overflow-y: scroll;
+}

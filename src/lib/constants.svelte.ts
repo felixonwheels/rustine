@@ -1,4 +1,4 @@
-import { backOut, cubicOut } from 'svelte/easing';
+import { backOut } from 'svelte/easing';
 
 export const transition_delay_start = 0;
 export const transition_delay_step = 100;
