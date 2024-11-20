@@ -1,10 +1,7 @@
 <script lang="ts">
 	import * as Card from '$lib/components/ui/card/index.js';
 	import * as m from '$lib/paraglide/messages.js';
-	import BookOpenText from 'lucide-svelte/icons/book-open-text';
-	import Hammer from 'lucide-svelte/icons/hammer';
 	import LockOpen from 'lucide-svelte/icons/lock-open';
-	import Users from 'lucide-svelte/icons/users';
 
 	let { manifesto_title, manifesto_description } = $props();
 

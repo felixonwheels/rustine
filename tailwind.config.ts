@@ -21,8 +21,7 @@ const config: Config = {
 		},
 		extend: {
 			colors: {
-				'rustine-orange': '#f36d00',
-				'rustine-indigo': '#655cd6',
+				'rustine-indigo': 'hsl(var(--rustine-indigo) / <alpha-value>)',
 				border: 'hsl(var(--border) / <alpha-value>)',
 				input: 'hsl(var(--input) / <alpha-value>)',
 				ring: 'hsl(var(--ring) / <alpha-value>)',

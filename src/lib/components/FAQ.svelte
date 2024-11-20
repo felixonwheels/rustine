@@ -13,9 +13,7 @@
 
 	let visible = $state(false);
 
-	onMount(() => {
-		visible = true;
-	});
+	onMount(() => (visible = true));
 
 	let items = [
 		{

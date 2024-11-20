@@ -1,5 +1,4 @@
 <script lang="ts">
-	import * as Card from '$lib/components/ui/card/index.js';
 	import {
 		transition_delay_start,
 		transition_delay_step,
@@ -8,6 +7,7 @@
 		transition_easing
 	} from '$lib/constants.svelte';
 	import * as m from '$lib/paraglide/messages.js';
+	import { cn } from '$lib/utils';
 	import BookOpenText from 'lucide-svelte/icons/book-open-text';
 	import Hammer from 'lucide-svelte/icons/hammer';
 	import Users from 'lucide-svelte/icons/users';
@@ -17,9 +17,7 @@
 
 	let visible = $state(false);
 
-	onMount(() => {
-		visible = true;
-	});
+	onMount(() => (visible = true));
 
 	let { subtitle, subtitle_description } = $props();
 
@@ -98,7 +96,7 @@
 		}}
 	>
 		<div
-			class="my-4 grow columns-1 gap-2 sm:columns-2 md:my-8 xl:columns-4"
+			class="mt-8 w-full"
 			in:slide={{
 				delay: transition_delay_start + 6 * transition_delay_step,
 				axis: 'y',
@@ -106,25 +104,37 @@
 				easing: transition_easing
 			}}
 		>
-			{#each features as feature (feature.title)}
-				<a href={feature.href}>
-					<Card.Root class="my-4 flex break-inside-avoid transition-shadow hover:shadow-md sm:m-4">
-						<Card.Content>
+			<div class="grid gap-6 md:grid-cols-6">
+				{#each features as feature, i (feature.title)}
+					<div
+						class={cn(
+							'rounded-lg',
+							i % 4 == 0 && 'md:col-span-2',
+							i % 4 == 1 && 'md:col-span-4 md:col-start-3',
+							i % 4 == 2 && 'md:col-span-4',
+							i % 4 == 3 && 'md:col-span-2 md:col-start-5'
+						)}
+					>
+						<a href={feature.href}>
 							<div
-								class="h-10 w-10 place-content-center rounded-md bg-primary p-2 text-primary-foreground shadow"
+								class="text-md flex h-full w-full flex-col items-center justify-center rounded-lg border border-border bg-card p-4 text-card-foreground shadow-sm transition-shadow duration-300 ease-in-out hover:shadow-md"
 							>
-								<feature.icon class="h-full w-full" />
+								<div
+									class="h-10 w-10 place-content-center rounded-md bg-primary p-2 text-primary-foreground shadow"
+								>
+									<feature.icon class="h-full w-full" />
+								</div>
+								<h3 class="text-md mt-2 font-semibold md:text-lg">
+									{m[feature.title as keyof typeof m]()}
+								</h3>
+								<p class="mt-2 text-center text-sm text-muted-foreground">
+									{m[feature.subtitle as keyof typeof m]()}
+								</p>
 							</div>
-							<h3 class="text-md mt-2 font-semibold md:text-lg">
-								{m[feature.title as keyof typeof m]()}
-							</h3>
-							<Card.Description class="mt-4">
-								{m[feature.subtitle as keyof typeof m]()}
-							</Card.Description>
-						</Card.Content>
-					</Card.Root>
-				</a>
-			{/each}
+						</a>
+					</div>
+				{/each}
+			</div>
 		</div>
 	</div>
 {/if}

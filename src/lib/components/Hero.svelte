@@ -16,9 +16,7 @@
 
 	let visible = $state(false);
 
-	onMount(() => {
-		visible = true;
-	});
+	onMount(() => (visible = true));
 </script>
 
 {#if visible}
@@ -49,7 +47,7 @@
 		}}
 	>
 		<h1
-			class="z-5 isolate mx-auto mt-6 inline-block bg-gradient-to-r from-primary to-rustine-indigo bg-clip-text px-2 text-center font-[Pacifico] text-5xl font-bold text-transparent drop-shadow-md md:text-7xl xl:text-8xl"
+			class="z-5 isolate mx-auto mt-12 inline-block bg-gradient-to-r from-primary to-rustine-indigo bg-clip-text px-2 text-center font-[Pacifico] text-5xl font-bold text-transparent drop-shadow-md md:text-7xl xl:text-8xl"
 			in:slide={{
 				delay: transition_delay_start + 1 * transition_delay_step,
 				axis: 'y',
@@ -68,7 +66,7 @@
 		}}
 	>
 		<h2
-			class="mt-6 text-center text-xl font-bold text-slate-500 dark:text-slate-400 md:text-2xl xl:text-3xl"
+			class="mt-6 text-center text-xl font-bold md:text-2xl xl:text-3xl"
 			in:slide={{
 				delay: transition_delay_start + 2 * transition_delay_step,
 				axis: 'y',
@@ -77,7 +75,7 @@
 			}}
 		>
 			{m.titleStart()}<mark
-				class="bg-gradient-to-r from-rustine-orange to-rustine-indigo bg-clip-text not-italic text-transparent"
+				class="bg-gradient-to-r from-primary to-rustine-indigo bg-clip-text not-italic text-transparent"
 				>{m.titleMark()}</mark
 			>{m.titleEnd()}
 		</h2>
@@ -90,7 +88,7 @@
 		}}
 	>
 		<div
-			class="mt-6 flex flex-col justify-center gap-3 sm:my-12 sm:flex-row sm:gap-6"
+			class="mt-12 flex flex-col justify-center gap-3 sm:my-12 sm:flex-row sm:gap-6"
 			in:slide={{
 				delay: transition_delay_start + 3 * transition_delay_step,
 				axis: 'y',
