@@ -5,10 +5,12 @@
 
 <div align="center">
   <a href="https://github.com/omnitrogen/rustine">
-    <img src="./src/lib/assets/rustine-logo.svg" alt="Logo" width="200" height="200">
+    <img src="./src/lib/assets/rustine-logo.svg" alt="Rustine logo which represents a tyre patch" width="200" height="200">
   </a>
 
-  <h3 align="center">Rustine</h3>
+  <h1 align="center">
+    <img src="./src/lib/assets/rustine-pacifico.png" alt="Rustine lettering in Pacifico font with a gradient from left to right, from orange to cool purple">
+  </h1>
 
   <p align="center">
     Tool to help you fix your bike in an easy way!
