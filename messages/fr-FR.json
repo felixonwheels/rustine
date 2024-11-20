@@ -1,6 +1,7 @@
 {
 	"$schema": "https://inlang.com/schema/inlang-message-format",
 
+	"wip": "⚠️ Ceci est un travail en cours. Ça ne fait pas grand-chose pour le moment, je suis juste en train de bricoler 🔧",
 	"home": "Accueil",
 	"titleStart": "Roulez. Cassez. ",
 	"titleMark": "Réparez.",
