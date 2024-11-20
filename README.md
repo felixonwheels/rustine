@@ -9,7 +9,7 @@
   </a>
 
   <h1 align="center">
-    <img src="./src/lib/assets/rustine-pacifico.png" alt="Rustine lettering in Pacifico font with a gradient from left to right, from orange to cool purple">
+    <img src="./src/lib/assets/rustine-pacifico.png" alt="Rustine lettering in Pacifico font with a gradient from left to right, from orange to cool purple" style="width: 20rem;">
   </h1>
 
   <p align="center">
