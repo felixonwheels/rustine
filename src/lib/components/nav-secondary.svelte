@@ -40,7 +40,11 @@
 		<Sidebar.Menu>
 			{#each items as item (item.title)}
 				<Sidebar.MenuItem>
-					<Sidebar.MenuButton isActive={i18n.route($page.url.pathname) === item.url} size="sm">
+					<Sidebar.MenuButton
+						isActive={i18n.route($page.url.pathname) === item.url}
+						onclick={() => sidebar.setOpenMobile(false)}
+						size="sm"
+					>
 						{#snippet tooltipContent()}
 							{item.title}
 						{/snippet}

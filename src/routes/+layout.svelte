@@ -31,11 +31,9 @@
 				</div>
 			</header>
 
-			<main>
-				<div class="container flex flex-1 flex-col gap-4 p-4 pt-0">
-					{@render children()}
-				</div>
-			</main>
+			<div class="container flex flex-1 flex-col gap-4 p-4 pt-0">
+				{@render children()}
+			</div>
 		</Sidebar.Inset>
 	</Sidebar.Provider>
 </ParaglideJS>

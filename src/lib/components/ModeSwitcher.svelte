@@ -2,9 +2,9 @@
 	import { Button } from '$lib/components/ui/button/index.js';
 	import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index.js';
 	import * as m from '$lib/paraglide/messages.js';
+	import Monitor from 'lucide-svelte/icons/monitor';
 	import Moon from 'lucide-svelte/icons/moon';
 	import Sun from 'lucide-svelte/icons/sun';
-	import SunMoon from 'lucide-svelte/icons/sun-moon';
 	import { resetMode, setMode } from 'mode-watcher';
 </script>
 
@@ -31,7 +31,7 @@
 			<span>{m.themeDark()}</span>
 		</DropdownMenu.Item>
 		<DropdownMenu.Item onclick={() => resetMode()}>
-			<SunMoon class="mr-2 size-4" />
+			<Monitor class="mr-2 size-4" />
 			<span>{m.themeSystem()}</span>
 		</DropdownMenu.Item>
 	</DropdownMenu.Content>

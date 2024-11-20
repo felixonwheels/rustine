@@ -2,6 +2,7 @@
 	import { page } from '$app/stores';
 	import * as Collapsible from '$lib/components/ui/collapsible/index.js';
 	import * as Sidebar from '$lib/components/ui/sidebar/index.js';
+	import { useSidebar } from '$lib/components/ui/sidebar/index.js';
 	import { i18n } from '$lib/i18n.js';
 	import * as m from '$lib/paraglide/messages.js';
 	import BookOpenText from 'lucide-svelte/icons/book-open-text';
@@ -10,6 +11,8 @@
 	import House from 'lucide-svelte/icons/house';
 	import Tag from 'lucide-svelte/icons/tag';
 	import Wrench from 'lucide-svelte/icons/wrench';
+
+	const sidebar = useSidebar();
 
 	let items = [
 		{
@@ -53,7 +56,10 @@
 				<Collapsible.Root open={mainItem.isActive}>
 					{#snippet child({ props })}
 						<Sidebar.MenuItem {...props}>
-							<Sidebar.MenuButton isActive={i18n.route($page.url.pathname) === mainItem.url}>
+							<Sidebar.MenuButton
+								isActive={i18n.route($page.url.pathname) === mainItem.url}
+								onclick={() => sidebar.setOpenMobile(false)}
+							>
 								{#snippet tooltipContent()}
 									{mainItem.title}
 								{/snippet}
@@ -80,6 +86,7 @@
 												<Sidebar.MenuSubButton
 													href={subItem.url}
 													isActive={i18n.route($page.url.pathname) === subItem.url}
+													onclick={() => sidebar.setOpenMobile(false)}
 												>
 													<div class="flex items-center">
 														<subItem.icon class="mr-2 size-4" strokeWidth={1} />

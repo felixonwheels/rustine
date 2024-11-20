@@ -25,5 +25,21 @@ export const load: PageServerLoad = async ({ fetch, depends }) => {
 		})
 	);
 
-	return { about: about.translations![0].text };
+	const global = await directus.request(
+		readSingleton('global', {
+			deep: {
+				translations: {
+					_filter: {
+						languages_code: {
+							_eq: languageTag()
+						}
+					}
+				}
+			},
+			fields: ['*', { translations: ['*'] }],
+			limit: 1
+		})
+	);
+
+	return { about: about.translations![0].text, manifesto: global.translations![0] };
 };
