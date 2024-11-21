@@ -4,7 +4,7 @@
 
 <svelte:head>
 	<title>{m.fix()}</title>
-	<meta content="fix your bike" name="description" />
+	<meta content={m.fix()} name="description" />
 </svelte:head>
 
 <h1 class="text-2xl font-bold">{m.fix()}</h1>

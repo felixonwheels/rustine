@@ -23,6 +23,21 @@ export const i18n = createI18n(runtime, {
 			'en-US': '/learn/brands/[id]'
 		},
 
+		'/learn/issues': {
+			'fr-FR': '/apprendre/problèmes',
+			'en-US': '/learn/issues'
+		},
+
+		'/learn/procedures': {
+			'fr-FR': '/apprendre/procédures',
+			'en-US': '/learn/procedures'
+		},
+
+		'/auto-repair': {
+			'fr-FR': '/auto-réparation',
+			'en-US': '/auto-repair'
+		},
+
 		'/fix': {
 			'fr-FR': '/réparer',
 			'en-US': '/fix'

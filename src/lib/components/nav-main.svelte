@@ -7,9 +7,11 @@
 	import * as m from '$lib/paraglide/messages.js';
 	import BookOpenText from 'lucide-svelte/icons/book-open-text';
 	import ChevronRight from 'lucide-svelte/icons/chevron-right';
+	import CircleAlert from 'lucide-svelte/icons/circle-alert';
 	import Hammer from 'lucide-svelte/icons/hammer';
 	import House from 'lucide-svelte/icons/house';
-	import Tag from 'lucide-svelte/icons/tag';
+	import ListCheck from 'lucide-svelte/icons/list-check';
+	import Users from 'lucide-svelte/icons/users';
 	import Wrench from 'lucide-svelte/icons/wrench';
 
 	const sidebar = useSidebar();
@@ -22,27 +24,39 @@
 			items: []
 		},
 		{
+			title: m.fix(),
+			url: '/fix',
+			icon: Wrench,
+			items: [],
+			isActive: true
+		},
+		{
 			title: m.learn(),
 			url: '/learn',
 			icon: BookOpenText,
 			items: [
 				{
+					title: m.issues(),
+					url: '/learn/issues',
+					icon: CircleAlert
+				},
+				{
+					title: m.procedures(),
+					url: '/learn/procedures',
+					icon: ListCheck
+				},
+				{
 					title: m.tools(),
 					url: '/learn/tools',
 					icon: Hammer
-				},
-				{
-					title: m.brands(),
-					url: '/learn/brands',
-					icon: Tag
 				}
 			],
 			isActive: true
 		},
 		{
-			title: m.fix(),
-			url: '/fix',
-			icon: Wrench,
+			title: m.repairCafe(),
+			url: '/auto-repair',
+			icon: Users,
 			items: [],
 			isActive: true
 		}
@@ -51,7 +65,7 @@
 
 <Sidebar.Group>
 	{#each items as mainItem (mainItem.title)}
-		<Sidebar.GroupContent class="mb-2">
+		<Sidebar.GroupContent class="mb-4">
 			<Sidebar.Menu>
 				<Collapsible.Root open={mainItem.isActive}>
 					{#snippet child({ props })}
