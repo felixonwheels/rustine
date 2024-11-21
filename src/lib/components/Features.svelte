@@ -124,7 +124,7 @@
 								>
 									<feature.icon class="h-full w-full" />
 								</div>
-								<h3 class="text-md mt-2 font-semibold md:text-lg">
+								<h3 class="text-md mt-2 text-center font-semibold md:text-lg">
 									{m[feature.title as keyof typeof m]()}
 								</h3>
 								<p class="mt-2 text-center text-sm text-muted-foreground">
