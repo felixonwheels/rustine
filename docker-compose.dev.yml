@@ -1,6 +1,6 @@
 services:
   directus:
-    image: directus/directus:11.2.1
+    image: directus/directus:11.2.2
     networks:
       - backend
     ports:
