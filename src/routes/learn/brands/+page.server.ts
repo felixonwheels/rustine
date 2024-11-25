@@ -24,5 +24,5 @@ export const load: PageServerLoad = async ({ fetch, depends }) => {
 		})
 	);
 
-	return { brands: brands };
+	return { brands };
 };

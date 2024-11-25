@@ -20,13 +20,18 @@
 	"manifestoOpenSubtitle": "Tout le code est en libre accès et sous licence MIT",
 	"faq": "Foire aux questions",
 
+	"fix": "Réparer",
+
 	"learn": "Apprendre",
-	"tools": "Outils",
+	"vocab": "Vocabulaire",
+	"symptoms": "Symptômes",
 	"issues": "Problèmes",
 	"procedures": "Procédures",
-	"repairCafe": "Ateliers d'auto-réparation",
+	"tools": "Outils",
+	"usefulResources": "Ressources pratiques",
+	"brands": "Marques",
 
-	"fix": "Réparer",
+	"repairCafe": "Ateliers d'auto-réparation",
 
 	"about": "À propos",
 

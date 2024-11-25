@@ -12,7 +12,7 @@
 
 	const sidebar = useSidebar();
 
-	let items = [
+	const navSecondaryItems = $state([
 		{
 			title: m.about(),
 			url: '/about',
@@ -30,7 +30,7 @@
 			icon: Bug,
 			isExternal: true
 		}
-	];
+	]);
 </script>
 
 <Sidebar.Group class="mt-auto">
@@ -38,7 +38,7 @@
 		<Separator class={sidebar.open ? 'm-2' : 'my-2'} />
 
 		<Sidebar.Menu>
-			{#each items as item (item.title)}
+			{#each navSecondaryItems as item (item.title)}
 				<Sidebar.MenuItem>
 					<Sidebar.MenuButton
 						isActive={i18n.route($page.url.pathname) === item.url}

@@ -6,17 +6,20 @@
 	import { i18n } from '$lib/i18n.js';
 	import * as m from '$lib/paraglide/messages.js';
 	import BookOpenText from 'lucide-svelte/icons/book-open-text';
+	import BriefcaseMedical from 'lucide-svelte/icons/briefcase-medical';
 	import ChevronRight from 'lucide-svelte/icons/chevron-right';
 	import CircleAlert from 'lucide-svelte/icons/circle-alert';
 	import Hammer from 'lucide-svelte/icons/hammer';
 	import House from 'lucide-svelte/icons/house';
+	import LibraryBig from 'lucide-svelte/icons/library-big';
 	import ListCheck from 'lucide-svelte/icons/list-check';
+	import Shapes from 'lucide-svelte/icons/shapes';
 	import Users from 'lucide-svelte/icons/users';
 	import Wrench from 'lucide-svelte/icons/wrench';
 
 	const sidebar = useSidebar();
 
-	let items = [
+	const navMainItems = $state([
 		{
 			title: m.home(),
 			url: '/',
@@ -36,6 +39,16 @@
 			icon: BookOpenText,
 			items: [
 				{
+					title: m.vocab(),
+					url: '/learn/vocab',
+					icon: Shapes
+				},
+				{
+					title: m.symptoms(),
+					url: '/learn/symptoms',
+					icon: BriefcaseMedical
+				},
+				{
 					title: m.issues(),
 					url: '/learn/issues',
 					icon: CircleAlert
@@ -49,6 +62,11 @@
 					title: m.tools(),
 					url: '/learn/tools',
 					icon: Hammer
+				},
+				{
+					title: m.usefulResources(),
+					url: '/learn/resources',
+					icon: LibraryBig
 				}
 			],
 			isActive: true
@@ -60,11 +78,11 @@
 			items: [],
 			isActive: true
 		}
-	];
+	]);
 </script>
 
 <Sidebar.Group>
-	{#each items as mainItem (mainItem.title)}
+	{#each navMainItems as mainItem (mainItem.title)}
 		<Sidebar.GroupContent class="mb-4">
 			<Sidebar.Menu>
 				<Collapsible.Root open={mainItem.isActive}>

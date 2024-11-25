@@ -20,13 +20,18 @@
 	"manifestoOpenSubtitle": "All the code is free software and licensed under the MIT license",
 	"faq": "Frequently asked questions",
 
+	"fix": "Fix",
+
 	"learn": "Learn",
-	"tools": "Tools",
+	"vocab": "Vocabulary",
+	"symptoms": "Symptoms",
 	"issues": "Issues",
 	"procedures": "Procedures",
-	"repairCafe": "Auto repair workshops",
+	"tools": "Tools",
+	"usefulResources": "Useful resources",
+	"brands": "Brands",
 
-	"fix": "Fix",
+	"repairCafe": "Auto repair workshops",
 
 	"about": "About",
 

@@ -3,24 +3,24 @@ import { createI18n } from '@inlang/paraglide-sveltekit';
 
 export const i18n = createI18n(runtime, {
 	pathnames: {
+		'/fix': {
+			'fr-FR': '/réparer',
+			'en-US': '/fix'
+		},
+
 		'/learn': {
 			'fr-FR': '/apprendre',
 			'en-US': '/learn'
 		},
 
-		'/learn/tools': {
-			'fr-FR': '/apprendre/outils',
-			'en-US': '/learn/tools'
+		'/learn/vocab': {
+			'fr-FR': '/apprendre/vocab',
+			'en-US': '/learn/vocab'
 		},
 
-		'/learn/brands': {
-			'fr-FR': '/apprendre/marques',
-			'en-US': '/learn/brands'
-		},
-
-		'/learn/brands/[id]': {
-			'fr-FR': '/apprendre/marques/[id]',
-			'en-US': '/learn/brands/[id]'
+		'/learn/symptoms': {
+			'fr-FR': '/apprendre/symptômes',
+			'en-US': '/learn/symptoms'
 		},
 
 		'/learn/issues': {
@@ -33,14 +33,29 @@ export const i18n = createI18n(runtime, {
 			'en-US': '/learn/procedures'
 		},
 
+		'/learn/tools': {
+			'fr-FR': '/apprendre/outils',
+			'en-US': '/learn/tools'
+		},
+
+		'/learn/resources': {
+			'fr-FR': '/apprendre/ressources',
+			'en-US': '/learn/resources'
+		},
+
+		'/learn/brands': {
+			'fr-FR': '/apprendre/marques',
+			'en-US': '/learn/brands'
+		},
+
+		'/learn/brands/[id]': {
+			'fr-FR': '/apprendre/marques/[id]',
+			'en-US': '/learn/brands/[id]'
+		},
+
 		'/auto-repair': {
 			'fr-FR': '/auto-réparation',
 			'en-US': '/auto-repair'
-		},
-
-		'/fix': {
-			'fr-FR': '/réparer',
-			'en-US': '/fix'
 		},
 
 		'/about': {

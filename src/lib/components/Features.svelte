@@ -5,7 +5,7 @@
 		transition_fade_duration,
 		transition_slide_duration,
 		transition_easing
-	} from '$lib/constants.svelte';
+	} from '$lib/constants';
 	import * as m from '$lib/paraglide/messages.js';
 	import { cn } from '$lib/utils';
 	import BookOpenText from 'lucide-svelte/icons/book-open-text';
