@@ -3,9 +3,10 @@
 
 	"wip": "⚠️ Ceci est un travail en cours. Ça ne fait pas grand-chose pour le moment, je suis juste en train de bricoler 🔧",
 	"home": "Accueil",
-	"titleStart": "Roulez. Cassez. ",
-	"titleMark": "Réparez.",
-	"titleEnd": " Recommencez.",
+	"titleRide": "Roulez.",
+	"titleBreak": "Cassez.",
+	"titleRepair": "Réparez.",
+	"titleRepeat": "Recommencez.",
 	"learnButton": "En apprendre plus sur votre vélo",
 	"fixButton": "Réparer votre vélo",
 	"featuresFixTitle": "Réparer votre vélo",

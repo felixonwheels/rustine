@@ -66,7 +66,7 @@
 		}}
 	>
 		<h2
-			class="mt-6 text-center text-xl font-bold md:text-2xl xl:text-3xl"
+			class="mt-6 flex flex-col items-center justify-center space-y-2 text-xl font-bold md:flex-row md:flex-wrap md:items-baseline md:space-x-2 md:text-2xl xl:text-3xl"
 			in:slide={{
 				delay: transition_delay_start + 2 * transition_delay_step,
 				axis: 'y',
@@ -74,10 +74,21 @@
 				easing: transition_easing
 			}}
 		>
-			{m.titleStart()}<mark
-				class="bg-gradient-to-r from-primary to-rustine-indigo bg-clip-text not-italic text-transparent"
-				>{m.titleMark()}</mark
-			>{m.titleEnd()}
+			<div class="shrink-0" in:slide={{ delay: 1000, duration: 1000, axis: 'x' }}>
+				{m.titleRide()}
+			</div>
+			<div class="shrink-0" in:slide={{ delay: 2000, duration: 1000, axis: 'x' }}>
+				{m.titleBreak()}
+			</div>
+			<div
+				class="shrink-0 bg-gradient-to-r from-primary to-rustine-indigo bg-clip-text not-italic text-transparent"
+				in:slide={{ delay: 3000, duration: 1000, axis: 'x' }}
+			>
+				{m.titleRepair()}
+			</div>
+			<div class="shrink-0" in:slide={{ delay: 4000, duration: 1000, axis: 'x' }}>
+				{m.titleRepeat()}
+			</div>
 		</h2>
 	</div>
 

@@ -3,9 +3,10 @@
 
 	"wip": "⚠️ This is a work in progress. It doesn't do much for now, I'm just noodling around 🍜",
 	"home": "Home",
-	"titleStart": "Ride. Break. ",
-	"titleMark": "Repair.",
-	"titleEnd": " Repeat.",
+	"titleRide": "Ride.",
+	"titleBreak": "Break.",
+	"titleRepair": "Repair.",
+	"titleRepeat": "Repeat.",
 	"learnButton": "Learn more about your bike",
 	"fixButton": "Fix your bike",
 	"featuresFixTitle": "Fix your bike",
