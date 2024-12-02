@@ -49,7 +49,7 @@
 			description: m.featuresLearnSubtitle() // TODO: to change
 		},
 		{
-			title: m.usefulResources(),
+			title: m.resources(),
 			url: '/learn/resources',
 			icon: LibraryBig,
 			description: m.featuresLearnSubtitle() // TODO: to change

@@ -3,8 +3,8 @@
 </script>
 
 <svelte:head>
-	<title>{m.usefulResources()}</title>
-	<meta content={m.usefulResources()} name="description" />
+	<title>{m.resources()}</title>
+	<meta content={m.resources()} name="description" />
 </svelte:head>
 
-<h1 class="text-2xl font-bold">{m.usefulResources()}</h1>
+<h1 class="text-2xl font-bold">{m.resources()}</h1>

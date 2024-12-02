@@ -64,7 +64,7 @@
 					icon: Hammer
 				},
 				{
-					title: m.usefulResources(),
+					title: m.resources(),
 					url: '/learn/resources',
 					icon: LibraryBig
 				}
